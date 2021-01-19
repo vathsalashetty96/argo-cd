@@ -12,7 +12,7 @@ KUSTOMIZE_VERSION=${KUSTOMIZE_VERSION:-$kustomize3_version}
 # v3.2.1 = https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v3.2.1/kustomize_kustomize.v3.2.1_linux_amd64
 # v3.3.0 = https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v3.3.0/kustomize_v3.3.0_linux_amd64.tar.gz
 case $ARCHITECTURE in
-  arm|arm64)
+  ppc64le)
     BINNAME=kustomize
     CGO_ENABLED=0 GO111MODULE=on go get -ldflags="-s" sigs.k8s.io/kustomize/kustomize/v3@v${KUSTOMIZE_VERSION}
     mv $GOPATH/bin/kustomize $BIN/$BINNAME

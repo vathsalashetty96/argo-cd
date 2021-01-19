@@ -88,7 +88,8 @@ WORKDIR /home/argocd
 ####################################################################################################
 # Argo CD UI stage
 ####################################################################################################
-FROM node:12.18.4 as argocd-ui
+#FROM node:12.18.4 as argocd-ui
+FROM ppc64le/node:12.18.4-buster as argocd-ui
 
 WORKDIR /src
 ADD ["ui/package.json", "ui/yarn.lock", "./"]
@@ -99,12 +100,17 @@ ADD ["ui/", "."]
 
 ARG ARGO_VERSION=latest
 ENV ARGO_VERSION=$ARGO_VERSION
+RUN export NODE_OPTIONS="--max-old-space-size=1024"
+
+RUN npm rebuild node-sass
+RUN npm run build --clean
 RUN NODE_ENV='production' yarn build
 
 ####################################################################################################
 # Argo CD Build stage which performs the actual build of Argo CD binaries
 ####################################################################################################
-FROM golang:1.14.12 as argocd-build
+#FROM golang:1.14.12 as argocd-build
+FROM golang:1.14.12-buster as argocd-build
 
 COPY --from=builder /usr/local/bin/packr /usr/local/bin/packr
 
@@ -121,8 +127,8 @@ RUN make cli-local server controller repo-server argocd-util
 
 ARG BUILD_ALL_CLIS=true
 RUN if [ "$BUILD_ALL_CLIS" = "true" ] ; then \
-    make CLI_NAME=argocd-darwin-amd64 GOOS=darwin cli-local && \
-    make CLI_NAME=argocd-windows-amd64.exe GOOS=windows cli-local \
+    make CLI_NAME=argocd-linux-ppc64le GOOS=linux cli-local && \
+    make CLI_NAME=argocd-linux-ppc64le.exe GOOS=linux cli-local \
     ; fi
 
 ####################################################################################################

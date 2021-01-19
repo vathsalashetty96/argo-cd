@@ -5,7 +5,7 @@ set -eux -o pipefail
 
 PACKR_VERSION=${packr_version}
 case $ARCHITECTURE in
-  arm|arm64)
+  ppc64le)
     # Clone the repository in $GOPATH/src/github.com/gobuffalo/packr
     go get -u github.com/gobuffalo/packr
     cd $GOPATH/src/github.com/gobuffalo/packr && git checkout tags/v$PACKR_VERSION

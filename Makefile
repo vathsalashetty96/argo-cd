@@ -204,9 +204,9 @@ cli-argocd:
 release-cli: clean-debug image
 	docker create --name tmp-argocd-linux $(IMAGE_PREFIX)argocd:$(IMAGE_TAG)
 	docker cp tmp-argocd-linux:/usr/local/bin/argocd ${DIST_DIR}/argocd-linux-amd64
-	docker cp tmp-argocd-linux:/usr/local/bin/argocd-darwin-amd64 ${DIST_DIR}/argocd-darwin-amd64
-	docker cp tmp-argocd-linux:/usr/local/bin/argocd-windows-amd64.exe ${DIST_DIR}/argocd-windows-amd64.exe
-	docker cp tmp-argocd-linux:/usr/local/bin/argocd-util ${DIST_DIR}/argocd-util-linux-amd64
+	docker cp tmp-argocd-linux:/usr/local/bin/argocd-linux-ppc64le ${DIST_DIR}/argocd-linux-ppc64le
+	docker cp tmp-argocd-linux:/usr/local/bin/argocd-linux-ppc64le.exe ${DIST_DIR}/argocd-linux-ppc64le.exe
+	docker cp tmp-argocd-linux:/usr/local/bin/argocd-util ${DIST_DIR}/argocd-util-linux-ppc64le
 	docker rm tmp-argocd-linux
 
 .PHONY: argocd-util
@@ -260,15 +260,15 @@ IMAGE_TAG="dev-$(shell git describe --always --dirty)"
 image: packr
 	docker build -t argocd-base --target argocd-base .
 	docker build -t argocd-ui --target argocd-ui .
-	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd-server ./cmd/argocd-server
-	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd-application-controller ./cmd/argocd-application-controller
-	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd-repo-server ./cmd/argocd-repo-server
-	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd ./cmd/argocd
-	CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd-darwin-amd64 ./cmd/argocd
-	CGO_ENABLED=0 GOOS=windows GOARCH=amd64 dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd-windows-amd64.exe ./cmd/argocd
-	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd-util ./cmd/argocd-util
-	CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd-util-darwin-amd64 ./cmd/argocd-util
-	CGO_ENABLED=0 GOOS=windows GOARCH=amd64 dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd-util-windows-amd64.exe ./cmd/argocd-util
+	CGO_ENABLED=0 GOOS=linux GOARCH=ppc64le dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd-server ./cmd/argocd-server
+	CGO_ENABLED=0 GOOS=linux GOARCH=ppc64le dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd-application-controller ./cmd/argocd-application-controller
+	CGO_ENABLED=0 GOOS=linux GOARCH=ppc64le dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd-repo-server ./cmd/argocd-repo-server
+	CGO_ENABLED=0 GOOS=linux GOARCH=ppc64le dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd ./cmd/argocd
+	CGO_ENABLED=0 GOOS=linux GOARCH=ppc64le dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd-linux-ppc64le ./cmd/argocd
+	CGO_ENABLED=0 GOOS=linux GOARCH=ppc64le dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd-linux-ppc64le.exe ./cmd/argocd
+	CGO_ENABLED=0 GOOS=linux GOARCH=ppc64le dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd-util ./cmd/argocd-util
+	CGO_ENABLED=0 GOOS=linux GOARCH=ppc64le dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd-util-linux-ppc64le ./cmd/argocd-util
+	CGO_ENABLED=0 GOOS=linux GOARCH=ppc64le dist/packr build -v -i -ldflags '${LDFLAGS}' -o ${DIST_DIR}/argocd-util-linux-ppc64le.exe ./cmd/argocd-util
 	cp Dockerfile.dev dist
 	docker build -t $(IMAGE_PREFIX)argocd:$(IMAGE_TAG) -f dist/Dockerfile.dev dist
 else

@@ -5,7 +5,7 @@ set -eux -o pipefail
 
 KSONNET_VERSION=${ksonnet_version}
 case $ARCHITECTURE in
-  arm|arm64)
+  ppc64le)
     set +o pipefail
     # Clone the repository in $GOPATH/src/github.com/ksonnet/ksonnet
     go get -u github.com/ksonnet/ksonnet || true
