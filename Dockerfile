@@ -109,8 +109,8 @@ RUN NODE_ENV='production' yarn build
 ####################################################################################################
 # Argo CD Build stage which performs the actual build of Argo CD binaries
 ####################################################################################################
-FROM golang:1.14.12 as argocd-build
-#FROM golang:1.14.12-buster as argocd-build
+#FROM golang:1.14.12 as argocd-build
+FROM golang:1.14.12-buster as argocd-build
 
 COPY --from=builder /usr/local/bin/packr /usr/local/bin/packr
 
@@ -127,8 +127,8 @@ RUN make cli-local server controller repo-server argocd-util
 
 ARG BUILD_ALL_CLIS=true
 RUN if [ "$BUILD_ALL_CLIS" = "true" ] ; then \
-    make CLI_NAME=argocd-linux-ppc64le GOOS=linux cli-local && \
-    make CLI_NAME=argocd-linux-ppc64le.exe GOOS=linux cli-local \
+    make CLI_NAME=argocd-linux-amd64 GOOS=linux cli-local && \
+    make CLI_NAME=argocd-linux-amd64.exe GOOS=linux cli-local \
     ; fi
 
 ####################################################################################################
