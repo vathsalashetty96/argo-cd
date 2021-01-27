@@ -109,8 +109,8 @@ RUN NODE_ENV='production' yarn build
 ####################################################################################################
 # Argo CD Build stage which performs the actual build of Argo CD binaries
 ####################################################################################################
-#FROM golang:1.14.12 as argocd-build
-FROM golang:1.14.12-buster as argocd-build
+FROM golang:1.14.12 as argocd-build
+#FROM golang:1.14.12-buster as argocd-build
 
 COPY --from=builder /usr/local/bin/packr /usr/local/bin/packr
 
