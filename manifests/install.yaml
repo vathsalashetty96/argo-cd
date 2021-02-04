@@ -2465,11 +2465,7 @@ spec:
         - -n
         - /usr/local/bin/argocd-util
         - /shared
-<<<<<<< HEAD
         image: chanting1.fyre.ibm.com:31320/argocd:latest
-=======
-        image: docker.io/dockendvaths367/argocd:latest
->>>>>>> 58535da98e91449a7e6e78a332efd8fe0eae7f30
         imagePullPolicy: Always
         name: copyutil
         volumeMounts:
@@ -2569,11 +2565,7 @@ spec:
         - argocd-repo-server
         - --redis
         - argocd-redis:6379
-<<<<<<< HEAD
         image: chanting1.fyre.ibm.com:31320/argocd:latest
-=======
-        image: docker.io/dockendvaths367/argocd:latest
->>>>>>> 58535da98e91449a7e6e78a332efd8fe0eae7f30
         imagePullPolicy: Always
         livenessProbe:
           failureThreshold: 3
@@ -2651,11 +2643,7 @@ spec:
         - argocd-server
         - --staticassets
         - /shared/app
-<<<<<<< HEAD
         image: chanting1.fyre.ibm.com:31320/argocd:latest
-=======
-        image: docker.io/dockendvaths367/argocd:latest
->>>>>>> 58535da98e91449a7e6e78a332efd8fe0eae7f30
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
@@ -2730,11 +2718,7 @@ spec:
         - "20"
         - --operation-processors
         - "10"
-<<<<<<< HEAD
         image: chanting1.fyre.ibm.com:31320/argocd:latest
-=======
-        image: docker.io/dockendvaths367/argocd:latest
->>>>>>> 58535da98e91449a7e6e78a332efd8fe0eae7f30
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
