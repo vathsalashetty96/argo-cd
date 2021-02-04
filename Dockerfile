@@ -127,8 +127,8 @@ RUN make cli-local server controller repo-server argocd-util
 
 ARG BUILD_ALL_CLIS=true
 RUN if [ "$BUILD_ALL_CLIS" = "true" ] ; then \
-    make CLI_NAME=argocd-linux-amd64 GOOS=linux cli-local && \
-    make CLI_NAME=argocd-linux-amd64.exe GOOS=linux cli-local \
+    make CLI_NAME=argocd-linux-ppc64le GOOS=linux cli-local && \
+    make CLI_NAME=argocd-linux-ppc64le.exe GOOS=linux cli-local \
     ; fi
 
 ####################################################################################################

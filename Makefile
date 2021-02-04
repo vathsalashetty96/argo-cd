@@ -203,7 +203,7 @@ cli-argocd:
 .PHONY: release-cli
 release-cli: clean-debug image
 	docker create --name tmp-argocd-linux $(IMAGE_PREFIX)argocd:$(IMAGE_TAG)
-	docker cp tmp-argocd-linux:/usr/local/bin/argocd ${DIST_DIR}/argocd-linux-amd64
+	docker cp tmp-argocd-linux:/usr/local/bin/argocd ${DIST_DIR}/argocd-linux-ppc64le
 	docker cp tmp-argocd-linux:/usr/local/bin/argocd-linux-ppc64le ${DIST_DIR}/argocd-linux-ppc64le
 	docker cp tmp-argocd-linux:/usr/local/bin/argocd-linux-ppc64le.exe ${DIST_DIR}/argocd-linux-ppc64le.exe
 	docker cp tmp-argocd-linux:/usr/local/bin/argocd-util ${DIST_DIR}/argocd-util-linux-ppc64le
