@@ -79,11 +79,11 @@ jobs:
       - build-go
     steps:
       - name: Create checkout directory
-        run: mkdir -p ~/go/src/github.com/vathsalashetty25/argo-cd
+        run: mkdir -p ~/go/src/github.com/argo-cd
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Create symlink in GOPATH
-        run: ln -s $(pwd) ~/go/src/github.com/vathsalashetty25/argo-cd
+        run: ln -s $(pwd) ~/go/src/github.com/argoproj/argo-cd
       - name: Setup Golang
         uses: actions/setup-go@v1
         with:
