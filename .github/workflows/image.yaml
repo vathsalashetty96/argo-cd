@@ -26,7 +26,7 @@ jobs:
       # build
       - run: |
           docker images -a --format "{{.ID}}" | xargs -I {} docker rmi {}
-          make image DEV_IMAGE=true DOCKER_PUSH=false IMAGE_NAMESPACE=docker.pkg.github.com/vathsalashetty25/argo-cd IMAGE_TAG=${{ steps.image.outputs.tag }}
+          make image DEV_IMAGE=true DOCKER_PUSH=false IMAGE_NAMESPACE=docker.pkg.github.com/argocd/argo-cd IMAGE_TAG=${{ steps.image.outputs.tag }}
         working-directory: ./src/github.com/vathsalashetty25/argo-cd
 
       # publish
