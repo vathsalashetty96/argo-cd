@@ -79,7 +79,7 @@ jobs:
       - build-go
     steps:
       - name: Create checkout directory
-        run: mkdir -p ~/go/src/github.com/vathsalashetty25/argocd
+        run: mkdir -p ~/go/src/github.com/argo-cd
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Create symlink in GOPATH
