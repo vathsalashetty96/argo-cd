@@ -1,7 +1,7 @@
 #!/bin/sh
 # The checksum of this file is used as cache key in our integration toolchain
 # 
-helm2_version=2.17.0
+helm2_version=2.14.1
 helm3_version=3.4.1
 jq_version=1.6
 ksonnet_version=0.13.1
