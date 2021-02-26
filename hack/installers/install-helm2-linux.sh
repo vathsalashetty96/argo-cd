@@ -7,4 +7,4 @@ set -eux -o pipefail
 mkdir -p /tmp/helm2 && tar -C /tmp/helm2 -xf $DOWNLOADS/helm2.tar.gz
 
 cp /tmp/helm2/linux-$ARCHITECTURE/helm $BIN/helm2
-
+helm2 version --client
