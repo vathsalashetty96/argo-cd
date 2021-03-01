@@ -1707,14 +1707,14 @@ which cannot modify Argo CD settings.</p>
 
 <hr />
 <p>Another <code>policy.csv</code> example might look as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">p, role:staging-db-admins, applications, create, staging-db-admins/*, allow</span>
-<span class="err">p, role:staging-db-admins, applications, delete, staging-db-admins/*, allow</span>
-<span class="err">p, role:staging-db-admins, applications, get, staging-db-admins/*, allow</span>
-<span class="err">p, role:staging-db-admins, applications, override, staging-db-admins/*, allow</span>
-<span class="err">p, role:staging-db-admins, applications, sync, staging-db-admins/*, allow</span>
-<span class="err">p, role:staging-db-admins, applications, update, staging-db-admins/*, allow</span>
-<span class="err">p, role:staging-db-admins, projects, get, staging-db-admins, allow</span>
-<span class="err">g, db-admins, role:staging-db-admins</span>
+<div class="codehilite"><pre><span></span><code>p, role:staging-db-admins, applications, create, staging-db-admins/*, allow
+p, role:staging-db-admins, applications, delete, staging-db-admins/*, allow
+p, role:staging-db-admins, applications, get, staging-db-admins/*, allow
+p, role:staging-db-admins, applications, override, staging-db-admins/*, allow
+p, role:staging-db-admins, applications, sync, staging-db-admins/*, allow
+p, role:staging-db-admins, applications, update, staging-db-admins/*, allow
+p, role:staging-db-admins, projects, get, staging-db-admins, allow
+g, db-admins, role:staging-db-admins
 </code></pre></div>
 
 <p>This example defines a <em>role</em> called <code>staging-db-admins</code> with <em>seven permissions</em> that allow that role to perform the <em>actions</em> (<code>create</code>/<code>delete</code>/<code>get</code>/<code>override</code>/<code>sync</code>/<code>update</code> applications, and <code>get</code> appprojects) against <code>*</code> (all) objects in the <code>staging-db-admins</code> Argo CD AppProject.</p>

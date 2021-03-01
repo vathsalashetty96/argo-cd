@@ -1633,38 +1633,38 @@ The important part to note here is that group-membership is a non-standard claim
 <h2 id="configuring-argo">Configuring argo<a class="headerlink" href="#configuring-argo" title="Permanent link">&para;</a></h2>
 <h3 id="configure-oidc-for-argocd">Configure OIDC for ArgoCD<a class="headerlink" href="#configure-oidc-for-argocd" title="Permanent link">&para;</a></h3>
 <p><code>kubectl edit configmap argocd-cm</code></p>
-<div class="codehilite"><pre><span></span><code><span class="err">...</span>
-<span class="c">data:</span>
-<span class="c">  application.instanceLabelKey: argocd.argoproj.io/instance</span>
-<span class="c">  url: https://your.argoingress.address</span>
-<span class="c">  oidc.config: |</span>
-<span class="c">    name: Auth0</span>
-<span class="c">    issuer: https://&lt;yourtenant&gt;.&lt;eu|us&gt;.auth0.com/</span>
-<span class="c">    clientID: &lt;theClientId&gt;</span>
-<span class="c">    clientSecret: &lt;theClientSecret&gt;</span>
-<span class="c">    requestedScopes:</span>
-<span class="c">    - openid</span>
-<span class="c">    - profile</span>
-<span class="c">    - email</span>
-<span class="c">    # not strictly necessary - but good practice:</span>
-<span class="c">    - &#39;http://your.domain/groups&#39;</span>
-<span class="err">...</span>
+<div class="codehilite"><pre><span></span><code>...
+data:
+  application.instanceLabelKey: argocd.argoproj.io/instance
+  url: https://your.argoingress.address
+  oidc.config: |
+    name: Auth0
+    issuer: https://&lt;yourtenant&gt;.&lt;eu|us&gt;.auth0.com/
+    clientID: &lt;theClientId&gt;
+    clientSecret: &lt;theClientSecret&gt;
+    requestedScopes:
+    - openid
+    - profile
+    - email
+    # not strictly necessary - but good practice:
+    - &#39;http://your.domain/groups&#39;
+...
 </code></pre></div>
 
 <h3 id="configure-rbac-for-argocd">Configure RBAC for ArgoCD<a class="headerlink" href="#configure-rbac-for-argocd" title="Permanent link">&para;</a></h3>
 <p><code>kubectl edit configmap argocd-rbac-cm</code> (or use helm values).</p>
-<div class="codehilite"><pre><span></span><code><span class="err">...</span>
-<span class="c">data:</span>
-<span class="c">  policy.csv: |</span>
-<span class="c">    # let members with group someProjectGroup handle apps in someProject</span>
-<span class="c">    # this can also be defined in the UI in the group-definition to avoid doing it there in the configmap</span>
-<span class="c">    p, someProjectGroup, applications, *, someProject/*, allow</span>
-<span class="c">    # let the group membership argocd-admins from OIDC become role:admin - needs to go into the configmap</span>
-<span class="c">    g, argocd-global-admins, role:admin</span>
-<span class="c">  policy.default: role:readonly</span>
-<span class="c">  # essential to get argo to use groups for RBAC:</span>
-<span class="c">  scopes: &#39;[http://your.domain/groups, email]&#39; </span>
-<span class="err">...</span>
+<div class="codehilite"><pre><span></span><code><span class="p">...</span><span class="w"></span>
+<span class="k">data</span><span class="err">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">policy</span><span class="p">.</span><span class="nl">csv</span><span class="p">:</span><span class="w"> </span><span class="o">|</span><span class="w"></span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">let</span><span class="w"> </span><span class="n">members</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="n">someProjectGroup</span><span class="w"> </span><span class="n">handle</span><span class="w"> </span><span class="n">apps</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">someProject</span><span class="w"></span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">also</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">defined</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">UI</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">group</span><span class="o">-</span><span class="n">definition</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">avoid</span><span class="w"> </span><span class="n">doing</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">there</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">configmap</span><span class="w"></span>
+<span class="w">    </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">someProjectGroup</span><span class="p">,</span><span class="w"> </span><span class="n">applications</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">someProject</span><span class="cm">/*, allow</span>
+<span class="cm">    # let the group membership argocd-admins from OIDC become role:admin - needs to go into the configmap</span>
+<span class="cm">    g, argocd-global-admins, role:admin</span>
+<span class="cm">  policy.default: role:readonly</span>
+<span class="cm">  # essential to get argo to use groups for RBAC:</span>
+<span class="cm">  scopes: &#39;[http://your.domain/groups, email]&#39; </span>
+<span class="cm">...</span>
 </code></pre></div>
 
 <p><br></p>
