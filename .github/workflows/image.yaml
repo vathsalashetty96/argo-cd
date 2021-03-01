@@ -25,6 +25,8 @@ jobs:
 
       # build
       - run: |
+          export DOCKER_BUILDX=buildx
+          export DOCKER_BUILD_ARGS="--platform linux/ppc64le --load"
           docker images -a --format "{{.ID}}" | xargs -I {} docker rmi {}
           make image DEV_IMAGE=true DOCKER_PUSH=false IMAGE_NAMESPACE=docker.pkg.github.com/argoproj/argo-cd IMAGE_TAG=${{ steps.image.outputs.tag }}
         working-directory: ./src/github.com/argoproj/argo-cd
