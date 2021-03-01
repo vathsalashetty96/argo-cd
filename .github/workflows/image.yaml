@@ -16,18 +16,18 @@ jobs:
           go-version: '1.14.12'
       - uses: actions/checkout@master
         with:
-          path: src/github.com/vathsalashetty25/argo-cd
+          path: src/github.com/argoproj/argo-cd
 
       # get image tag
       - run: echo ::set-output name=tag::$(cat ./VERSION)-${GITHUB_SHA::8}
-        working-directory: ./src/github.com/vathsalashetty25/argo-cd
+        working-directory: ./src/github.com/argoproj/argo-cd
         id: image
 
       # build
       - run: |
           docker images -a --format "{{.ID}}" | xargs -I {} docker rmi {}
           make image DEV_IMAGE=true DOCKER_PUSH=false IMAGE_NAMESPACE=docker.pkg.github.com/argoproj/argo-cd IMAGE_TAG=${{ steps.image.outputs.tag }}
-        working-directory: ./src/github.com/vathsalashetty25/argo-cd
+        working-directory: ./src/github.com/argoproj/argo-cd
 
       # publish
       - run: |
