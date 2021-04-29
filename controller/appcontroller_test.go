@@ -8,14 +8,14 @@ import (
 
 	"k8s.io/apimachinery/pkg/api/resource"
 
-	clustercache "github.com/argoproj/gitops-engine/pkg/cache"
+	clustercache "github.com/vathsalashetty96/gitops-engine/pkg/cache"
 
-	statecache "github.com/argoproj/argo-cd/controller/cache"
+	statecache "github.com/vathsalashetty96/argo-cd/controller/cache"
 
-	"github.com/argoproj/gitops-engine/pkg/cache/mocks"
-	synccommon "github.com/argoproj/gitops-engine/pkg/sync/common"
-	"github.com/argoproj/gitops-engine/pkg/utils/kube"
-	"github.com/argoproj/gitops-engine/pkg/utils/kube/kubetest"
+	"github.com/vathsalashetty96/gitops-engine/pkg/cache/mocks"
+	synccommon "github.com/vathsalashetty96/gitops-engine/pkg/sync/common"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/kube"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/kube/kubetest"
 	"github.com/ghodss/yaml"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
@@ -29,16 +29,16 @@ import (
 	kubetesting "k8s.io/client-go/testing"
 	"k8s.io/client-go/tools/cache"
 
-	"github.com/argoproj/argo-cd/common"
-	mockstatecache "github.com/argoproj/argo-cd/controller/cache/mocks"
-	argoappv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	appclientset "github.com/argoproj/argo-cd/pkg/client/clientset/versioned/fake"
-	"github.com/argoproj/argo-cd/reposerver/apiclient"
-	mockrepoclient "github.com/argoproj/argo-cd/reposerver/apiclient/mocks"
-	"github.com/argoproj/argo-cd/test"
-	cacheutil "github.com/argoproj/argo-cd/util/cache"
-	appstatecache "github.com/argoproj/argo-cd/util/cache/appstate"
-	"github.com/argoproj/argo-cd/util/settings"
+	"github.com/vathsalashetty96/argo-cd/common"
+	mockstatecache "github.com/vathsalashetty96/argo-cd/controller/cache/mocks"
+	argoappv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	appclientset "github.com/vathsalashetty96/argo-cd/pkg/client/clientset/versioned/fake"
+	"github.com/vathsalashetty96/argo-cd/reposerver/apiclient"
+	mockrepoclient "github.com/vathsalashetty96/argo-cd/reposerver/apiclient/mocks"
+	"github.com/vathsalashetty96/argo-cd/test"
+	cacheutil "github.com/vathsalashetty96/argo-cd/util/cache"
+	appstatecache "github.com/vathsalashetty96/argo-cd/util/cache/appstate"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 )
 
 type namespacedResource struct {
@@ -153,14 +153,14 @@ data:
 kind: Secret
 metadata:
   labels:
-    argocd.argoproj.io/secret-type: cluster
+    argocd.vathsalashetty96.io/secret-type: cluster
   name: some-secret
   namespace: ` + test.FakeArgoCDNamespace + `
 type: Opaque
 `
 
 var fakeApp = `
-apiVersion: argoproj.io/v1alpha1
+apiVersion: vathsalashetty96.io/v1alpha1
 kind: Application
 metadata:
   uid: "123"
@@ -173,7 +173,7 @@ spec:
   project: default
   source:
     path: some/path
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    repoURL: https://github.com/vathsalashetty96/argocd-example-apps.git
   syncPolicy:
     automated: {}
 status:
@@ -197,11 +197,11 @@ status:
       revision: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
       source:
         path: some/path
-        repoURL: https://github.com/argoproj/argocd-example-apps.git
+        repoURL: https://github.com/vathsalashetty96/argocd-example-apps.git
 `
 
 var fakeAppWithDestName = `
-apiVersion: argoproj.io/v1alpha1
+apiVersion: vathsalashetty96.io/v1alpha1
 kind: Application
 metadata:
   uid: "123"
@@ -214,13 +214,13 @@ spec:
   project: default
   source:
     path: some/path
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    repoURL: https://github.com/vathsalashetty96/argocd-example-apps.git
   syncPolicy:
     automated: {}
 `
 
 var fakeAppWithDestMismatch = `
-apiVersion: argoproj.io/v1alpha1
+apiVersion: vathsalashetty96.io/v1alpha1
 kind: Application
 metadata:
   uid: "123"
@@ -234,7 +234,7 @@ spec:
   project: default
   source:
     path: some/path
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    repoURL: https://github.com/vathsalashetty96/argocd-example-apps.git
   syncPolicy:
     automated: {}
 `
