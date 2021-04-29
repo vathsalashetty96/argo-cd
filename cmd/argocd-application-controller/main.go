@@ -11,7 +11,7 @@ import (
 	// load the azure plugin (required to authenticate with AKS clusters).
 	_ "k8s.io/client-go/plugin/pkg/client/auth/azure"
 
-	"github.com/argoproj/argo-cd/cmd/argocd-application-controller/commands"
+	"github.com/vathsalashetty96/argo-cd/cmd/argocd-application-controller/commands"
 )
 
 func main() {
