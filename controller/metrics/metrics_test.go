@@ -10,21 +10,21 @@ import (
 	"testing"
 	"time"
 
-	"github.com/argoproj/gitops-engine/pkg/sync/common"
+	"github.com/vathsalashetty96/gitops-engine/pkg/sync/common"
 	"github.com/ghodss/yaml"
 	"github.com/stretchr/testify/assert"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/tools/cache"
 
-	argoappv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	appclientset "github.com/argoproj/argo-cd/pkg/client/clientset/versioned/fake"
-	appinformer "github.com/argoproj/argo-cd/pkg/client/informers/externalversions"
-	applister "github.com/argoproj/argo-cd/pkg/client/listers/application/v1alpha1"
+	argoappv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	appclientset "github.com/vathsalashetty96/argo-cd/pkg/client/clientset/versioned/fake"
+	appinformer "github.com/vathsalashetty96/argo-cd/pkg/client/informers/externalversions"
+	applister "github.com/vathsalashetty96/argo-cd/pkg/client/listers/application/v1alpha1"
 )
 
 const fakeApp = `
-apiVersion: argoproj.io/v1alpha1
+apiVersion: vathsalashetty96.io/v1alpha1
 kind: Application
 metadata:
   name: my-app
@@ -36,7 +36,7 @@ spec:
   project: important-project
   source:
     path: some/path
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    repoURL: https://github.com/vathsalashetty96/argocd-example-apps.git
 status:
   sync:
     status: Synced
@@ -45,7 +45,7 @@ status:
 `
 
 const fakeApp2 = `
-apiVersion: argoproj.io/v1alpha1
+apiVersion: vathsalashetty96.io/v1alpha1
 kind: Application
 metadata:
   name: my-app-2
@@ -57,7 +57,7 @@ spec:
   project: important-project
   source:
     path: some/path
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    repoURL: https://github.com/vathsalashetty96/argocd-example-apps.git
 status:
   sync:
     status: Synced
@@ -71,7 +71,7 @@ operation:
 `
 
 const fakeApp3 = `
-apiVersion: argoproj.io/v1alpha1
+apiVersion: vathsalashetty96.io/v1alpha1
 kind: Application
 metadata:
   name: my-app-3
@@ -84,7 +84,7 @@ spec:
   project: important-project
   source:
     path: some/path
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    repoURL: https://github.com/vathsalashetty96/argocd-example-apps.git
 status:
   sync:
     status: OutOfSync
@@ -93,7 +93,7 @@ status:
 `
 
 const fakeDefaultApp = `
-apiVersion: argoproj.io/v1alpha1
+apiVersion: vathsalashetty96.io/v1alpha1
 kind: Application
 metadata:
   name: my-app
@@ -104,7 +104,7 @@ spec:
     server: https://localhost:6443
   source:
     path: some/path
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    repoURL: https://github.com/vathsalashetty96/argocd-example-apps.git
 status:
   sync:
     status: Synced
