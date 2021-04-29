@@ -4,17 +4,17 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/argoproj/gitops-engine/pkg/utils/kube"
-	"github.com/argoproj/gitops-engine/pkg/utils/text"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/kube"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/text"
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime"
 	resourcehelper "k8s.io/kubernetes/pkg/api/v1/resource"
 	k8snode "k8s.io/kubernetes/pkg/util/node"
 
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/util/resource"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/util/resource"
 )
 
 func populateNodeInfo(un *unstructured.Unstructured, res *ResourceInfo) {
