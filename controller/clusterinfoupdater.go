@@ -4,18 +4,18 @@ import (
 	"context"
 	"time"
 
-	"github.com/argoproj/gitops-engine/pkg/cache"
-	"github.com/argoproj/gitops-engine/pkg/utils/kube"
+	"github.com/vathsalashetty96/gitops-engine/pkg/cache"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/kube"
 	log "github.com/sirupsen/logrus"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/labels"
 
-	"github.com/argoproj/argo-cd/controller/metrics"
-	appv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/pkg/client/listers/application/v1alpha1"
-	"github.com/argoproj/argo-cd/util/argo"
-	appstatecache "github.com/argoproj/argo-cd/util/cache/appstate"
-	"github.com/argoproj/argo-cd/util/db"
+	"github.com/vathsalashetty96/argo-cd/controller/metrics"
+	appv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/pkg/client/listers/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/util/argo"
+	appstatecache "github.com/vathsalashetty96/argo-cd/util/cache/appstate"
+	"github.com/vathsalashetty96/argo-cd/util/db"
 )
 
 const (
