@@ -12,14 +12,14 @@ import (
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
 
-	cmdutil "github.com/argoproj/argo-cd/cmd/util"
-	"github.com/argoproj/argo-cd/common"
-	argocdclient "github.com/argoproj/argo-cd/pkg/apiclient"
-	clusterpkg "github.com/argoproj/argo-cd/pkg/apiclient/cluster"
-	argoappv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/util/clusterauth"
-	"github.com/argoproj/argo-cd/util/errors"
-	"github.com/argoproj/argo-cd/util/io"
+	cmdutil "github.com/vathsalashetty96/argo-cd/cmd/util"
+	"github.com/vathsalashetty96/argo-cd/common"
+	argocdclient "github.com/vathsalashetty96/argo-cd/pkg/apiclient"
+	clusterpkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/cluster"
+	argoappv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/util/clusterauth"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
+	"github.com/vathsalashetty96/argo-cd/util/io"
 )
 
 // NewClusterCommand returns a new instance of an `argocd cluster` command
