@@ -7,7 +7,7 @@ import (
 
 	"k8s.io/utils/pointer"
 
-	"github.com/argoproj/gitops-engine/pkg/sync/common"
+	"github.com/vathsalashetty96/gitops-engine/pkg/sync/common"
 	"github.com/stretchr/testify/assert"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -19,21 +19,21 @@ func TestAppProject_IsSourcePermitted(t *testing.T) {
 		appSource   string
 		isPermitted bool
 	}{{
-		projSources: []string{"*"}, appSource: "https://github.com/argoproj/test.git", isPermitted: true,
+		projSources: []string{"*"}, appSource: "https://github.com/vathsalashetty96/test.git", isPermitted: true,
 	}, {
-		projSources: []string{"https://github.com/argoproj/test.git"}, appSource: "https://github.com/argoproj/test.git", isPermitted: true,
+		projSources: []string{"https://githubvathsalashetty96.com/argoproj/test.git"}, appSource: "https://github.com/vathsalashetty96/test.git", isPermitted: true,
 	}, {
-		projSources: []string{"ssh://git@GITHUB.com:argoproj/test"}, appSource: "ssh://git@github.com:argoproj/test", isPermitted: true,
+		projSources: []string{"ssh://git@GITHUB.com:vathsalashetty96/test"}, appSource: "ssh://git@github.com:vathsalashetty96/test", isPermitted: true,
 	}, {
-		projSources: []string{"https://github.com/argoproj/*"}, appSource: "https://github.com/argoproj/argoproj.git", isPermitted: true,
+		projSources: []string{"https://github.com/vathsalashetty96/*"}, appSource: "https://github.com/vathsalashetty96/vathsalashetty96.git", isPermitted: true,
 	}, {
 		projSources: []string{"https://github.com/test1/test.git", "https://github.com/test2/test.git"}, appSource: "https://github.com/test2/test.git", isPermitted: true,
 	}, {
-		projSources: []string{"https://github.com/argoproj/test1.git"}, appSource: "https://github.com/argoproj/test2.git", isPermitted: false,
+		projSources: []string{"https://github.com/vathsalashetty96/test1.git"}, appSource: "https://github.com/vathsalashetty96/test2.git", isPermitted: false,
 	}, {
-		projSources: []string{"https://github.com/argoproj/*.git"}, appSource: "https://github.com/argoproj1/test2.git", isPermitted: false,
+		projSources: []string{"https://github.com/vathsalashetty96/*.git"}, appSource: "https://github.com/argoproj1/test2.git", isPermitted: false,
 	}, {
-		projSources: []string{"https://github.com/argoproj/foo"}, appSource: "https://github.com/argoproj/foo1", isPermitted: false,
+		projSources: []string{"https://github.com/vathsalashetty96/foo"}, appSource: "https://github.com/vathsalashetty96/foo1", isPermitted: false,
 	}, {
 		projSources: []string{"https://gitlab.com/group/*"}, appSource: "https://gitlab.com/group/repo/owner", isPermitted: false,
 	}, {
