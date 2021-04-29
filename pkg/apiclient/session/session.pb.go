@@ -10,7 +10,7 @@ package session
 import (
 	context "context"
 	fmt "fmt"
-	_ "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
+	_ "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
