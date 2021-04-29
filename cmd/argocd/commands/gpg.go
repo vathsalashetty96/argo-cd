@@ -10,11 +10,11 @@ import (
 
 	"github.com/spf13/cobra"
 
-	argocdclient "github.com/argoproj/argo-cd/pkg/apiclient"
-	gpgkeypkg "github.com/argoproj/argo-cd/pkg/apiclient/gpgkey"
-	appsv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/util/errors"
-	argoio "github.com/argoproj/argo-cd/util/io"
+	argocdclient "github.com/vathsalashetty96/argo-cd/pkg/apiclient"
+	gpgkeypkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/gpgkey"
+	appsv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
+	argoio "github.com/vathsalashetty96/argo-cd/util/io"
 )
 
 // NewGPGCommand returns a new instance of an `argocd repo` command
