@@ -7,7 +7,7 @@ import (
 	"github.com/ghodss/yaml"
 	v1 "k8s.io/api/core/v1"
 
-	"github.com/argoproj/gitops-engine/pkg/utils/kube"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/kube"
 )
 
 // PrintResource prints a single resource in YAML or JSON format to stdout according to the output format
