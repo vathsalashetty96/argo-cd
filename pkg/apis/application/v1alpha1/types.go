@@ -16,8 +16,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/argoproj/gitops-engine/pkg/health"
-	synccommon "github.com/argoproj/gitops-engine/pkg/sync/common"
+	"github.com/vathsalashetty96/gitops-engine/pkg/health"
+	synccommon "github.com/vathsalashetty96/gitops-engine/pkg/sync/common"
 	"github.com/ghodss/yaml"
 	"github.com/google/go-cmp/cmp"
 	"github.com/robfig/cron"
@@ -34,11 +34,11 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/client-go/tools/clientcmd/api"
 
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/util/cert"
-	"github.com/argoproj/argo-cd/util/git"
-	"github.com/argoproj/argo-cd/util/glob"
-	"github.com/argoproj/argo-cd/util/helm"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/util/cert"
+	"github.com/vathsalashetty96/argo-cd/util/git"
+	"github.com/vathsalashetty96/argo-cd/util/glob"
+	"github.com/vathsalashetty96/argo-cd/util/helm"
 )
 
 // Application is a definition of Application resource.
