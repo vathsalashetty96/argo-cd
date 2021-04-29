@@ -5,11 +5,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/argoproj/gitops-engine/pkg/cache"
-	"github.com/argoproj/gitops-engine/pkg/cache/mocks"
+	"github.com/vathsalashetty96/gitops-engine/pkg/cache"
+	"github.com/vathsalashetty96/gitops-engine/pkg/cache/mocks"
 	"github.com/stretchr/testify/mock"
 
-	appv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
+	appv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
 )
 
 func TestHandleModEvent_HasChanges(t *testing.T) {
