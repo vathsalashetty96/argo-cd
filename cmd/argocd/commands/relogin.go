@@ -9,12 +9,12 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	argocdclient "github.com/argoproj/argo-cd/pkg/apiclient"
-	settingspkg "github.com/argoproj/argo-cd/pkg/apiclient/settings"
-	"github.com/argoproj/argo-cd/util/errors"
-	argoio "github.com/argoproj/argo-cd/util/io"
-	"github.com/argoproj/argo-cd/util/localconfig"
-	"github.com/argoproj/argo-cd/util/session"
+	argocdclient "github.com/vathsalashetty96/argo-cd/pkg/apiclient"
+	settingspkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/settings"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
+	argoio "github.com/vathsalashetty96/argo-cd/util/io"
+	"github.com/vathsalashetty96/argo-cd/util/localconfig"
+	"github.com/vathsalashetty96/argo-cd/util/session"
 )
 
 // NewReloginCommand returns a new instance of `argocd relogin` command
