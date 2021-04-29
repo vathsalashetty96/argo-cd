@@ -18,15 +18,15 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	cmdutil "github.com/argoproj/argo-cd/cmd/util"
-	argocdclient "github.com/argoproj/argo-cd/pkg/apiclient"
-	projectpkg "github.com/argoproj/argo-cd/pkg/apiclient/project"
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/util/cli"
-	"github.com/argoproj/argo-cd/util/errors"
-	"github.com/argoproj/argo-cd/util/git"
-	"github.com/argoproj/argo-cd/util/gpg"
-	argoio "github.com/argoproj/argo-cd/util/io"
+	cmdutil "github.com/vathsalashetty96/argo-cd/cmd/util"
+	argocdclient "github.com/vathsalashetty96/argo-cd/pkg/apiclient"
+	projectpkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/project"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/util/cli"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
+	"github.com/vathsalashetty96/argo-cd/util/git"
+	"github.com/vathsalashetty96/argo-cd/util/gpg"
+	argoio "github.com/vathsalashetty96/argo-cd/util/io"
 )
 
 type policyOpts struct {
