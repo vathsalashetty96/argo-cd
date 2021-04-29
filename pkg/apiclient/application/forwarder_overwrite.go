@@ -6,9 +6,9 @@ import (
 	// nolint:staticcheck
 	"github.com/golang/protobuf/proto"
 
-	"github.com/argoproj/pkg/grpc/http"
+	"github.com/vathsalashetty96/pkg/grpc/http"
 
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
 )
 
 func init() {
