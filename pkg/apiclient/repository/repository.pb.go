@@ -10,8 +10,8 @@ package repository
 import (
 	context "context"
 	fmt "fmt"
-	v1alpha1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	apiclient "github.com/argoproj/argo-cd/reposerver/apiclient"
+	v1alpha1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	apiclient "github.com/vathsalashetty96/argo-cd/reposerver/apiclient"
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
