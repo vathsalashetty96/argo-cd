@@ -6,9 +6,9 @@ import (
 	"reflect"
 	"sync"
 
-	clustercache "github.com/argoproj/gitops-engine/pkg/cache"
-	"github.com/argoproj/gitops-engine/pkg/health"
-	"github.com/argoproj/gitops-engine/pkg/utils/kube"
+	clustercache "github.com/vathsalashetty96/gitops-engine/pkg/cache"
+	"github.com/vathsalashetty96/gitops-engine/pkg/health"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/kube"
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/sync/semaphore"
 	v1 "k8s.io/api/core/v1"
@@ -18,14 +18,14 @@ import (
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/tools/cache"
 
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/controller/metrics"
-	appv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/util/argo"
-	"github.com/argoproj/argo-cd/util/db"
-	logutils "github.com/argoproj/argo-cd/util/log"
-	"github.com/argoproj/argo-cd/util/lua"
-	"github.com/argoproj/argo-cd/util/settings"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/controller/metrics"
+	appv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/util/argo"
+	"github.com/vathsalashetty96/argo-cd/util/db"
+	logutils "github.com/vathsalashetty96/argo-cd/util/log"
+	"github.com/vathsalashetty96/argo-cd/util/lua"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 )
 
 type LiveStateCache interface {
