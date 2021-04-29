@@ -14,11 +14,11 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"github.com/argoproj/gitops-engine/pkg/diff"
-	"github.com/argoproj/gitops-engine/pkg/health"
-	"github.com/argoproj/gitops-engine/pkg/sync/hook"
-	"github.com/argoproj/gitops-engine/pkg/sync/ignore"
-	"github.com/argoproj/gitops-engine/pkg/utils/kube"
+	"github.com/vathsalashetty96/gitops-engine/pkg/diff"
+	"github.com/vathsalashetty96/gitops-engine/pkg/health"
+	"github.com/vathsalashetty96/gitops-engine/pkg/sync/hook"
+	"github.com/vathsalashetty96/gitops-engine/pkg/sync/ignore"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/kube"
 	"github.com/ghodss/yaml"
 	"github.com/mattn/go-isatty"
 	log "github.com/sirupsen/logrus"
@@ -28,28 +28,28 @@ import (
 	"k8s.io/apimachinery/pkg/types"
 	"k8s.io/utils/pointer"
 
-	cmdutil "github.com/argoproj/argo-cd/cmd/util"
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/controller"
-	"github.com/argoproj/argo-cd/pkg/apiclient"
-	argocdclient "github.com/argoproj/argo-cd/pkg/apiclient"
-	"github.com/argoproj/argo-cd/pkg/apiclient/application"
-	applicationpkg "github.com/argoproj/argo-cd/pkg/apiclient/application"
-	clusterpkg "github.com/argoproj/argo-cd/pkg/apiclient/cluster"
-	projectpkg "github.com/argoproj/argo-cd/pkg/apiclient/project"
-	"github.com/argoproj/argo-cd/pkg/apiclient/settings"
-	settingspkg "github.com/argoproj/argo-cd/pkg/apiclient/settings"
-	argoappv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	repoapiclient "github.com/argoproj/argo-cd/reposerver/apiclient"
-	"github.com/argoproj/argo-cd/reposerver/repository"
-	"github.com/argoproj/argo-cd/util/argo"
-	"github.com/argoproj/argo-cd/util/cli"
-	"github.com/argoproj/argo-cd/util/errors"
-	"github.com/argoproj/argo-cd/util/git"
-	argoio "github.com/argoproj/argo-cd/util/io"
-	argokube "github.com/argoproj/argo-cd/util/kube"
-	"github.com/argoproj/argo-cd/util/templates"
-	"github.com/argoproj/argo-cd/util/text/label"
+	cmdutil "github.com/vathsalashetty96/argo-cd/cmd/util"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/controller"
+	"github.com/vathsalashetty96/argo-cd/pkg/apiclient"
+	argocdclient "github.com/vathsalashetty96/argo-cd/pkg/apiclient"
+	"github.com/vathsalashetty96/argo-cd/pkg/apiclient/application"
+	applicationpkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/application"
+	clusterpkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/cluster"
+	projectpkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/project"
+	"github.com/vathsalashetty96/argo-cd/pkg/apiclient/settings"
+	settingspkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/settings"
+	argoappv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	repoapiclient "github.com/vathsalashetty96/argo-cd/reposerver/apiclient"
+	"github.com/vathsalashetty96/argo-cd/reposerver/repository"
+	"github.com/vathsalashetty96/argo-cd/util/argo"
+	"github.com/vathsalashetty96/argo-cd/util/cli"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
+	"github.com/vathsalashetty96/argo-cd/util/git"
+	argoio "github.com/vathsalashetty96/argo-cd/util/io"
+	argokube "github.com/vathsalashetty96/argo-cd/util/kube"
+	"github.com/vathsalashetty96/argo-cd/util/templates"
+	"github.com/vathsalashetty96/argo-cd/util/text/label"
 )
 
 var (
@@ -110,22 +110,22 @@ func NewApplicationCreateCommand(clientOpts *argocdclient.ClientOptions) *cobra.
 		Short: "Create an application",
 		Example: `
 	# Create a directory app
-	argocd app create guestbook --repo https://github.com/argoproj/argocd-example-apps.git --path guestbook --dest-namespace default --dest-server https://kubernetes.default.svc --directory-recurse
+	argocd app create guestbook --repo https://github.com/vathsalashetty96/argocd-example-apps.git --path guestbook --dest-namespace default --dest-server https://kubernetes.default.svc --directory-recurse
 
 	# Create a Jsonnet app
-	argocd app create jsonnet-guestbook --repo https://github.com/argoproj/argocd-example-apps.git --path jsonnet-guestbook --dest-namespace default --dest-server https://kubernetes.default.svc --jsonnet-ext-str replicas=2
+	argocd app create jsonnet-guestbook --repo https://github.com/vathsalashetty96/argocd-example-apps.git --path jsonnet-guestbook --dest-namespace default --dest-server https://kubernetes.default.svc --jsonnet-ext-str replicas=2
 
 	# Create a Helm app
-	argocd app create helm-guestbook --repo https://github.com/argoproj/argocd-example-apps.git --path helm-guestbook --dest-namespace default --dest-server https://kubernetes.default.svc --helm-set replicaCount=2
+	argocd app create helm-guestbook --repo https://github.com/vathsalashetty96/argocd-example-apps.git --path helm-guestbook --dest-namespace default --dest-server https://kubernetes.default.svc --helm-set replicaCount=2
 
 	# Create a Helm app from a Helm repo
 	argocd app create nginx-ingress --repo https://kubernetes-charts.storage.googleapis.com --helm-chart nginx-ingress --revision 1.24.3 --dest-namespace default --dest-server https://kubernetes.default.svc
 
 	# Create a Kustomize app
-	argocd app create kustomize-guestbook --repo https://github.com/argoproj/argocd-example-apps.git --path kustomize-guestbook --dest-namespace default --dest-server https://kubernetes.default.svc --kustomize-image gcr.io/heptio-images/ks-guestbook-demo:0.1
+	argocd app create kustomize-guestbook --repo https://github.com/vathsalashetty96/argocd-example-apps.git --path kustomize-guestbook --dest-namespace default --dest-server https://kubernetes.default.svc --kustomize-image gcr.io/heptio-images/ks-guestbook-demo:0.1
 
 	# Create a app using a custom tool:
-	argocd app create ksane --repo https://github.com/argoproj/argocd-example-apps.git --path plugins/kasane --dest-namespace default --dest-server https://kubernetes.default.svc --config-management-plugin kasane
+	argocd app create ksane --repo https://github.com/vathsalashetty96/argocd-example-apps.git --path plugins/kasane --dest-namespace default --dest-server https://kubernetes.default.svc --config-management-plugin kasane
 `,
 		Run: func(c *cobra.Command, args []string) {
 			argocdClient := argocdclient.NewClientOrDie(clientOpts)
@@ -1161,9 +1161,9 @@ func NewApplicationSyncCommand(clientOpts *argocdclient.ClientOptions) *cobra.Co
   # Sync a specific resource
   # Resource should be formatted as GROUP:KIND:NAME. If no GROUP is specified then :KIND:NAME
   argocd app sync my-app --resource :Service:my-service
-  argocd app sync my-app --resource argoproj.io:Rollout:my-rollout
+  argocd app sync my-app --resource vathsalashetty96.io:Rollout:my-rollout
   # Specify namespace if the application has resources with the same name in different namespaces
-  argocd app sync my-app --resource argoproj.io:Rollout:my-namespace/my-rollout`,
+  argocd app sync my-app --resource vathsalashetty96.io:Rollout:my-namespace/my-rollout`,
 		Run: func(c *cobra.Command, args []string) {
 			if len(args) == 0 && selector == "" {
 				c.HelpFunc()(c, args)
