@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/argoproj/pkg/errors"
+	"github.com/vathsalashetty96/pkg/errors"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	v1 "k8s.io/api/core/v1"
@@ -19,7 +19,7 @@ import (
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/tools/clientcmd"
 
-	"github.com/argoproj/argo-cd/util/cli"
+	"github.com/vathsalashetty96/argo-cd/util/cli"
 
 	// load the gcp plugin (required to authenticate against GKE clusters).
 	_ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
