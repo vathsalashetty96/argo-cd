@@ -10,13 +10,13 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	argocdclient "github.com/argoproj/argo-cd/pkg/apiclient"
-	repocredspkg "github.com/argoproj/argo-cd/pkg/apiclient/repocreds"
-	appsv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/util/cli"
-	"github.com/argoproj/argo-cd/util/errors"
-	"github.com/argoproj/argo-cd/util/git"
-	"github.com/argoproj/argo-cd/util/io"
+	argocdclient "github.com/vathsalashetty96/argo-cd/pkg/apiclient"
+	repocredspkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/repocreds"
+	appsv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/util/cli"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
+	"github.com/vathsalashetty96/argo-cd/util/git"
+	"github.com/vathsalashetty96/argo-cd/util/io"
 )
 
 // NewRepoCredsCommand returns a new instance of an `argocd repocreds` command
