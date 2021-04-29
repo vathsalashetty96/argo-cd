@@ -8,16 +8,16 @@ import (
 	"text/tabwriter"
 	"time"
 
-	timeutil "github.com/argoproj/pkg/time"
+	timeutil "github.com/vathsalashetty96/pkg/time"
 	jwtgo "github.com/dgrijalva/jwt-go/v4"
 	"github.com/spf13/cobra"
 
-	argocdclient "github.com/argoproj/argo-cd/pkg/apiclient"
-	projectpkg "github.com/argoproj/argo-cd/pkg/apiclient/project"
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/util/errors"
-	"github.com/argoproj/argo-cd/util/io"
-	"github.com/argoproj/argo-cd/util/jwt"
+	argocdclient "github.com/vathsalashetty96/argo-cd/pkg/apiclient"
+	projectpkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/project"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
+	"github.com/vathsalashetty96/argo-cd/util/io"
+	"github.com/vathsalashetty96/argo-cd/util/jwt"
 )
 
 const (
