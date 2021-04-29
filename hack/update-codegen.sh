@@ -34,6 +34,6 @@ export GO111MODULE=off
 sed -e '/go install/d' ${CODEGEN_PKG}/generate-groups.sh > ${TARGET_SCRIPT}
 
 bash -x ${TARGET_SCRIPT} "deepcopy,client,informer,lister" \
-  github.com/argoproj/argo-cd/pkg/client github.com/argoproj/argo-cd/pkg/apis \
+  github.com/vathsalashetty96/argo-cd/pkg/client github.com/vathsalashetty96/argo-cd/pkg/apis \
   "application:v1alpha1" \
   --go-header-file ${SCRIPT_ROOT}/hack/custom-boilerplate.go.txt
