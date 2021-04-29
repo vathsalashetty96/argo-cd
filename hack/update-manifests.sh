@@ -29,8 +29,8 @@ fi
 
 $KUSTOMIZE version
 
-cd ${SRCROOT}/manifests/base && $KUSTOMIZE edit set image quay.io/argoproj/argocd=${IMAGE_NAMESPACE}/argocd:${IMAGE_TAG}
-cd ${SRCROOT}/manifests/ha/base && $KUSTOMIZE edit set image quay.io/argoproj/argocd=${IMAGE_NAMESPACE}/argocd:${IMAGE_TAG}
+cd ${SRCROOT}/manifests/base && $KUSTOMIZE edit set image quay.io/vathsalashetty96/argocd=${IMAGE_NAMESPACE}/argocd:${IMAGE_TAG}
+cd ${SRCROOT}/manifests/ha/base && $KUSTOMIZE edit set image quay.io/vathsalashetty96/argocd=${IMAGE_NAMESPACE}/argocd:${IMAGE_TAG}
 
 echo "${AUTOGENMSG}" > "${SRCROOT}/manifests/install.yaml"
 $KUSTOMIZE build "${SRCROOT}/manifests/cluster-install" >> "${SRCROOT}/manifests/install.yaml"
