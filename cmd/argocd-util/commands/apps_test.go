@@ -3,11 +3,11 @@ package commands
 import (
 	"testing"
 
-	"github.com/argoproj/argo-cd/test"
+	"github.com/vathsalashetty96/argo-cd/test"
 
-	clustermocks "github.com/argoproj/gitops-engine/pkg/cache/mocks"
-	"github.com/argoproj/gitops-engine/pkg/health"
-	"github.com/argoproj/gitops-engine/pkg/utils/kube"
+	clustermocks "github.com/vathsalashetty96/gitops-engine/pkg/cache/mocks"
+	"github.com/vathsalashetty96/gitops-engine/pkg/health"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/kube"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	corev1 "k8s.io/api/core/v1"
@@ -16,16 +16,16 @@ import (
 	kubefake "k8s.io/client-go/kubernetes/fake"
 	"k8s.io/client-go/tools/cache"
 
-	"github.com/argoproj/argo-cd/common"
-	statecache "github.com/argoproj/argo-cd/controller/cache"
-	cachemocks "github.com/argoproj/argo-cd/controller/cache/mocks"
-	"github.com/argoproj/argo-cd/controller/metrics"
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	appfake "github.com/argoproj/argo-cd/pkg/client/clientset/versioned/fake"
-	"github.com/argoproj/argo-cd/reposerver/apiclient"
-	"github.com/argoproj/argo-cd/reposerver/apiclient/mocks"
-	"github.com/argoproj/argo-cd/util/db"
-	"github.com/argoproj/argo-cd/util/settings"
+	"github.com/vathsalashetty96/argo-cd/common"
+	statecache "github.com/vathsalashetty96/argo-cd/controller/cache"
+	cachemocks "github.com/vathsalashetty96/argo-cd/controller/cache/mocks"
+	"github.com/vathsalashetty96/argo-cd/controller/metrics"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	appfake "github.com/vathsalashetty96/argo-cd/pkg/client/clientset/versioned/fake"
+	"github.com/vathsalashetty96/argo-cd/reposerver/apiclient"
+	"github.com/vathsalashetty96/argo-cd/reposerver/apiclient/mocks"
+	"github.com/vathsalashetty96/argo-cd/util/db"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 )
 
 func TestGetReconcileResults(t *testing.T) {
