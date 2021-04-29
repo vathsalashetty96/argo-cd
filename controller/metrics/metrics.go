@@ -7,16 +7,16 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/argoproj/gitops-engine/pkg/health"
+	"github.com/vathsalashetty96/gitops-engine/pkg/health"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	log "github.com/sirupsen/logrus"
 	"k8s.io/apimachinery/pkg/labels"
 
-	argoappv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	applister "github.com/argoproj/argo-cd/pkg/client/listers/application/v1alpha1"
-	"github.com/argoproj/argo-cd/util/git"
-	"github.com/argoproj/argo-cd/util/healthz"
+	argoappv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	applister "github.com/vathsalashetty96/argo-cd/pkg/client/listers/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/util/git"
+	"github.com/vathsalashetty96/argo-cd/util/healthz"
 )
 
 type MetricsServer struct {
