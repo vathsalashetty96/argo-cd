@@ -10,11 +10,11 @@ import (
 
 	"github.com/spf13/cobra"
 
-	argocdclient "github.com/argoproj/argo-cd/pkg/apiclient"
-	projectpkg "github.com/argoproj/argo-cd/pkg/apiclient/project"
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/util/errors"
-	"github.com/argoproj/argo-cd/util/io"
+	argocdclient "github.com/vathsalashetty96/argo-cd/pkg/apiclient"
+	projectpkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/project"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
+	"github.com/vathsalashetty96/argo-cd/util/io"
 )
 
 // NewProjectWindowsCommand returns a new instance of the `argocd proj windows` command
