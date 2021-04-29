@@ -11,12 +11,12 @@ import (
 
 	"github.com/spf13/cobra"
 
-	argocdclient "github.com/argoproj/argo-cd/pkg/apiclient"
-	certificatepkg "github.com/argoproj/argo-cd/pkg/apiclient/certificate"
-	appsv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	certutil "github.com/argoproj/argo-cd/util/cert"
-	"github.com/argoproj/argo-cd/util/errors"
-	"github.com/argoproj/argo-cd/util/io"
+	argocdclient "github.com/vathsalashetty96/argo-cd/pkg/apiclient"
+	certificatepkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/certificate"
+	appsv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	certutil "github.com/vathsalashetty96/argo-cd/util/cert"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
+	"github.com/vathsalashetty96/argo-cd/util/io"
 )
 
 // NewCertCommand returns a new instance of an `argocd repo` command
