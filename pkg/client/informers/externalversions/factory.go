@@ -7,9 +7,9 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/argoproj/argo-cd/pkg/client/clientset/versioned"
-	application "github.com/argoproj/argo-cd/pkg/client/informers/externalversions/application"
-	internalinterfaces "github.com/argoproj/argo-cd/pkg/client/informers/externalversions/internalinterfaces"
+	versioned "github.com/vathsalashetty96/argo-cd/pkg/client/clientset/versioned"
+	application "github.com/vathsalashetty96/argo-cd/pkg/client/informers/externalversions/application"
+	internalinterfaces "github.com/vathsalashetty96/argo-cd/pkg/client/informers/externalversions/internalinterfaces"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
