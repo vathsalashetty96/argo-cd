@@ -9,9 +9,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/argoproj/argo-cd/common"
-	utils "github.com/argoproj/argo-cd/util/io"
-	"github.com/argoproj/argo-cd/util/settings"
+	"github.com/vathsalashetty96/argo-cd/common"
+	utils "github.com/vathsalashetty96/argo-cd/util/io"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 
 	"github.com/stretchr/testify/assert"
 	v1 "k8s.io/api/core/v1"
@@ -172,8 +172,8 @@ clientSecret: aaaabbbbccccddddeee`,
 			validator: "repositories",
 			data: map[string]string{
 				"repositories": `
-- url: https://github.com/argoproj/my-private-repository1
-- url: https://github.com/argoproj/my-private-repository2`,
+- url: https://github.com/vathsalashetty96/my-private-repository1
+- url: https://github.com/vathsalashetty96/my-private-repository2`,
 			},
 			containsSummary: "2 repositories",
 		},
