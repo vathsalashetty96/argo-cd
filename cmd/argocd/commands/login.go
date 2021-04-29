@@ -18,17 +18,17 @@ import (
 	"github.com/spf13/cobra"
 	"golang.org/x/oauth2"
 
-	argocdclient "github.com/argoproj/argo-cd/pkg/apiclient"
-	sessionpkg "github.com/argoproj/argo-cd/pkg/apiclient/session"
-	settingspkg "github.com/argoproj/argo-cd/pkg/apiclient/settings"
-	"github.com/argoproj/argo-cd/util/cli"
-	"github.com/argoproj/argo-cd/util/errors"
-	grpc_util "github.com/argoproj/argo-cd/util/grpc"
-	"github.com/argoproj/argo-cd/util/io"
-	jwtutil "github.com/argoproj/argo-cd/util/jwt"
-	"github.com/argoproj/argo-cd/util/localconfig"
-	oidcutil "github.com/argoproj/argo-cd/util/oidc"
-	"github.com/argoproj/argo-cd/util/rand"
+	argocdclient "github.com/vathsalashetty96/argo-cd/pkg/apiclient"
+	sessionpkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/session"
+	settingspkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/settings"
+	"github.com/vathsalashetty96/argo-cd/util/cli"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
+	grpc_util "github.com/vathsalashetty96/argo-cd/util/grpc"
+	"github.com/vathsalashetty96/argo-cd/util/io"
+	jwtutil "github.com/vathsalashetty96/argo-cd/util/jwt"
+	"github.com/vathsalashetty96/argo-cd/util/localconfig"
+	oidcutil "github.com/vathsalashetty96/argo-cd/util/oidc"
+	"github.com/vathsalashetty96/argo-cd/util/rand"
 )
 
 // NewLoginCommand returns a new instance of `argocd login` command
