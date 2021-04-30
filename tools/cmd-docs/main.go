@@ -4,11 +4,11 @@ import (
 	"log"
 	"os"
 
-	controller "github.com/argoproj/argo-cd/cmd/argocd-application-controller/commands"
-	reposerver "github.com/argoproj/argo-cd/cmd/argocd-repo-server/commands"
-	argocdserver "github.com/argoproj/argo-cd/cmd/argocd-server/commands"
-	argocdutil "github.com/argoproj/argo-cd/cmd/argocd-util/commands"
-	argocdcli "github.com/argoproj/argo-cd/cmd/argocd/commands"
+	controller "github.com/vathsalashetty96/argo-cd/cmd/argocd-application-controller/commands"
+	reposerver "github.com/vathsalashetty96/argo-cd/cmd/argocd-repo-server/commands"
+	argocdserver "github.com/vathsalashetty96/argo-cd/cmd/argocd-server/commands"
+	argocdutil "github.com/vathsalashetty96/argo-cd/cmd/argocd-util/commands"
+	argocdcli "github.com/vathsalashetty96/argo-cd/cmd/argocd/commands"
 
 	"github.com/spf13/cobra/doc"
 )
