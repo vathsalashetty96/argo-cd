@@ -13,15 +13,15 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes/fake"
 
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/pkg/apiclient/account"
-	sessionpkg "github.com/argoproj/argo-cd/pkg/apiclient/session"
-	"github.com/argoproj/argo-cd/server/session"
-	"github.com/argoproj/argo-cd/util/errors"
-	"github.com/argoproj/argo-cd/util/password"
-	"github.com/argoproj/argo-cd/util/rbac"
-	sessionutil "github.com/argoproj/argo-cd/util/session"
-	"github.com/argoproj/argo-cd/util/settings"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/pkg/apiclient/account"
+	sessionpkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/session"
+	"github.com/vathsalashetty96/argo-cd/server/session"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
+	"github.com/vathsalashetty96/argo-cd/util/password"
+	"github.com/vathsalashetty96/argo-cd/util/rbac"
+	sessionutil "github.com/vathsalashetty96/argo-cd/util/session"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 )
 
 const (
