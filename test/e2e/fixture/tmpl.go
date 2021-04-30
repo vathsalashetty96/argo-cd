@@ -6,7 +6,7 @@ import (
 	"strings"
 	"text/template"
 
-	. "github.com/argoproj/argo-cd/util/errors"
+	. "github.com/vathsalashetty96/argo-cd/util/errors"
 )
 
 // utility method to template a string using a map
