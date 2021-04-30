@@ -1,4 +1,4 @@
-module github.com/argoproj/argo-cd
+module github.com/vathsalashetty96/argo-cd
 
 go 1.14
 
