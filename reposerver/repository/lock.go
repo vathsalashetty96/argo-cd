@@ -4,7 +4,7 @@ import (
 	"io"
 	"sync"
 
-	ioutil "github.com/argoproj/argo-cd/util/io"
+	ioutil "github.com/vathsalashetty96/argo-cd/util/io"
 )
 
 func NewRepositoryLock() *repositoryLock {
