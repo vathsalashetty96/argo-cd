@@ -13,11 +13,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/pkg/apiclient"
-	"github.com/argoproj/argo-cd/test"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/pkg/apiclient"
+	"github.com/vathsalashetty96/argo-cd/test"
 
-	applicationpkg "github.com/argoproj/argo-cd/pkg/apiclient/application"
+	applicationpkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/application"
 )
 
 func TestUserAgent(t *testing.T) {
