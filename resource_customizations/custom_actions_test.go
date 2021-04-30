@@ -11,14 +11,14 @@ import (
 
 	"github.com/undefinedlabs/go-mpatch"
 
-	"github.com/argoproj/gitops-engine/pkg/diff"
+	"github.com/vathsalashetty96/gitops-engine/pkg/diff"
 	"github.com/ghodss/yaml"
 	"github.com/stretchr/testify/assert"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 
-	appsv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/util/cli"
-	"github.com/argoproj/argo-cd/util/lua"
+	appsv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/util/cli"
+	"github.com/vathsalashetty96/argo-cd/util/lua"
 )
 
 type testNormalizer struct{}
