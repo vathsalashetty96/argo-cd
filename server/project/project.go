@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/argoproj/pkg/sync"
+	"github.com/vathsalashetty96/pkg/sync"
 	"github.com/dgrijalva/jwt-go/v4"
 	"github.com/google/uuid"
 	log "github.com/sirupsen/logrus"
@@ -19,17 +19,17 @@ import (
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/cache"
 
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/pkg/apiclient/project"
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	appclientset "github.com/argoproj/argo-cd/pkg/client/clientset/versioned"
-	listersv1alpha1 "github.com/argoproj/argo-cd/pkg/client/listers/application/v1alpha1"
-	"github.com/argoproj/argo-cd/server/rbacpolicy"
-	"github.com/argoproj/argo-cd/util/argo"
-	jwtutil "github.com/argoproj/argo-cd/util/jwt"
-	"github.com/argoproj/argo-cd/util/rbac"
-	"github.com/argoproj/argo-cd/util/session"
-	"github.com/argoproj/argo-cd/util/settings"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/pkg/apiclient/project"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	appclientset "github.com/vathsalashetty96/argo-cd/pkg/client/clientset/versioned"
+	listersv1alpha1 "github.com/vathsalashetty96/argo-cd/pkg/client/listers/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/server/rbacpolicy"
+	"github.com/vathsalashetty96/argo-cd/util/argo"
+	jwtutil "github.com/vathsalashetty96/argo-cd/util/jwt"
+	"github.com/vathsalashetty96/argo-cd/util/rbac"
+	"github.com/vathsalashetty96/argo-cd/util/session"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 )
 
 const (
