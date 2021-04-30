@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"image/color"
 
-	appv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
+	appv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
 
-	"github.com/argoproj/gitops-engine/pkg/health"
+	"github.com/vathsalashetty96/gitops-engine/pkg/health"
 )
 
 var (
