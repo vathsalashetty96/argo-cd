@@ -17,13 +17,13 @@ import (
 	"gopkg.in/go-playground/webhooks.v5/gogs"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	appclientset "github.com/argoproj/argo-cd/pkg/client/clientset/versioned"
-	"github.com/argoproj/argo-cd/reposerver/cache"
-	"github.com/argoproj/argo-cd/util/argo"
-	"github.com/argoproj/argo-cd/util/security"
-	"github.com/argoproj/argo-cd/util/settings"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	appclientset "github.com/vathsalashetty96/argo-cd/pkg/client/clientset/versioned"
+	"github.com/vathsalashetty96/argo-cd/reposerver/cache"
+	"github.com/vathsalashetty96/argo-cd/util/argo"
+	"github.com/vathsalashetty96/argo-cd/util/security"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 )
 
 type settingsSource interface {
