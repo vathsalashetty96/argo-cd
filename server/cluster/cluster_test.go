@@ -5,22 +5,22 @@ import (
 	"testing"
 	"time"
 
-	"github.com/argoproj/gitops-engine/pkg/utils/kube/kubetest"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/kube/kubetest"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 	"k8s.io/client-go/kubernetes/fake"
 	"k8s.io/utils/pointer"
 
-	"github.com/argoproj/argo-cd/common"
-	clusterapi "github.com/argoproj/argo-cd/pkg/apiclient/cluster"
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	servercache "github.com/argoproj/argo-cd/server/cache"
-	"github.com/argoproj/argo-cd/test"
-	cacheutil "github.com/argoproj/argo-cd/util/cache"
-	appstatecache "github.com/argoproj/argo-cd/util/cache/appstate"
-	dbmocks "github.com/argoproj/argo-cd/util/db/mocks"
-	"github.com/argoproj/argo-cd/util/rbac"
+	"github.com/vathsalashetty96/argo-cd/common"
+	clusterapi "github.com/vathsalashetty96/argo-cd/pkg/apiclient/cluster"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	servercache "github.com/vathsalashetty96/argo-cd/server/cache"
+	"github.com/vathsalashetty96/argo-cd/test"
+	cacheutil "github.com/vathsalashetty96/argo-cd/util/cache"
+	appstatecache "github.com/vathsalashetty96/argo-cd/util/cache/appstate"
+	dbmocks "github.com/vathsalashetty96/argo-cd/util/db/mocks"
+	"github.com/vathsalashetty96/argo-cd/util/rbac"
 )
 
 func newServerInMemoryCache() *servercache.Cache {
