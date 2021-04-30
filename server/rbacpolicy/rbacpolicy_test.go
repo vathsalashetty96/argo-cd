@@ -9,10 +9,10 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes/fake"
 
-	"github.com/argoproj/argo-cd/common"
-	argoappv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/test"
-	"github.com/argoproj/argo-cd/util/rbac"
+	"github.com/vathsalashetty96/argo-cd/common"
+	argoappv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/test"
+	"github.com/vathsalashetty96/argo-cd/util/rbac"
 )
 
 func newFakeProj() *argoappv1.AppProject {
@@ -94,23 +94,23 @@ p, cam, applications, %s/argoproj.io/Rollout/resume, my-proj/*, allow
 
 	// Alice has wild-card approval for all actions
 	claims := jwt.MapClaims{"sub": "alice"}
-	assert.True(t, enf.Enforce(claims, "applications", ActionAction+"/argoproj.io/Rollout/resume", "my-proj/my-app"))
+	assert.True(t, enf.Enforce(claims, "applications", ActionAction+"/vathsalashetty96.io/Rollout/resume", "my-proj/my-app"))
 	claims = jwt.MapClaims{"sub": "alice"}
-	assert.True(t, enf.Enforce(claims, "applications", ActionAction+"/argoproj.io/NewCrd/abort", "my-proj/my-app"))
+	assert.True(t, enf.Enforce(claims, "applications", ActionAction+"/vathsalashetty96.io/NewCrd/abort", "my-proj/my-app"))
 	// Bob has wild-card approval for all actions under argoproj.io/Rollout
 	claims = jwt.MapClaims{"sub": "bob"}
-	assert.True(t, enf.Enforce(claims, "applications", ActionAction+"/argoproj.io/Rollout/resume", "my-proj/my-app"))
+	assert.True(t, enf.Enforce(claims, "applications", ActionAction+"/vathsalashetty96.io/Rollout/resume", "my-proj/my-app"))
 	claims = jwt.MapClaims{"sub": "bob"}
-	assert.False(t, enf.Enforce(claims, "applications", ActionAction+"/argoproj.io/NewCrd/abort", "my-proj/my-app"))
+	assert.False(t, enf.Enforce(claims, "applications", ActionAction+"/vathsalashetty96.io/NewCrd/abort", "my-proj/my-app"))
 	// Cam only has approval for actions/argoproj.io/Rollout:resume
 	claims = jwt.MapClaims{"sub": "cam"}
-	assert.True(t, enf.Enforce(claims, "applications", ActionAction+"/argoproj.io/Rollout/resume", "my-proj/my-app"))
+	assert.True(t, enf.Enforce(claims, "applications", ActionAction+"/vathsalashetty96.io/Rollout/resume", "my-proj/my-app"))
 	claims = jwt.MapClaims{"sub": "cam"}
-	assert.False(t, enf.Enforce(claims, "applications", ActionAction+"/argoproj.io/Rollout/abort", "my-proj/my-app"))
+	assert.False(t, enf.Enforce(claims, "applications", ActionAction+"/vathsalashetty96.io/Rollout/abort", "my-proj/my-app"))
 
 	// Eve does not have approval for any actions
 	claims = jwt.MapClaims{"sub": "eve"}
-	assert.False(t, enf.Enforce(claims, "applications", ActionAction+"/argoproj.io/Rollout/resume", "my-proj/my-app"))
+	assert.False(t, enf.Enforce(claims, "applications", ActionAction+"/vathsalashetty96.io/Rollout/resume", "my-proj/my-app"))
 }
 
 func TestGetScopes_DefaultScopes(t *testing.T) {
