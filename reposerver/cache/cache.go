@@ -10,10 +10,10 @@ import (
 	"github.com/go-redis/redis/v8"
 	"github.com/spf13/cobra"
 
-	appv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/reposerver/apiclient"
-	cacheutil "github.com/argoproj/argo-cd/util/cache"
-	"github.com/argoproj/argo-cd/util/hash"
+	appv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/reposerver/apiclient"
+	cacheutil "github.com/vathsalashetty96/argo-cd/util/cache"
+	"github.com/vathsalashetty96/argo-cd/util/hash"
 
 	log "github.com/sirupsen/logrus"
 )
