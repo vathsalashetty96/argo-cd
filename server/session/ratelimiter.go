@@ -1,8 +1,8 @@
 package session
 
 import (
-	util "github.com/argoproj/argo-cd/util/io"
-	"github.com/argoproj/argo-cd/util/session"
+	util "github.com/vathsalashetty96/argo-cd/util/io"
+	"github.com/vathsalashetty96/argo-cd/util/session"
 
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/sync/semaphore"
