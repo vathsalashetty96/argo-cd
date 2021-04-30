@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	synccommon "github.com/argoproj/gitops-engine/pkg/sync/common"
-	"github.com/argoproj/gitops-engine/pkg/utils/kube/kubetest"
-	"github.com/argoproj/pkg/sync"
+	synccommon "github.com/vathsalashetty96/gitops-engine/pkg/sync/common"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/kube/kubetest"
+	"github.com/vathsalashetty96/pkg/sync"
 	"github.com/dgrijalva/jwt-go/v4"
 	"github.com/ghodss/yaml"
 	"github.com/stretchr/testify/assert"
@@ -25,21 +25,21 @@ import (
 	k8scache "k8s.io/client-go/tools/cache"
 	"k8s.io/utils/pointer"
 
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/pkg/apiclient/application"
-	appsv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	apps "github.com/argoproj/argo-cd/pkg/client/clientset/versioned/fake"
-	appinformer "github.com/argoproj/argo-cd/pkg/client/informers/externalversions"
-	"github.com/argoproj/argo-cd/reposerver/apiclient"
-	"github.com/argoproj/argo-cd/reposerver/apiclient/mocks"
-	"github.com/argoproj/argo-cd/server/rbacpolicy"
-	"github.com/argoproj/argo-cd/test"
-	"github.com/argoproj/argo-cd/util/assets"
-	"github.com/argoproj/argo-cd/util/cache"
-	"github.com/argoproj/argo-cd/util/db"
-	"github.com/argoproj/argo-cd/util/errors"
-	"github.com/argoproj/argo-cd/util/rbac"
-	"github.com/argoproj/argo-cd/util/settings"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/pkg/apiclient/application"
+	appsv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	apps "github.com/vathsalashetty96/argo-cd/pkg/client/clientset/versioned/fake"
+	appinformer "github.com/vathsalashetty96/argo-cd/pkg/client/informers/externalversions"
+	"github.com/vathsalashetty96/argo-cd/reposerver/apiclient"
+	"github.com/vathsalashetty96/argo-cd/reposerver/apiclient/mocks"
+	"github.com/vathsalashetty96/argo-cd/server/rbacpolicy"
+	"github.com/vathsalashetty96/argo-cd/test"
+	"github.com/vathsalashetty96/argo-cd/util/assets"
+	"github.com/vathsalashetty96/argo-cd/util/cache"
+	"github.com/vathsalashetty96/argo-cd/util/db"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
+	"github.com/vathsalashetty96/argo-cd/util/rbac"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 )
 
 const (
@@ -188,7 +188,7 @@ metadata:
 spec:
   source:
     path: some/path
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    repoURL: https://github.com/vathsalashetty96/argocd-example-apps.git
     targetRevision: HEAD
     ksonnet:
       environment: default
@@ -206,7 +206,7 @@ metadata:
 spec:
   source:
     path: some/path
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    repoURL: https://github.com/vathsalashetty96/argocd-example-apps.git
     targetRevision: HEAD
     ksonnet:
       environment: default
@@ -226,7 +226,7 @@ metadata:
 spec:
   source:
     path: some/path
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    repoURL: https://github.com/vathsalashetty96/argocd-example-apps.git
     targetRevision: HEAD
     ksonnet:
       environment: default
@@ -388,7 +388,7 @@ func TestSyncAndTerminate(t *testing.T) {
 	ctx := context.Background()
 	appServer := newTestAppServer()
 	testApp := newTestApp()
-	testApp.Spec.Source.RepoURL = "https://github.com/argoproj/argo-cd.git"
+	testApp.Spec.Source.RepoURL = "https://github.com/vathsalashetty96/argo-cd.git"
 	createReq := application.ApplicationCreateRequest{
 		Application: *testApp,
 	}
@@ -429,7 +429,7 @@ func TestSyncHelm(t *testing.T) {
 	ctx := context.Background()
 	appServer := newTestAppServer()
 	testApp := newTestApp()
-	testApp.Spec.Source.RepoURL = "https://argoproj.github.io/argo-helm"
+	testApp.Spec.Source.RepoURL = "https://vathsalashetty96.github.io/argo-helm"
 	testApp.Spec.Source.Path = ""
 	testApp.Spec.Source.Chart = "argo-cd"
 	testApp.Spec.Source.TargetRevision = "0.7.*"
