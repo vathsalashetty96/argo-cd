@@ -6,13 +6,13 @@ import (
 
 	"golang.org/x/net/context"
 
-	gpgkeypkg "github.com/argoproj/argo-cd/pkg/apiclient/gpgkey"
-	appsv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/reposerver/apiclient"
-	"github.com/argoproj/argo-cd/server/rbacpolicy"
-	"github.com/argoproj/argo-cd/util/db"
-	"github.com/argoproj/argo-cd/util/gpg"
-	"github.com/argoproj/argo-cd/util/rbac"
+	gpgkeypkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/gpgkey"
+	appsv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/reposerver/apiclient"
+	"github.com/vathsalashetty96/argo-cd/server/rbacpolicy"
+	"github.com/vathsalashetty96/argo-cd/util/db"
+	"github.com/vathsalashetty96/argo-cd/util/gpg"
+	"github.com/vathsalashetty96/argo-cd/util/rbac"
 )
 
 // Server provides a service of type GPGKeyService
