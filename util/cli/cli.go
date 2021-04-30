@@ -24,9 +24,9 @@ import (
 	"k8s.io/kubectl/pkg/util/term"
 	"sigs.k8s.io/yaml"
 
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/util/errors"
-	"github.com/argoproj/argo-cd/util/io"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
+	"github.com/vathsalashetty96/argo-cd/util/io"
 )
 
 // NewVersionCmd returns a new `version` command to be used as a sub-command to root
