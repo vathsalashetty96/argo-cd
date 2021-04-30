@@ -9,20 +9,20 @@ import (
 	"os"
 	"testing"
 
-	"github.com/argoproj/gitops-engine/pkg/health"
-	. "github.com/argoproj/gitops-engine/pkg/sync/common"
+	"github.com/vathsalashetty96/gitops-engine/pkg/health"
+	. "github.com/vathsalashetty96/gitops-engine/pkg/sync/common"
 	"github.com/stretchr/testify/assert"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/types"
 
-	. "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/test/e2e/fixture"
-	. "github.com/argoproj/argo-cd/test/e2e/fixture"
-	. "github.com/argoproj/argo-cd/test/e2e/fixture/app"
-	"github.com/argoproj/argo-cd/test/e2e/fixture/repos"
-	. "github.com/argoproj/argo-cd/util/errors"
-	"github.com/argoproj/argo-cd/util/settings"
+	. "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/test/e2e/fixture"
+	. "github.com/vathsalashetty96/argo-cd/test/e2e/fixture"
+	. "github.com/vathsalashetty96/argo-cd/test/e2e/fixture/app"
+	"github.com/vathsalashetty96/argo-cd/test/e2e/fixture/repos"
+	. "github.com/vathsalashetty96/argo-cd/util/errors"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 )
 
 func TestHelmHooksAreCreated(t *testing.T) {
@@ -46,7 +46,7 @@ func TestHelmHookWeight(t *testing.T) {
 		When().
 		// this create a weird hook, that runs during sync - but before the pod, and because it'll fail - the pod will never be created
 		PatchFile("hook.yaml", `[
-	{"op": "replace", "path": "/metadata/annotations", "value": {"argocd.argoproj.io/hook": "Sync", "helm.sh/hook-weight": "-1"}},
+	{"op": "replace", "path": "/metadata/annotations", "value": {"argocd.vathsalashetty96.io/hook": "Sync", "helm.sh/hook-weight": "-1"}},
 	{"op": "replace", "path": "/spec/containers/0/command/0", "value": "false"}
 ]`).
 		Create().
