@@ -6,14 +6,14 @@ import (
 
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	. "github.com/argoproj/gitops-engine/pkg/sync/common"
+	. "github.com/vathsalashetty96/gitops-engine/pkg/sync/common"
 	"github.com/stretchr/testify/assert"
 	"k8s.io/apimachinery/pkg/types"
 
-	. "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/test/e2e/fixture"
-	. "github.com/argoproj/argo-cd/test/e2e/fixture/app"
-	"github.com/argoproj/argo-cd/util/errors"
+	. "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/test/e2e/fixture"
+	. "github.com/vathsalashetty96/argo-cd/test/e2e/fixture/app"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
 )
 
 func TestAutoSyncSelfHealDisabled(t *testing.T) {
