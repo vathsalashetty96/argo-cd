@@ -23,17 +23,17 @@ import (
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime"
 
-	argoappv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/reposerver/apiclient"
-	"github.com/argoproj/argo-cd/reposerver/cache"
-	"github.com/argoproj/argo-cd/reposerver/metrics"
-	fileutil "github.com/argoproj/argo-cd/test/fixture/path"
-	cacheutil "github.com/argoproj/argo-cd/util/cache"
-	"github.com/argoproj/argo-cd/util/git"
-	gitmocks "github.com/argoproj/argo-cd/util/git/mocks"
-	"github.com/argoproj/argo-cd/util/helm"
-	helmmocks "github.com/argoproj/argo-cd/util/helm/mocks"
-	"github.com/argoproj/argo-cd/util/io"
+	argoappv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/reposerver/apiclient"
+	"github.com/vathsalashetty96/argo-cd/reposerver/cache"
+	"github.com/vathsalashetty96/argo-cd/reposerver/metrics"
+	fileutil "github.com/vathsalashetty96/argo-cd/test/fixture/path"
+	cacheutil "github.com/vathsalashetty96/argo-cd/util/cache"
+	"github.com/vathsalashetty96/argo-cd/util/git"
+	gitmocks "github.com/vathsalashetty96/argo-cd/util/git/mocks"
+	"github.com/vathsalashetty96/argo-cd/util/helm"
+	helmmocks "github.com/vathsalashetty96/argo-cd/util/helm/mocks"
+	"github.com/vathsalashetty96/argo-cd/util/io"
 )
 
 const testSignature = `gpg: Signature made Wed Feb 26 23:22:34 2020 CET
