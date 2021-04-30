@@ -3,7 +3,7 @@ package cluster
 import (
 	"time"
 
-	"github.com/argoproj/gitops-engine/pkg/utils/kube"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/kube"
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc/codes"
@@ -11,13 +11,13 @@ import (
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 
-	"github.com/argoproj/argo-cd/pkg/apiclient/cluster"
-	appv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	servercache "github.com/argoproj/argo-cd/server/cache"
-	"github.com/argoproj/argo-cd/server/rbacpolicy"
-	"github.com/argoproj/argo-cd/util/clusterauth"
-	"github.com/argoproj/argo-cd/util/db"
-	"github.com/argoproj/argo-cd/util/rbac"
+	"github.com/vathsalashetty96/argo-cd/pkg/apiclient/cluster"
+	appv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	servercache "github.com/vathsalashetty96/argo-cd/server/cache"
+	"github.com/vathsalashetty96/argo-cd/server/rbacpolicy"
+	"github.com/vathsalashetty96/argo-cd/util/clusterauth"
+	"github.com/vathsalashetty96/argo-cd/util/db"
+	"github.com/vathsalashetty96/argo-cd/util/rbac"
 )
 
 // Server provides a Cluster service
