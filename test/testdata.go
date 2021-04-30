@@ -1,16 +1,16 @@
 package test
 
 import (
-	"github.com/argoproj/gitops-engine/pkg/utils/testing"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/testing"
 	apiv1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime"
 
-	"github.com/argoproj/argo-cd/common"
-	apps "github.com/argoproj/argo-cd/pkg/client/clientset/versioned/fake"
-	appinformer "github.com/argoproj/argo-cd/pkg/client/informers/externalversions"
-	applister "github.com/argoproj/argo-cd/pkg/client/listers/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/common"
+	apps "github.com/vathsalashetty96/argo-cd/pkg/client/clientset/versioned/fake"
+	appinformer "github.com/vathsalashetty96/argo-cd/pkg/client/informers/externalversions"
+	applister "github.com/vathsalashetty96/argo-cd/pkg/client/listers/application/v1alpha1"
 )
 
 const (
