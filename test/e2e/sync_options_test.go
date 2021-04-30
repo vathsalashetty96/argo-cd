@@ -5,14 +5,14 @@ import (
 	"os"
 	"testing"
 
-	. "github.com/argoproj/gitops-engine/pkg/sync/common"
+	. "github.com/vathsalashetty96/gitops-engine/pkg/sync/common"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/types"
 
-	. "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/test/e2e/fixture"
-	. "github.com/argoproj/argo-cd/test/e2e/fixture/app"
-	"github.com/argoproj/argo-cd/util/errors"
+	. "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/test/e2e/fixture"
+	. "github.com/vathsalashetty96/argo-cd/test/e2e/fixture/app"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
 )
 
 // TestSyncOptionsValidateFalse verifies we can disable validation during kubectl apply, using the
@@ -91,7 +91,7 @@ func TestSyncWithSkipHook(t *testing.T) {
 		Expect(SyncStatusIs(SyncStatusCodeSynced)).
 		// app should remain synced when app has skipped annotation even if git change detected
 		When().
-		PatchFile("guestbook-ui-deployment.yaml", `[{ "op": "add", "path": "/metadata/annotations", "value": { "argocd.argoproj.io/hook": "Skip" }}]`).
+		PatchFile("guestbook-ui-deployment.yaml", `[{ "op": "add", "path": "/metadata/annotations", "value": { "argocd.vathsalashetty96.io/hook": "Skip" }}]`).
 		PatchFile("guestbook-ui-deployment.yaml", `[{ "op": "replace", "path": "/spec/replicas", "value": 1 }]`).
 		Refresh(RefreshTypeNormal).
 		Then().
