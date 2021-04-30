@@ -8,12 +8,12 @@ import (
 
 	"github.com/dgrijalva/jwt-go/v4"
 
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/pkg/client/clientset/versioned"
-	"github.com/argoproj/argo-cd/util/session"
-	"github.com/argoproj/argo-cd/util/settings"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/pkg/client/clientset/versioned"
+	"github.com/vathsalashetty96/argo-cd/util/session"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 
-	jwtutil "github.com/argoproj/argo-cd/util/jwt"
+	jwtutil "github.com/vathsalashetty96/argo-cd/util/jwt"
 )
 
 //NewHandler creates handler serving to do api/logout endpoint
