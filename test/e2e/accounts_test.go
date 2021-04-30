@@ -4,15 +4,15 @@ import (
 	"context"
 	"testing"
 
-	"github.com/argoproj/pkg/errors"
+	"github.com/vathsalashetty96/pkg/errors"
 	"github.com/stretchr/testify/assert"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	argocdclient "github.com/argoproj/argo-cd/pkg/apiclient"
-	"github.com/argoproj/argo-cd/pkg/apiclient/session"
+	argocdclient "github.com/vathsalashetty96/argo-cd/pkg/apiclient"
+	"github.com/vathsalashetty96/argo-cd/pkg/apiclient/session"
 	. "github.com/argoproj/argo-cd/test/e2e/fixture"
-	"github.com/argoproj/argo-cd/util/io"
+	"github.com/vathsalashetty96/argo-cd/util/io"
 )
 
 func TestCreateAndUseAccount(t *testing.T) {
