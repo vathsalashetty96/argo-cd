@@ -13,13 +13,13 @@ import (
 	"google.golang.org/grpc/status"
 	"k8s.io/kubernetes/pkg/util/slice"
 
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/pkg/apiclient/account"
-	"github.com/argoproj/argo-cd/server/rbacpolicy"
-	"github.com/argoproj/argo-cd/util/password"
-	"github.com/argoproj/argo-cd/util/rbac"
-	"github.com/argoproj/argo-cd/util/session"
-	"github.com/argoproj/argo-cd/util/settings"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/pkg/apiclient/account"
+	"github.com/vathsalashetty96/argo-cd/server/rbacpolicy"
+	"github.com/vathsalashetty96/argo-cd/util/password"
+	"github.com/vathsalashetty96/argo-cd/util/rbac"
+	"github.com/vathsalashetty96/argo-cd/util/session"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 )
 
 // Server provides a Session service
