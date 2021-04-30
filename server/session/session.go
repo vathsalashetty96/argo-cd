@@ -6,10 +6,10 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/argoproj/argo-cd/pkg/apiclient/session"
-	"github.com/argoproj/argo-cd/server/rbacpolicy"
-	util "github.com/argoproj/argo-cd/util/io"
-	sessionmgr "github.com/argoproj/argo-cd/util/session"
+	"github.com/vathsalashetty96/argo-cd/pkg/apiclient/session"
+	"github.com/vathsalashetty96/argo-cd/server/rbacpolicy"
+	util "github.com/vathsalashetty96/argo-cd/util/io"
+	sessionmgr "github.com/vathsalashetty96/argo-cd/util/session"
 )
 
 // Server provides a Session service
