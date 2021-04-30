@@ -6,15 +6,15 @@ import (
 	"net/http"
 	"regexp"
 
-	healthutil "github.com/argoproj/gitops-engine/pkg/health"
+	healthutil "github.com/vathsalashetty96/gitops-engine/pkg/health"
 	"k8s.io/apimachinery/pkg/api/errors"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	appv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/pkg/client/clientset/versioned"
-	"github.com/argoproj/argo-cd/util/argo"
-	"github.com/argoproj/argo-cd/util/assets"
-	"github.com/argoproj/argo-cd/util/settings"
+	appv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/pkg/client/clientset/versioned"
+	"github.com/vathsalashetty96/argo-cd/util/argo"
+	"github.com/vathsalashetty96/argo-cd/util/assets"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 )
 
 //NewHandler creates handler serving to do api/badge endpoint
