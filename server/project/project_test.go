@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/argoproj/pkg/sync"
+	"github.com/vathsalashetty96/pkg/sync"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 	"google.golang.org/grpc/codes"
@@ -19,17 +19,17 @@ import (
 
 	"github.com/dgrijalva/jwt-go/v4"
 
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/pkg/apiclient/project"
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	apps "github.com/argoproj/argo-cd/pkg/client/clientset/versioned/fake"
-	informer "github.com/argoproj/argo-cd/pkg/client/informers/externalversions"
-	"github.com/argoproj/argo-cd/server/rbacpolicy"
-	"github.com/argoproj/argo-cd/util/assets"
-	jwtutil "github.com/argoproj/argo-cd/util/jwt"
-	"github.com/argoproj/argo-cd/util/rbac"
-	"github.com/argoproj/argo-cd/util/session"
-	"github.com/argoproj/argo-cd/util/settings"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/pkg/apiclient/project"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	apps "github.com/vathsalashetty96/argo-cd/pkg/client/clientset/versioned/fake"
+	informer "github.com/vathsalashetty96/argo-cd/pkg/client/informers/externalversions"
+	"github.com/vathsalashetty96/argo-cd/server/rbacpolicy"
+	"github.com/vathsalashetty96/argo-cd/util/assets"
+	jwtutil "github.com/vathsalashetty96/argo-cd/util/jwt"
+	"github.com/vathsalashetty96/argo-cd/util/rbac"
+	"github.com/vathsalashetty96/argo-cd/util/session"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 )
 
 const testNamespace = "default"
@@ -62,7 +62,7 @@ func TestProjectServer(t *testing.T) {
 				{Namespace: "ns1", Server: "https://server1"},
 				{Namespace: "ns2", Server: "https://server2"},
 			},
-			SourceRepos: []string{"https://github.com/argoproj/argo-cd.git"},
+			SourceRepos: []string{"https://github.com/vathsalashetty96/argo-cd.git"},
 		},
 	}
 	existingApp := v1alpha1.Application{
@@ -210,7 +210,7 @@ func TestProjectServer(t *testing.T) {
 	t.Run("TestRemoveSourceUsedByApp", func(t *testing.T) {
 		existingApp := v1alpha1.Application{
 			ObjectMeta: v1.ObjectMeta{Name: "test", Namespace: "default"},
-			Spec:       v1alpha1.ApplicationSpec{Project: "test", Source: v1alpha1.ApplicationSource{RepoURL: "https://github.com/argoproj/argo-cd.git"}},
+			Spec:       v1alpha1.ApplicationSpec{Project: "test", Source: v1alpha1.ApplicationSource{RepoURL: "https://github.com/vathsalashetty96/argo-cd.git"}},
 		}
 
 		projectServer := NewServer("default", fake.NewSimpleClientset(), apps.NewSimpleClientset(&existingProj, &existingApp), enforcer, sync.NewKeyLock(), nil, nil, projInformer, settingsMgr)
@@ -227,16 +227,16 @@ func TestProjectServer(t *testing.T) {
 
 	t.Run("TestRemoveSourceUsedByAppSuccessfulIfPermittedByAnotherSrc", func(t *testing.T) {
 		proj := existingProj.DeepCopy()
-		proj.Spec.SourceRepos = []string{"https://github.com/argoproj/argo-cd.git", "https://github.com/argoproj/*"}
+		proj.Spec.SourceRepos = []string{"https://github.com/vathsalashetty96/argo-cd.git", "https://github.com/vathsalashetty96/*"}
 		existingApp := v1alpha1.Application{
 			ObjectMeta: v1.ObjectMeta{Name: "test", Namespace: "default"},
-			Spec:       v1alpha1.ApplicationSpec{Project: "test", Source: v1alpha1.ApplicationSource{RepoURL: "https://github.com/argoproj/argo-cd.git"}},
+			Spec:       v1alpha1.ApplicationSpec{Project: "test", Source: v1alpha1.ApplicationSource{RepoURL: "https://github.com/vathsalashetty96/argo-cd.git"}},
 		}
 
 		projectServer := NewServer("default", fake.NewSimpleClientset(), apps.NewSimpleClientset(proj, &existingApp), enforcer, sync.NewKeyLock(), nil, nil, projInformer, settingsMgr)
 
 		updatedProj := proj.DeepCopy()
-		updatedProj.Spec.SourceRepos = []string{"https://github.com/argoproj/*"}
+		updatedProj.Spec.SourceRepos = []string{"https://github.com/vathsalashetty96/*"}
 
 		res, err := projectServer.Update(context.Background(), &project.ProjectUpdateRequest{Project: updatedProj})
 
