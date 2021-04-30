@@ -5,7 +5,7 @@ import (
 	"os/exec"
 	"strings"
 
-	argoexec "github.com/argoproj/pkg/exec"
+	argoexec "github.com/vathsalashetty96/pkg/exec"
 )
 
 func Run(workDir, name string, args ...string) (string, error) {
