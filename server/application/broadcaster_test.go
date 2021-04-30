@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	appv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
+	appv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
 )
 
 func TestBroadcasterHandler_SubscribeUnsubscribe(t *testing.T) {
