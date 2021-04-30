@@ -8,11 +8,11 @@ import (
 	"github.com/go-redis/redis/v8"
 	"github.com/spf13/cobra"
 
-	appv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	cacheutil "github.com/argoproj/argo-cd/util/cache"
-	appstatecache "github.com/argoproj/argo-cd/util/cache/appstate"
-	"github.com/argoproj/argo-cd/util/oidc"
-	"github.com/argoproj/argo-cd/util/session"
+	appv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	cacheutil "github.com/vathsalashetty96/argo-cd/util/cache"
+	appstatecache "github.com/vathsalashetty96/argo-cd/util/cache/appstate"
+	"github.com/vathsalashetty96/argo-cd/util/oidc"
+	"github.com/vathsalashetty96/argo-cd/util/session"
 )
 
 var ErrCacheMiss = appstatecache.ErrCacheMiss
