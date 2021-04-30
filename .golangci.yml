@@ -17,6 +17,6 @@ linters:
     - unparam
 linters-settings:
   goimports:
-    local-prefixes: github.com/argoproj/argo-cd
+    local-prefixes: github.com/vathsalashetty96/argo-cd
 service:
   golangci-lint-version: 1.21.0
