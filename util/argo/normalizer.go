@@ -1,10 +1,10 @@
 package argo
 
 import (
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/util/argo/normalizers"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/util/argo/normalizers"
 
-	"github.com/argoproj/gitops-engine/pkg/diff"
+	"github.com/vathsalashetty96/gitops-engine/pkg/diff"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 )
 
