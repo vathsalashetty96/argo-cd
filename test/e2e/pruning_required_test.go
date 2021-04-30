@@ -3,9 +3,9 @@ package e2e
 import (
 	"testing"
 
-	. "github.com/argoproj/gitops-engine/pkg/sync/common"
+	. "github.com/vathsalashetty96/gitops-engine/pkg/sync/common"
 
-	. "github.com/argoproj/argo-cd/test/e2e/fixture/app"
+	. "github.com/vathsalashetty96/argo-cd/test/e2e/fixture/app"
 )
 
 // check we fail with message if we delete a non-prunable resource
