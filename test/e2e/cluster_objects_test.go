@@ -3,11 +3,11 @@ package e2e
 import (
 	"testing"
 
-	"github.com/argoproj/gitops-engine/pkg/health"
-	. "github.com/argoproj/gitops-engine/pkg/sync/common"
+	"github.com/vathsalashetty96/gitops-engine/pkg/health"
+	. "github.com/vathsalashetty96/gitops-engine/pkg/sync/common"
 
-	. "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	. "github.com/argoproj/argo-cd/test/e2e/fixture/app"
+	. "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	. "github.com/vathsalashetty96/argo-cd/test/e2e/fixture/app"
 )
 
 // ensure that cluster scoped objects, like a cluster role, as a hok, can be successfully deployed
