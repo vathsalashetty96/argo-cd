@@ -107,30 +107,30 @@ const (
 	// The Argo CD application name is used as the instance name
 	LabelKeyAppInstance = "app.kubernetes.io/instance"
 	// LegacyLabelApplicationName is the legacy label (v0.10 and below) and is superceded by 'app.kubernetes.io/instance'
-	LabelKeyLegacyApplicationName = "applications.argoproj.io/app-name"
+	LabelKeyLegacyApplicationName = "applications.vathsalashetty96.io/app-name"
 	// LabelKeySecretType contains the type of argocd secret (currently: 'cluster')
-	LabelKeySecretType = "argocd.argoproj.io/secret-type"
+	LabelKeySecretType = "argocd.vathsalashetty96.io/secret-type"
 	// LabelValueSecretTypeCluster indicates a secret type of cluster
 	LabelValueSecretTypeCluster = "cluster"
 
 	// AnnotationCompareOptions is a comma-separated list of options for comparison
-	AnnotationCompareOptions = "argocd.argoproj.io/compare-options"
+	AnnotationCompareOptions = "argocd.vathsalashetty96.io/compare-options"
 
 	// AnnotationKeyRefresh is the annotation key which indicates that app needs to be refreshed. Removed by application controller after app is refreshed.
 	// Might take values 'normal'/'hard'. Value 'hard' means manifest cache and target cluster state cache should be invalidated before refresh.
-	AnnotationKeyRefresh = "argocd.argoproj.io/refresh"
+	AnnotationKeyRefresh = "argocd.vathsalashetty96.io/refresh"
 	// AnnotationKeyManagedBy is annotation name which indicates that k8s resource is managed by an application.
 	AnnotationKeyManagedBy = "managed-by"
 	// AnnotationValueManagedByArgoCD is a 'managed-by' annotation value for resources managed by Argo CD
-	AnnotationValueManagedByArgoCD = "argocd.argoproj.io"
+	AnnotationValueManagedByArgoCD = "argocd.vathsalashetty96.io"
 	// ResourcesFinalizerName the finalizer value which we inject to finalize deletion of an application
-	ResourcesFinalizerName = "resources-finalizer.argocd.argoproj.io"
+	ResourcesFinalizerName = "resources-finalizer.argocd.vathsalashetty96.io"
 
 	// AnnotationKeyManifestGeneratePaths is an annotation that contains a list of semicolon-separated paths in the
 	// manifests repository that affects the manifest generation. Paths might be either relative or absolute. The
 	// absolute path means an absolute path within the repository and the relative path is relative to the application
 	// source path within the repository.
-	AnnotationKeyManifestGeneratePaths = "argocd.argoproj.io/manifest-generate-paths"
+	AnnotationKeyManifestGeneratePaths = "argocd.vathsalashetty96.io/manifest-generate-paths"
 
 	// AnnotationKeyLinkPrefix tells the UI to add an external link icon to the application node
 	// that links to the value given in the annotation.
@@ -140,7 +140,7 @@ const (
 	// an optional link title separated by a "|"
 	// Ex: "http://grafana.example.com/d/yu5UH4MMz/deployments"
 	// Ex: "Go to Dashboard|http://grafana.example.com/d/yu5UH4MMz/deployments"
-	AnnotationKeyLinkPrefix = "link.argocd.argoproj.io/"
+	AnnotationKeyLinkPrefix = "link.argocd.vathsalashetty96.io/"
 )
 
 // Environment variables for tuning and debugging Argo CD
