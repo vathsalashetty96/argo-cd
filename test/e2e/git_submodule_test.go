@@ -5,10 +5,10 @@ import (
 
 	v1 "k8s.io/api/core/v1"
 
-	"github.com/argoproj/argo-cd/test/e2e/fixture"
+	"github.com/vathsalashetty96/argo-cd/test/e2e/fixture"
 
-	. "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	. "github.com/argoproj/argo-cd/test/e2e/fixture/app"
+	. "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	. "github.com/vathsalashetty96/argo-cd/test/e2e/fixture/app"
 )
 
 func TestGitSubmoduleSSHSupport(t *testing.T) {
