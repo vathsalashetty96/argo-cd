@@ -10,10 +10,10 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/stretchr/testify/assert"
 
-	. "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	appv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/reposerver/apiclient"
-	cacheutil "github.com/argoproj/argo-cd/util/cache"
+	. "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	appv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/reposerver/apiclient"
+	cacheutil "github.com/vathsalashetty96/argo-cd/util/cache"
 )
 
 type fixtures struct {
