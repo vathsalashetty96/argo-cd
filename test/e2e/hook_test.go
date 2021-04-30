@@ -8,13 +8,13 @@ import (
 	"github.com/stretchr/testify/assert"
 	v1 "k8s.io/api/core/v1"
 
-	"github.com/argoproj/gitops-engine/pkg/health"
-	. "github.com/argoproj/gitops-engine/pkg/sync/common"
+	"github.com/vathsalashetty96/gitops-engine/pkg/health"
+	. "github.com/vathsalashetty96/gitops-engine/pkg/sync/common"
 
-	. "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	. "github.com/argoproj/argo-cd/test/e2e/fixture"
-	. "github.com/argoproj/argo-cd/test/e2e/fixture/app"
-	. "github.com/argoproj/argo-cd/util/errors"
+	. "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	. "github.com/vathsalashetty96/argo-cd/test/e2e/fixture"
+	. "github.com/vathsalashetty96/argo-cd/test/e2e/fixture/app"
+	. "github.com/vathsalashetty96/argo-cd/util/errors"
 )
 
 func TestPreSyncHookSuccessful(t *testing.T) {
@@ -36,7 +36,7 @@ func testHookSuccessful(t *testing.T, hookType HookType) {
 	Given(t).
 		Path("hook").
 		When().
-		PatchFile("hook.yaml", fmt.Sprintf(`[{"op": "replace", "path": "/metadata/annotations", "value": {"argocd.argoproj.io/hook": "%s"}}]`, hookType)).
+		PatchFile("hook.yaml", fmt.Sprintf(`[{"op": "replace", "path": "/metadata/annotations", "value": {"argocd.vathsalashetty96.io/hook": "%s"}}]`, hookType)).
 		Create().
 		Sync().
 		Then().
@@ -68,7 +68,7 @@ func TestPreSyncHookFailure(t *testing.T) {
 	Given(t).
 		Path("hook").
 		When().
-		PatchFile("hook.yaml", `[{"op": "replace", "path": "/metadata/annotations", "value": {"argocd.argoproj.io/hook": "PreSync"}}]`).
+		PatchFile("hook.yaml", `[{"op": "replace", "path": "/metadata/annotations", "value": {"argocd.vathsalashetty96.io/hook": "PreSync"}}]`).
 		// make hook fail
 		PatchFile("hook.yaml", `[{"op": "replace", "path": "/spec/containers/0/command", "value": ["false"]}]`).
 		Create().
@@ -121,7 +121,7 @@ func TestPostSyncHookFailure(t *testing.T) {
 	Given(t).
 		Path("hook").
 		When().
-		PatchFile("hook.yaml", `[{"op": "replace", "path": "/metadata/annotations", "value": {"argocd.argoproj.io/hook": "PostSync"}}]`).
+		PatchFile("hook.yaml", `[{"op": "replace", "path": "/metadata/annotations", "value": {"argocd.vathsalashetty96.io/hook": "PostSync"}}]`).
 		// make hook fail
 		PatchFile("hook.yaml", `[{"op": "replace", "path": "/spec/containers/0/command/0", "value": "false"}]`).
 		Create().
@@ -140,7 +140,7 @@ func TestPostSyncHookPodFailure(t *testing.T) {
 		Path("hook").
 		When().
 		IgnoreErrors().
-		PatchFile("hook.yaml", `[{"op": "add", "path": "/metadata/annotations", "value": {"argocd.argoproj.io/hook": "PostSync"}}]`).
+		PatchFile("hook.yaml", `[{"op": "add", "path": "/metadata/annotations", "value": {"argocd.vathsalashetty96.io/hook": "PostSync"}}]`).
 		// make pod fail
 		PatchFile("pod.yaml", `[{"op": "replace", "path": "/spec/containers/0/command/0", "value": "false"}]`).
 		Create().
@@ -176,7 +176,7 @@ spec:
       name: main
   restartPolicy: Never
 `).
-		PatchFile("hook.yaml", `[{"op": "replace", "path": "/metadata/annotations", "value": {"argocd.argoproj.io/hook": "PostSync"}}]`).
+		PatchFile("hook.yaml", `[{"op": "replace", "path": "/metadata/annotations", "value": {"argocd.vathsalashetty96.io/hook": "PostSync"}}]`).
 		PatchFile("hook.yaml", `[{"op": "replace", "path": "/spec/containers/0/command/0", "value": "false"}]`).
 		Create().
 		Sync().
@@ -196,7 +196,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   annotations:
-    argocd.argoproj.io/hook: SyncFail
+    argocd.vathsalashetty96.io/hook: SyncFail
   name: successful-sync-fail-hook
 spec:
   containers:
@@ -212,7 +212,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   annotations:
-    argocd.argoproj.io/hook: SyncFail
+    argocd.vathsalashetty96.io/hook: SyncFail
   name: failed-sync-fail-hook
 spec:
   containers:
@@ -223,7 +223,7 @@ spec:
       name: main
   restartPolicy: Never
 `).
-		PatchFile("hook.yaml", `[{"op": "replace", "path": "/metadata/annotations", "value": {"argocd.argoproj.io/hook": "PostSync"}}]`).
+		PatchFile("hook.yaml", `[{"op": "replace", "path": "/metadata/annotations", "value": {"argocd.vathsalashetty96.io/hook": "PostSync"}}]`).
 		PatchFile("hook.yaml", `[{"op": "replace", "path": "/spec/containers/0/command/0", "value": "false"}]`).
 		Create().
 		Sync().
@@ -238,7 +238,7 @@ func TestHookDeletePolicyHookSucceededHookExit0(t *testing.T) {
 	Given(t).
 		Path("hook").
 		When().
-		PatchFile("hook.yaml", `[{"op": "add", "path": "/metadata/annotations/argocd.argoproj.io~1hook-delete-policy", "value": "HookSucceeded"}]`).
+		PatchFile("hook.yaml", `[{"op": "add", "path": "/metadata/annotations/argocd.vathsalashetty96.io~1hook-delete-policy", "value": "HookSucceeded"}]`).
 		Create().
 		Sync().
 		Then().
@@ -251,7 +251,7 @@ func TestHookDeletePolicyHookSucceededHookExit1(t *testing.T) {
 	Given(t).
 		Path("hook").
 		When().
-		PatchFile("hook.yaml", `[{"op": "add", "path": "/metadata/annotations/argocd.argoproj.io~1hook-delete-policy", "value": "HookSucceeded"}]`).
+		PatchFile("hook.yaml", `[{"op": "add", "path": "/metadata/annotations/argocd.vathsalashetty96.io~1hook-delete-policy", "value": "HookSucceeded"}]`).
 		PatchFile("hook.yaml", `[{"op": "replace", "path": "/spec/containers/0/command/0", "value": "false"}]`).
 		Create().
 		IgnoreErrors().
@@ -267,7 +267,7 @@ func TestHookDeletePolicyHookFailedHookExit0(t *testing.T) {
 	Given(t).
 		Path("hook").
 		When().
-		PatchFile("hook.yaml", `[{"op": "add", "path": "/metadata/annotations/argocd.argoproj.io~1hook-delete-policy", "value": "HookFailed"}]`).
+		PatchFile("hook.yaml", `[{"op": "add", "path": "/metadata/annotations/argocd.vathsalashetty96.io~1hook-delete-policy", "value": "HookFailed"}]`).
 		Create().
 		Sync().
 		Then().
@@ -282,7 +282,7 @@ func TestHookDeletePolicyHookFailedHookExit1(t *testing.T) {
 		Path("hook").
 		When().
 		IgnoreErrors().
-		PatchFile("hook.yaml", `[{"op": "add", "path": "/metadata/annotations/argocd.argoproj.io~1hook-delete-policy", "value": "HookFailed"}]`).
+		PatchFile("hook.yaml", `[{"op": "add", "path": "/metadata/annotations/argocd.vathsalashetty96.io~1hook-delete-policy", "value": "HookFailed"}]`).
 		PatchFile("hook.yaml", `[{"op": "replace", "path": "/spec/containers/0/command/0", "value": "false"}]`).
 		Create().
 		Sync().
@@ -298,7 +298,7 @@ func TestHookBeforeHookCreation(t *testing.T) {
 	Given(t).
 		Path("hook").
 		When().
-		PatchFile("hook.yaml", `[{"op": "add", "path": "/metadata/annotations/argocd.argoproj.io~1hook-delete-policy", "value": "BeforeHookCreation"}]`).
+		PatchFile("hook.yaml", `[{"op": "add", "path": "/metadata/annotations/argocd.vathsalashetty96.io~1hook-delete-policy", "value": "BeforeHookCreation"}]`).
 		Create().
 		Sync().
 		Then().
@@ -339,7 +339,7 @@ func TestHookBeforeHookCreationFailure(t *testing.T) {
 		Path("hook").
 		When().
 		PatchFile("hook.yaml", `[
-	{"op": "add", "path": "/metadata/annotations/argocd.argoproj.io~1hook-delete-policy", "value": "BeforeHookCreation"},
+	{"op": "add", "path": "/metadata/annotations/argocd.vathsalashetty96.io~1hook-delete-policy", "value": "BeforeHookCreation"},
 	{"op": "replace", "path": "/spec/containers/0/command", "value": ["sleep", "3"]}
 ]`).
 		Create().
@@ -362,7 +362,7 @@ func TestHookSkip(t *testing.T) {
 		Path("hook").
 		When().
 		// should not create this pod
-		PatchFile("pod.yaml", `[{"op": "replace", "path": "/metadata/annotations", "value": {"argocd.argoproj.io/hook": "Skip"}}]`).
+		PatchFile("pod.yaml", `[{"op": "replace", "path": "/metadata/annotations", "value": {"argocd.vathsalashetty96.io/hook": "Skip"}}]`).
 		Create().
 		Sync().
 		Then().
@@ -392,7 +392,7 @@ func TestAutomaticallyNamingUnnamedHook(t *testing.T) {
 		When().
 		PatchFile("hook.yaml", `[{"op": "remove", "path": "/metadata/name"}]`).
 		// make this part of two sync tasks
-		PatchFile("hook.yaml", `[{"op": "replace", "path": "/metadata/annotations", "value": {"argocd.argoproj.io/hook": "PreSync,PostSync"}}]`).
+		PatchFile("hook.yaml", `[{"op": "replace", "path": "/metadata/annotations", "value": {"argocd.vathsalashetty96.io/hook": "PreSync,PostSync"}}]`).
 		Create().
 		Sync().
 		Then().
