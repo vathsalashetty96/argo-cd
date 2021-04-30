@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/argoproj/pkg/errors"
+	"github.com/vathsalashetty96/pkg/errors"
 	jsonpatch "github.com/evanphx/json-patch"
 	"github.com/ghodss/yaml"
 	log "github.com/sirupsen/logrus"
@@ -22,16 +22,16 @@ import (
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
 
-	"github.com/argoproj/argo-cd/common"
-	argocdclient "github.com/argoproj/argo-cd/pkg/apiclient"
-	sessionpkg "github.com/argoproj/argo-cd/pkg/apiclient/session"
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	appclientset "github.com/argoproj/argo-cd/pkg/client/clientset/versioned"
-	. "github.com/argoproj/argo-cd/util/errors"
-	grpcutil "github.com/argoproj/argo-cd/util/grpc"
-	"github.com/argoproj/argo-cd/util/io"
-	"github.com/argoproj/argo-cd/util/rand"
-	"github.com/argoproj/argo-cd/util/settings"
+	"github.com/vathsalashetty96/argo-cd/common"
+	argocdclient "github.com/vathsalashetty96/argo-cd/pkg/apiclient"
+	sessionpkg "github.com/vathsalashetty96/argo-cd/pkg/apiclient/session"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	appclientset "github.com/vathsalashetty96/argo-cd/pkg/client/clientset/versioned"
+	. "github.com/vathsalashetty96/argo-cd/util/errors"
+	grpcutil "github.com/vathsalashetty96/argo-cd/util/grpc"
+	"github.com/vathsalashetty96/argo-cd/util/io"
+	"github.com/vathsalashetty96/argo-cd/util/rand"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 )
 
 const (
