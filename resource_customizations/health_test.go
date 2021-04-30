@@ -7,13 +7,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/argoproj/gitops-engine/pkg/health"
+	"github.com/vathsalashetty96/gitops-engine/pkg/health"
 	"github.com/ghodss/yaml"
 	"github.com/stretchr/testify/assert"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 
-	"github.com/argoproj/argo-cd/util/errors"
-	"github.com/argoproj/argo-cd/util/lua"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
+	"github.com/vathsalashetty96/argo-cd/util/lua"
 )
 
 type TestStructure struct {
