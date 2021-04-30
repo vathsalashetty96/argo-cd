@@ -3,11 +3,11 @@ package e2e
 import (
 	"testing"
 
-	. "github.com/argoproj/gitops-engine/pkg/sync/common"
+	. "github.com/vathsalashetty96/gitops-engine/pkg/sync/common"
 
-	. "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	. "github.com/argoproj/argo-cd/test/e2e/fixture"
-	. "github.com/argoproj/argo-cd/test/e2e/fixture/app"
+	. "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	. "github.com/vathsalashetty96/argo-cd/test/e2e/fixture"
+	. "github.com/vathsalashetty96/argo-cd/test/e2e/fixture/app"
 )
 
 // when a app gets stuck in sync, and we try to delete it, it won't delete, instead we must then terminate it
