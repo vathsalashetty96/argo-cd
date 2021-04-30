@@ -3,14 +3,14 @@ package normalizers
 import (
 	"encoding/json"
 
-	"github.com/argoproj/gitops-engine/pkg/diff"
+	"github.com/vathsalashetty96/gitops-engine/pkg/diff"
 	jsonpatch "github.com/evanphx/json-patch"
 	log "github.com/sirupsen/logrus"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/util/glob"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/util/glob"
 )
 
 type normalizerPatch struct {
