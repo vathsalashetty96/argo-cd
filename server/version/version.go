@@ -7,18 +7,18 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/argoproj/gitops-engine/pkg/utils/tracing"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/tracing"
 	"github.com/golang/protobuf/ptypes/empty"
 	"github.com/google/go-jsonnet"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/net/context"
 
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/pkg/apiclient/version"
-	"github.com/argoproj/argo-cd/util/helm"
-	ksutil "github.com/argoproj/argo-cd/util/ksonnet"
-	"github.com/argoproj/argo-cd/util/kustomize"
-	"github.com/argoproj/argo-cd/util/log"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/pkg/apiclient/version"
+	"github.com/vathsalashetty96/argo-cd/util/helm"
+	ksutil "github.com/vathsalashetty96/argo-cd/util/ksonnet"
+	"github.com/vathsalashetty96/argo-cd/util/kustomize"
+	"github.com/vathsalashetty96/argo-cd/util/log"
 )
 
 type Server struct {
