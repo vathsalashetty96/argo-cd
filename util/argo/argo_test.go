@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/argoproj/gitops-engine/pkg/utils/kube/kubetest"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/kube/kubetest"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"google.golang.org/grpc/codes"
@@ -17,15 +17,15 @@ import (
 	"k8s.io/client-go/kubernetes/fake"
 	"k8s.io/client-go/tools/cache"
 
-	argoappv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	appclientset "github.com/argoproj/argo-cd/pkg/client/clientset/versioned/fake"
-	"github.com/argoproj/argo-cd/pkg/client/informers/externalversions/application/v1alpha1"
-	applisters "github.com/argoproj/argo-cd/pkg/client/listers/application/v1alpha1"
-	"github.com/argoproj/argo-cd/reposerver/apiclient"
-	"github.com/argoproj/argo-cd/reposerver/apiclient/mocks"
-	"github.com/argoproj/argo-cd/test"
-	dbmocks "github.com/argoproj/argo-cd/util/db/mocks"
-	"github.com/argoproj/argo-cd/util/settings"
+	argoappv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	appclientset "github.com/vathsalashetty96/argo-cd/pkg/client/clientset/versioned/fake"
+	"github.com/vathsalashetty96/argo-cd/pkg/client/informers/externalversions/application/v1alpha1"
+	applisters "github.com/vathsalashetty96/argo-cd/pkg/client/listers/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/reposerver/apiclient"
+	"github.com/vathsalashetty96/argo-cd/reposerver/apiclient/mocks"
+	"github.com/vathsalashetty96/argo-cd/test"
+	dbmocks "github.com/vathsalashetty96/argo-cd/util/db/mocks"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 )
 
 func TestRefreshApp(t *testing.T) {
