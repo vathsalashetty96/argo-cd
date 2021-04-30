@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/argoproj/argo-cd/util/kustomize"
+	"github.com/vathsalashetty96/argo-cd/util/kustomize"
 )
 
 func Discover(root string) (map[string]string, error) {
