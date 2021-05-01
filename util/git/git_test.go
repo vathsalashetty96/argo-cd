@@ -10,9 +10,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/argoproj/argo-cd/test/fixture/log"
-	"github.com/argoproj/argo-cd/test/fixture/path"
-	"github.com/argoproj/argo-cd/test/fixture/test"
+	"github.com/vathsalashetty96/argo-cd/test/fixture/log"
+	"github.com/vathsalashetty96/argo-cd/test/fixture/path"
+	"github.com/vathsalashetty96/argo-cd/test/fixture/test"
 )
 
 func TestIsCommitSHA(t *testing.T) {
@@ -58,14 +58,14 @@ func TestRemoveSuffix(t *testing.T) {
 
 func TestIsSSHURL(t *testing.T) {
 	data := map[string]bool{
-		"git://github.com/argoproj/test.git":     false,
-		"git@GITHUB.com:argoproj/test.git":       true,
+		"git://github.com/vathsalashetty96/test.git":     false,
+		"git@GITHUB.com:vathsalashetty96/test.git":       true,
 		"git@github.com:test":                    true,
 		"git@github.com:test.git":                true,
-		"https://github.com/argoproj/test":       false,
-		"https://github.com/argoproj/test.git":   false,
-		"ssh://git@GITHUB.com:argoproj/test":     true,
-		"ssh://git@GITHUB.com:argoproj/test.git": true,
+		"https://github.com/vathsalashetty96/test":       false,
+		"https://github.com/vathsalashetty96/test.git":   false,
+		"ssh://git@GITHUB.com:vathsalashetty96/test":     true,
+		"ssh://git@GITHUB.com:vathsalashetty96/test.git": true,
 		"ssh://git@github.com:test.git":          true,
 	}
 	for k, v := range data {
@@ -103,23 +103,23 @@ func TestIsSSHURLUserName(t *testing.T) {
 
 func TestSameURL(t *testing.T) {
 	data := map[string]string{
-		"git@GITHUB.com:argoproj/test":                     "git@github.com:argoproj/test.git",
-		"git@GITHUB.com:argoproj/test.git":                 "git@github.com:argoproj/test.git",
+		"git@GITHUB.com:vathsalashetty96/test":                     "git@github.com:vathsalashetty96/test.git",
+		"git@GITHUB.com:vathsalashetty96/test.git":                 "git@github.com:vathsalashetty96/test.git",
 		"git@GITHUB.com:test":                              "git@github.com:test.git",
 		"git@GITHUB.com:test.git":                          "git@github.com:test.git",
-		"https://GITHUB.com/argoproj/test":                 "https://github.com/argoproj/test.git",
-		"https://GITHUB.com/argoproj/test.git":             "https://github.com/argoproj/test.git",
+		"https://GITHUB.com/vathsalashetty96/test":                 "https://github.com/vathsalashetty96/test.git",
+		"https://GITHUB.com/vathsalashetty96/test.git":             "https://github.com/vathsalashetty96/test.git",
 		"https://github.com/FOO":                           "https://github.com/foo",
 		"https://github.com/TEST":                          "https://github.com/TEST.git",
 		"https://github.com/TEST.git":                      "https://github.com/TEST.git",
 		"https://github.com:4443/TEST":                     "https://github.com:4443/TEST.git",
 		"https://github.com:4443/TEST.git":                 "https://github.com:4443/TEST",
-		"ssh://git@GITHUB.com/argoproj/test":               "git@github.com:argoproj/test.git",
-		"ssh://git@GITHUB.com/argoproj/test.git":           "git@github.com:argoproj/test.git",
+		"ssh://git@GITHUB.com/vathsalashetty96/test":               "git@github.com:vathsalashetty96/test.git",
+		"ssh://git@GITHUB.com/vathsalashetty96/test.git":           "git@github.com:vathsalashetty96/test.git",
 		"ssh://git@GITHUB.com/test.git":                    "git@github.com:test.git",
 		"ssh://git@github.com/test":                        "git@github.com:test.git",
-		" https://github.com/argoproj/test ":               "https://github.com/argoproj/test.git",
-		"\thttps://github.com/argoproj/test\n":             "https://github.com/argoproj/test.git",
+		" https://github.com/vathsalashetty96/test ":               "https://github.com/vathsalashetty96/test.git",
+		"\thttps://github.com/vathsalashetty96/test\n":             "https://github.com/vathsalashetty96/test.git",
 		"https://1234.visualstudio.com/myproj/_git/myrepo": "https://1234.visualstudio.com/myproj/_git/myrepo",
 		"https://dev.azure.com/1234/myproj/_git/myrepo":    "https://dev.azure.com/1234/myproj/_git/myrepo",
 	}
@@ -193,7 +193,7 @@ func TestCustomHTTPClient(t *testing.T) {
 }
 
 func TestLsRemote(t *testing.T) {
-	clnt, err := NewClientExt("https://github.com/argoproj/argo-cd.git", "/tmp", NopCreds{}, false, false)
+	clnt, err := NewClientExt("https://github.com/vathsalashetty96/argo-cd.git", "/tmp", NopCreds{}, false, false)
 	assert.NoError(t, err)
 	xpass := []string{
 		"HEAD",
@@ -277,7 +277,7 @@ func TestVerifyCommitSignature(t *testing.T) {
 	}
 	defer os.RemoveAll(p)
 
-	client, err := NewClientExt("https://github.com/argoproj/argo-cd.git", p, NopCreds{}, false, false)
+	client, err := NewClientExt("https://github.com/vathsalashetty96/argo-cd.git", p, NopCreds{}, false, false)
 	assert.NoError(t, err)
 
 	err = client.Init()
@@ -323,7 +323,7 @@ func TestNewFactory(t *testing.T) {
 		name string
 		args args
 	}{
-		{"Github", args{url: "https://github.com/argoproj/argocd-example-apps"}},
+		{"Github", args{url: "https://github.com/vathsalashetty96/argocd-example-apps"}},
 		{"Azure", args{url: "https://jsuen0437@dev.azure.com/jsuen0437/jsuen/_git/jsuen"}},
 	}
 	for _, tt := range tests {
@@ -376,7 +376,7 @@ func TestListRevisions(t *testing.T) {
 	}
 	defer os.RemoveAll(dir)
 
-	repoURL := "https://github.com/argoproj/argo-cd.git"
+	repoURL := "https://github.com/vathsalashetty96/argo-cd.git"
 	client, err := NewClientExt(repoURL, dir, NopCreds{}, false, false)
 	assert.NoError(t, err)
 
