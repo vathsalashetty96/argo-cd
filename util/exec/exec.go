@@ -8,11 +8,11 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/argoproj/argo-cd/util/log"
+	"github.com/vathsalashetty96/argo-cd/util/log"
 
-	argoexec "github.com/argoproj/pkg/exec"
+	argoexec "github.com/vathsalashetty96/pkg/exec"
 
-	tracing "github.com/argoproj/gitops-engine/pkg/utils/tracing"
+	tracing "github.com/vathsalashetty96/gitops-engine/pkg/utils/tracing"
 )
 
 var timeout time.Duration
