@@ -9,15 +9,15 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/argoproj/gitops-engine/pkg/utils/kube"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/kube"
 	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	certutil "github.com/argoproj/argo-cd/util/cert"
-	executil "github.com/argoproj/argo-cd/util/exec"
-	"github.com/argoproj/argo-cd/util/git"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	certutil "github.com/vathsalashetty96/argo-cd/util/cert"
+	executil "github.com/vathsalashetty96/argo-cd/util/exec"
+	"github.com/vathsalashetty96/argo-cd/util/git"
 )
 
 // represents a Docker image in the format NAME[:TAG].
