@@ -5,8 +5,8 @@ import (
 
 	"github.com/ghodss/yaml"
 
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/util/settings"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 )
 
 func GenerateDexConfigYAML(settings *settings.ArgoCDSettings) ([]byte, error) {
