@@ -17,12 +17,12 @@ import (
 	"time"
 
 	"github.com/Masterminds/semver"
-	"github.com/argoproj/pkg/sync"
+	"github.com/vathsalashetty96/pkg/sync"
 	log "github.com/sirupsen/logrus"
 	"gopkg.in/yaml.v2"
 
-	executil "github.com/argoproj/argo-cd/util/exec"
-	"github.com/argoproj/argo-cd/util/io"
+	executil "github.com/vathsalashetty96/argo-cd/util/exec"
+	"github.com/vathsalashetty96/argo-cd/util/io"
 )
 
 var (
