@@ -4,18 +4,18 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/argoproj/gitops-engine/pkg/health"
+	"github.com/vathsalashetty96/gitops-engine/pkg/health"
 	"github.com/ghodss/yaml"
 	"github.com/stretchr/testify/assert"
 	lua "github.com/yuin/gopher-lua"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 
-	appv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/util/grpc"
+	appv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/util/grpc"
 )
 
 const objJSON = `
-apiVersion: argoproj.io/v1alpha1
+apiVersion: vathsalashetty96.io/v1alpha1
 kind: Rollout
 metadata:
   labels:
@@ -281,7 +281,7 @@ return obj
 `
 
 const expectedUpdatedObj = `
-apiVersion: argoproj.io/v1alpha1
+apiVersion: vathsalashetty96.io/v1alpha1
 kind: Rollout
 metadata:
   labels:
@@ -321,7 +321,7 @@ func TestExecuteResourceActionInvalidUnstructured(t *testing.T) {
 }
 
 const objWithEmptyStruct = `
-apiVersion: argoproj.io/v1alpha1
+apiVersion: vathsalashetty96.io/v1alpha1
 kind: Test
 metadata:
   labels:
@@ -342,7 +342,7 @@ spec:
 `
 
 const expectedUpdatedObjWithEmptyStruct = `
-apiVersion: argoproj.io/v1alpha1
+apiVersion: vathsalashetty96.io/v1alpha1
 kind: Test
 metadata:
   labels:
