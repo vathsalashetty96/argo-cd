@@ -14,7 +14,7 @@ import (
 	"k8s.io/client-go/kubernetes/fake"
 	kubetesting "k8s.io/client-go/testing"
 
-	"github.com/argoproj/argo-cd/util/errors"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
 )
 
 const (
