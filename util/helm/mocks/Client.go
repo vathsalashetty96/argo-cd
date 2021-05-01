@@ -3,9 +3,9 @@
 package mocks
 
 import (
-	helm "github.com/argoproj/argo-cd/util/helm"
+	helm "github.com/vathsalashetty96/argo-cd/util/helm"
 
-	io "github.com/argoproj/argo-cd/util/io"
+	io "github.com/vathsalashetty96/argo-cd/util/io"
 
 	mock "github.com/stretchr/testify/mock"
 
