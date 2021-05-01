@@ -1,11 +1,11 @@
 package kube
 
 import (
-	"github.com/argoproj/gitops-engine/pkg/utils/kube"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/kube"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	"github.com/argoproj/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/common"
 )
 
 // SetAppInstanceLabel the recommended app.kubernetes.io/instance label against an unstructured object
