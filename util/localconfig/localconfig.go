@@ -8,7 +8,7 @@ import (
 
 	"github.com/dgrijalva/jwt-go/v4"
 
-	configUtil "github.com/argoproj/argo-cd/util/config"
+	configUtil "github.com/vathsalashetty96/argo-cd/util/config"
 )
 
 // LocalConfig is a local Argo CD config file
