@@ -4,15 +4,15 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/argoproj/gitops-engine/pkg/health"
-	synccommon "github.com/argoproj/gitops-engine/pkg/sync/common"
-	"github.com/argoproj/gitops-engine/pkg/utils/kube"
+	"github.com/vathsalashetty96/gitops-engine/pkg/health"
+	synccommon "github.com/vathsalashetty96/gitops-engine/pkg/sync/common"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/kube"
 	"github.com/ghodss/yaml"
 	"github.com/stretchr/testify/assert"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 
-	appv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
+	appv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
 )
 
 func TestSetApplicationHealth(t *testing.T) {
@@ -74,7 +74,7 @@ func TestAppOfAppsHealth(t *testing.T) {
 			},
 		}
 		resStatus := &appv1.ResourceStatus{
-			Group:   "argoproj.io",
+			Group:   "vathsalashetty96.io",
 			Version: "v1alpha1",
 			Kind:    "Application",
 			Name:    name,
