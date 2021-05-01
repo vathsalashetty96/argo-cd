@@ -9,8 +9,8 @@ import (
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/utils/pointer"
 
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/util/settings"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 )
 
 func getHelmRepoCredIndex(helmRepositories []settings.HelmRepoCredentials, repoURL string) int {
