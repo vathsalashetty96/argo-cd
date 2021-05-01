@@ -13,7 +13,7 @@ import (
 	extv1beta1 "k8s.io/api/extensions/v1beta1"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 
-	"github.com/argoproj/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/common"
 )
 
 const depWithoutSelector = `
