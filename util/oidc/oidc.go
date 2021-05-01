@@ -13,19 +13,19 @@ import (
 	"strings"
 	"time"
 
-	"github.com/argoproj/pkg/jwt/zjwt"
+	"github.com/vathsalashetty96/pkg/jwt/zjwt"
 	gooidc "github.com/coreos/go-oidc"
 	"github.com/dgrijalva/jwt-go/v4"
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/oauth2"
 
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/server/settings/oidc"
-	appstatecache "github.com/argoproj/argo-cd/util/cache/appstate"
-	"github.com/argoproj/argo-cd/util/dex"
-	httputil "github.com/argoproj/argo-cd/util/http"
-	"github.com/argoproj/argo-cd/util/rand"
-	"github.com/argoproj/argo-cd/util/settings"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/server/settings/oidc"
+	appstatecache "github.com/vathsalashetty96/argo-cd/util/cache/appstate"
+	"github.com/vathsalashetty96/argo-cd/util/dex"
+	httputil "github.com/vathsalashetty96/argo-cd/util/http"
+	"github.com/vathsalashetty96/argo-cd/util/rand"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 )
 
 const (
