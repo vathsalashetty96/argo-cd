@@ -1,13 +1,13 @@
 package health
 
 import (
-	"github.com/argoproj/gitops-engine/pkg/health"
-	hookutil "github.com/argoproj/gitops-engine/pkg/sync/hook"
-	"github.com/argoproj/gitops-engine/pkg/sync/ignore"
+	"github.com/vathsalashetty96/gitops-engine/pkg/health"
+	hookutil "github.com/vathsalashetty96/gitops-engine/pkg/sync/hook"
+	"github.com/vathsalashetty96/gitops-engine/pkg/sync/ignore"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 
-	appv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/util/lua"
+	appv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/util/lua"
 )
 
 // SetApplicationHealth updates the health statuses of all resources performed in the comparison
@@ -48,7 +48,7 @@ func ignoreLiveObjectHealth(liveObj *unstructured.Unstructured, resHealth appv1.
 			return true
 		}
 		gvk := liveObj.GroupVersionKind()
-		if gvk.Group == "argoproj.io" && gvk.Kind == "Application" && (resHealth.Status == health.HealthStatusMissing || resHealth.Status == health.HealthStatusUnknown) {
+		if gvk.Group == "vathsalashetty96.io" && gvk.Kind == "Application" && (resHealth.Status == health.HealthStatusMissing || resHealth.Status == health.HealthStatusUnknown) {
 			// Covers the app-of-apps corner case where child app is deployed but that app itself
 			// has a status of 'Missing', which we don't want to cause the parent's health status
 			// to also be Missing
