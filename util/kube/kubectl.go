@@ -3,10 +3,10 @@ package kube
 import (
 	"os"
 
-	"github.com/argoproj/argo-cd/util/log"
+	"github.com/vathsalashetty96/argo-cd/util/log"
 
-	"github.com/argoproj/gitops-engine/pkg/utils/kube"
-	"github.com/argoproj/gitops-engine/pkg/utils/tracing"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/kube"
+	"github.com/vathsalashetty96/gitops-engine/pkg/utils/tracing"
 	"github.com/sirupsen/logrus"
 )
 
