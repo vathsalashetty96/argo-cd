@@ -10,9 +10,9 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/argoproj/argo-cd/common"
-	appsv1 "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	certutil "github.com/argoproj/argo-cd/util/cert"
+	"github.com/vathsalashetty96/argo-cd/common"
+	appsv1 "github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	certutil "github.com/vathsalashetty96/argo-cd/util/cert"
 )
 
 // A struct representing an entry in the list of SSH known hosts.
