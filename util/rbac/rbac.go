@@ -8,9 +8,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/argoproj/argo-cd/util/assets"
-	"github.com/argoproj/argo-cd/util/glob"
-	jwtutil "github.com/argoproj/argo-cd/util/jwt"
+	"github.com/vathsalashetty96/argo-cd/util/assets"
+	"github.com/vathsalashetty96/argo-cd/util/glob"
+	jwtutil "github.com/vathsalashetty96/argo-cd/util/jwt"
 
 	"github.com/casbin/casbin"
 	"github.com/casbin/casbin/model"
