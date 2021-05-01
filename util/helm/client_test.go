@@ -7,7 +7,7 @@ import (
 	"github.com/Masterminds/semver"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/argoproj/argo-cd/util/io"
+	"github.com/vathsalashetty96/argo-cd/util/io"
 )
 
 func TestIndex(t *testing.T) {
@@ -17,13 +17,13 @@ func TestIndex(t *testing.T) {
 		assert.Error(t, err)
 	})
 	t.Run("Stable", func(t *testing.T) {
-		client := NewClient("https://argoproj.github.io/argo-helm", Creds{}, false)
+		client := NewClient("https://vathsalashetty96.github.io/argo-helm", Creds{}, false)
 		index, err := client.GetIndex()
 		assert.NoError(t, err)
 		assert.NotNil(t, index)
 	})
 	t.Run("BasicAuth", func(t *testing.T) {
-		client := NewClient("https://argoproj.github.io/argo-helm", Creds{
+		client := NewClient("https://vathsalashetty96.github.io/argo-helm", Creds{
 			Username: "my-password",
 			Password: "my-username",
 		}, false)
@@ -34,7 +34,7 @@ func TestIndex(t *testing.T) {
 }
 
 func Test_nativeHelmChart_ExtractChart(t *testing.T) {
-	client := NewClient("https://argoproj.github.io/argo-helm", Creds{}, false)
+	client := NewClient("https://vathsalashetty96.github.io/argo-helm", Creds{}, false)
 	path, closer, err := client.ExtractChart("argo-cd", semver.MustParse("0.7.1"))
 	assert.NoError(t, err)
 	defer io.Close(closer)
