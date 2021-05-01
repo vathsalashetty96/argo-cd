@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	util "github.com/argoproj/argo-cd/util/io"
+	util "github.com/vathsalashetty96/argo-cd/util/io"
 
 	"github.com/stretchr/testify/assert"
 )
