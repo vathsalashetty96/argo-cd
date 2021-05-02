@@ -8,7 +8,7 @@ import (
 
 	"github.com/go-openapi/loads"
 
-	"github.com/argoproj/argo-cd/util/assets"
+	"github.com/vathsalashetty96/argo-cd/util/assets"
 )
 
 func TestSwaggerUI(t *testing.T) {
