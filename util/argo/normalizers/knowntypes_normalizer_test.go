@@ -6,10 +6,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/argoproj/argo-cd/pkg/apis/application"
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
 
-	"github.com/argoproj/pkg/errors"
+	"github.com/vathsalashetty96/pkg/errors"
 	"github.com/ghodss/yaml"
 	"github.com/stretchr/testify/assert"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
@@ -153,7 +153,7 @@ spec:
          app: canary-demo
       spec:
         containers:
-        - image: argoproj/rollouts-demo:yellow
+        - image: vathsalashetty96/rollouts-demo:yellow
           name: canary-demo
           volumeMounts:
           - name: config-volume
