@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"time"
 
-	ioutil "github.com/argoproj/argo-cd/util/io"
+	ioutil "github.com/vathsalashetty96/argo-cd/util/io"
 
 	rediscache "github.com/go-redis/cache/v8"
 	"github.com/go-redis/redis/v8"
