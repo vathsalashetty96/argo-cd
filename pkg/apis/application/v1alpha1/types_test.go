@@ -21,7 +21,7 @@ func TestAppProject_IsSourcePermitted(t *testing.T) {
 	}{{
 		projSources: []string{"*"}, appSource: "https://github.com/vathsalashetty96/test.git", isPermitted: true,
 	}, {
-		projSources: []string{"https://githubvathsalashetty96.com/argoproj/test.git"}, appSource: "https://github.com/vathsalashetty96/test.git", isPermitted: true,
+		projSources: []string{"https://github.com/vathsalashetty96/test.git"}, appSource: "https://github.com/vathsalashetty96/test.git", isPermitted: true,
 	}, {
 		projSources: []string{"ssh://git@GITHUB.com:vathsalashetty96/test"}, appSource: "ssh://git@github.com:vathsalashetty96/test", isPermitted: true,
 	}, {
