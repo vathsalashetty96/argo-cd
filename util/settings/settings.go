@@ -26,14 +26,14 @@ import (
 	v1listers "k8s.io/client-go/listers/core/v1"
 	"k8s.io/client-go/tools/cache"
 
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/argoproj/argo-cd/server/settings/oidc"
-	"github.com/argoproj/argo-cd/util"
-	"github.com/argoproj/argo-cd/util/kube"
-	"github.com/argoproj/argo-cd/util/password"
-	argorand "github.com/argoproj/argo-cd/util/rand"
-	tlsutil "github.com/argoproj/argo-cd/util/tls"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	"github.com/vathsalashetty96/argo-cd/server/settings/oidc"
+	"github.com/vathsalashetty96/argo-cd/util"
+	"github.com/vathsalashetty96/argo-cd/util/kube"
+	"github.com/vathsalashetty96/argo-cd/util/password"
+	argorand "github.com/vathsalashetty96/argo-cd/util/rand"
+	tlsutil "github.com/vathsalashetty96/argo-cd/util/tls"
 )
 
 // ArgoCDSettings holds in-memory runtime configuration options.
