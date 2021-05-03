@@ -18,7 +18,7 @@ spec:
       serviceAccountName: argocd-dex-server
       initContainers:
       - name: copyutil
-        image: quay.io/argoproj/argocd:latest
+        image: quay.io/vathsalashetty96/argocd:latest
         imagePullPolicy: Always
         command: [cp, -n, /usr/local/bin/argocd-util, /shared]
         volumeMounts:
