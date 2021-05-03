@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/argoproj/argo-cd/util/errors"
+	"github.com/vathsalashetty96/argo-cd/util/errors"
 )
 
 type AddBinDirToPath struct {
