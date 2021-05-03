@@ -180,7 +180,7 @@ func newTestAppServer(objects ...runtime.Object) *Server {
 }
 
 const fakeApp = `
-apiVersion: argoproj.io/v1alpha1
+apiVersion: vathsalashetty96.io/v1alpha1
 kind: Application
 metadata:
   name: test-app
@@ -198,7 +198,7 @@ spec:
 `
 
 const fakeAppWithDestName = `
-apiVersion: argoproj.io/v1alpha1
+apiVersion: vathsalashetty96.io/v1alpha1
 kind: Application
 metadata:
   name: test-app
@@ -216,7 +216,7 @@ spec:
 `
 
 const fakeAppWithAnnotations = `
-apiVersion: argoproj.io/v1alpha1
+apiVersion: vathsalashetty96.io/v1alpha1
 kind: Application
 metadata:
   name: test-app
