@@ -114,7 +114,7 @@ FROM golang:1.14.12-buster as argocd-build
 
 COPY --from=builder /usr/local/bin/packr /usr/local/bin/packr
 
-WORKDIR /go/src/github.com/argoproj/argo-cd
+WORKDIR /go/src/github.com/vathsalashetty96/argo-cd
 
 COPY go.mod go.mod
 COPY go.sum go.sum
@@ -135,5 +135,5 @@ RUN if [ "$BUILD_ALL_CLIS" = "true" ] ; then \
 # Final image
 ####################################################################################################
 FROM argocd-base
-COPY --from=argocd-build /go/src/github.com/argoproj/argo-cd/dist/argocd* /usr/local/bin/
+COPY --from=argocd-build /go/src/github.com/vathsalashetty96/argo-cd/dist/argocd* /usr/local/bin/
 COPY --from=argocd-ui ./src/dist/app /shared/app
