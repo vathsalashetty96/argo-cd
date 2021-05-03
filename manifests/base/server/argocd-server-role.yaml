@@ -21,7 +21,7 @@ rules:
   - patch
   - delete
 - apiGroups:
-  - argoproj.io
+  - vathsalashetty96.io
   resources:
   - applications
   - appprojects
