@@ -3,7 +3,7 @@
 192.168.0.20
 argocd.example.com
 api.github.com/user
-cd.apps.argoproj.io
+cd.apps.vathsalashetty96.io
 docker-build
 docker-build:443
 git.example.com
@@ -14,7 +14,7 @@ github.com/argoproj/other-private-repo
 github.com/argoproj/private-repo
 github.com/otherproj/another-private-repo
 ksonnet.io
-raw.githubusercontent.com/argoproj/argo-cd
+raw.githubusercontent.com/vathsalashetty96/argo-cd
 repo.example.com
 repo.example.com:443
 server.example.com
