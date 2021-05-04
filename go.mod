@@ -89,7 +89,7 @@ require (
 	
 
 replace (
-	go mod edit -replace github.com/argoproj/gitops-engine=github.com/vathsalashetty96/gitops-engine v0.2.1-0.20210112204306-814d79df4954
+	github.com/argoproj/gitops-engine=github.com/vathsalashetty96/gitops-engine v0.2.1-0.20210112204306-814d79df4954
 	github.com/golang/protobuf => github.com/golang/protobuf v1.4.2
 	github.com/gorilla/websocket => github.com/gorilla/websocket v1.4.2
 	github.com/grpc-ecosystem/grpc-gateway => github.com/grpc-ecosystem/grpc-gateway v1.16.0
