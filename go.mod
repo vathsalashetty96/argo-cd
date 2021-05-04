@@ -86,6 +86,8 @@ require (
 	sigs.k8s.io/yaml v1.2.0
 )
 
+	go mod edit -replace github.com/argoproj/gitops-engine=github.com/vathsalashetty96/gitops-engine v0.2.1-0.20210112204306-814d79df4954
+
 replace (
 	github.com/golang/protobuf => github.com/golang/protobuf v1.4.2
 	github.com/gorilla/websocket => github.com/gorilla/websocket v1.4.2
