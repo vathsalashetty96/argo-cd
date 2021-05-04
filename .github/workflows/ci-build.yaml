@@ -31,7 +31,7 @@ jobs:
         uses: actions/setup-go@v1
         with:
           go-version: '1.14.12'
-     - name: Download all Go modules
+      - name: Download all Go modules
         run: |
           go mod download
       - name: Check for tidyness of go.mod and go.sum
