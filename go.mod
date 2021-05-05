@@ -1,6 +1,7 @@
 module github.com/vathsalashetty96/argo-cd
 
 go 1.14
+	replace github.com/argoproj/gitops-engine v0.2.1 => github.com/vathsalashetty96/gitops-engine v0.2.1
 
 require (
 	github.com/Masterminds/semver v1.5.0
