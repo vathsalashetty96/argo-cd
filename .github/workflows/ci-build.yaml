@@ -216,7 +216,7 @@ jobs:
       - name: Download & vendor dependencies
         run: |
           # We need to vendor go modules for codegen yet
-          go mod download
+          # go mod download
           go mod vendor -v
         working-directory: /home/runner/go/src/github.com/vathsalashetty96/argo-cd
       - name: Install toolchain for codegen
