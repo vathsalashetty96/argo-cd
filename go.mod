@@ -9,8 +9,7 @@ require (
 	github.com/alicebob/miniredis v2.5.0+incompatible
 	github.com/vathsalashetty96/gitops-engine v0.2.1-0.20210112204306-814d79df4954
 	github.com/vathsalashetty96/pkg v0.2.0
-	# github.com/vathsalashetty96/gitops-engine v0.0.0-20210505103630-c47463d588fe
-	# github.com/vathsalashetty96/pkg v0.0.0-20210506052158-4502d7bc67cd
+	
 	github.com/bombsimon/logrusr v1.0.0
 	github.com/casbin/casbin v1.9.1
 	github.com/chai2010/gettext-go v0.0.0-20170215093142-bf70f2a70fb1 // indirect
