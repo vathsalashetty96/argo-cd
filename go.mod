@@ -91,7 +91,7 @@ replace (
 	github.com/gorilla/websocket => github.com/gorilla/websocket v1.4.2
 	github.com/grpc-ecosystem/grpc-gateway => github.com/grpc-ecosystem/grpc-gateway v1.16.0
 	github.com/improbable-eng/grpc-web => github.com/improbable-eng/grpc-web v0.0.0-20181111100011-16092bd1d58a
-	# github.com/vathsalashetty96/gitops-engine v0.2.1-0.20210112204306-814d79df4956 => github.com/vathsalashetty96/gitops-engine v0.3.2-0.20210112204306-53bd2e495951
+	github.com/vathsalashetty96/gitops-engine => github.com/vathsalashetty96/gitops-engine v0.0.0-20210505103630-c47463d588fe
 	google.golang.org/grpc => google.golang.org/grpc v1.15.0
 
 	k8s.io/api => k8s.io/api v0.20.1
