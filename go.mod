@@ -7,7 +7,7 @@ require (
 	github.com/TomOnTime/utfutil v0.0.0-20180511104225-09c41003ee1d
 	github.com/alicebob/gopher-json v0.0.0-20180125190556-5a6b3ba71ee6 // indirect
 	github.com/alicebob/miniredis v2.5.0+incompatible
-	github.com/vathsalashetty96/gitops-engine v0.3.2
+	github.com/vathsalashetty96/gitops-engine v0.3.2.0-20210505103630-c47463d588fe
 	github.com/vathsalashetty96/pkg v0.2.0
 	
 	github.com/bombsimon/logrusr v1.0.0
