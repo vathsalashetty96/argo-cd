@@ -33,6 +33,8 @@ jobs:
           go-version: '1.14.12'
       - name: Download all Go modules
         run: |
+          go get github.com/vathsalashetty96/argo-cd/util@master
+          go list -m github.com/vathsalashetty96/argo-cd/util
           go mod download
       - name: Check for tidyness of go.mod and go.sum
         run: |
