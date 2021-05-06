@@ -7,8 +7,10 @@ require (
 	github.com/TomOnTime/utfutil v0.0.0-20180511104225-09c41003ee1d
 	github.com/alicebob/gopher-json v0.0.0-20180125190556-5a6b3ba71ee6 // indirect
 	github.com/alicebob/miniredis v2.5.0+incompatible
-	github.com/vathsalashetty96/gitops-engine v0.0.0-20210505103630-c47463d588fe
-	github.com/vathsalashetty96/pkg v0.0.0-20210506052158-4502d7bc67cd
+	github.com/vathsalashetty96/gitops-engine v0.2.1-0.20210112204306-814d79df4954
+	github.com/vathsalashetty96/pkg v0.2.0
+	# github.com/vathsalashetty96/gitops-engine v0.0.0-20210505103630-c47463d588fe
+	# github.com/vathsalashetty96/pkg v0.0.0-20210506052158-4502d7bc67cd
 	github.com/bombsimon/logrusr v1.0.0
 	github.com/casbin/casbin v1.9.1
 	github.com/chai2010/gettext-go v0.0.0-20170215093142-bf70f2a70fb1 // indirect
@@ -91,8 +93,8 @@ replace (
 	github.com/gorilla/websocket => github.com/gorilla/websocket v1.4.2
 	github.com/grpc-ecosystem/grpc-gateway => github.com/grpc-ecosystem/grpc-gateway v1.16.0
 	github.com/improbable-eng/grpc-web => github.com/improbable-eng/grpc-web v0.0.0-20181111100011-16092bd1d58a
-	github.com/vathsalashetty96/gitops-engine => github.com/vathsalashetty96/gitops-engine v0.0.0-20210505103630-c47463d588fe
-	github.com/vathsalashetty96/pkg => github.com/vathsalashetty96/pkg v0.0.0-20210506052158-4502d7bc67cd
+	# github.com/vathsalashetty96/gitops-engine => github.com/vathsalashetty96/gitops-engine v0.0.0-20210505103630-c47463d588fe
+	# github.com/vathsalashetty96/pkg => github.com/vathsalashetty96/pkg v0.0.0-20210506052158-4502d7bc67cd
 	google.golang.org/grpc => google.golang.org/grpc v1.15.0
 
 	k8s.io/api => k8s.io/api v0.20.1
