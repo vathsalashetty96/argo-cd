@@ -55,11 +55,11 @@ require (
 	// github.com/sirupsen/logrus v1.6.0
 	// github.com/skratchdot/open-golang v0.0.0-20160302144031-75fb7ed4208c
 	// github.com/soheilhy/cmux v0.1.4
-	github.com/spf13/cobra v1.1.1
-	github.com/spf13/pflag v1.0.5
-	github.com/stretchr/testify v1.6.1
-	github.com/undefinedlabs/go-mpatch v1.0.6
-	github.com/vmihailenco/msgpack/v5 v5.1.0 // indirect
+	// github.com/spf13/cobra v1.1.1
+	// github.com/spf13/pflag v1.0.5
+	// github.com/stretchr/testify v1.6.1
+	// github.com/undefinedlabs/go-mpatch v1.0.6
+	// github.com/vmihailenco/msgpack/v5 v5.1.0 // indirect
 	github.com/yuin/gopher-lua v0.0.0-20190115140932-732aa6820ec4
 	golang.org/x/crypto v0.0.0-20201002170205-7f63de1d35b0
 	golang.org/x/exp v0.0.0-20200821190819-94841d0725da // indirect
