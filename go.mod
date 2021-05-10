@@ -48,8 +48,8 @@ require (
 	github.com/mwitkow/go-conntrack v0.0.0-20190716064945-2f068394615f // indirect
 	// github.com/patrickmn/go-cache v2.1.0+incompatible
 	// github.com/pkg/errors v0.9.1
-	github.com/pquerna/cachecontrol v0.0.0-20180306154005-525d0eb5f91d // indirect
-	github.com/prometheus/client_golang v1.7.1
+	// github.com/pquerna/cachecontrol v0.0.0-20180306154005-525d0eb5f91d // indirect
+	// github.com/prometheus/client_golang v1.7.1
 	github.com/robfig/cron v1.1.0
 	github.com/rs/cors v1.6.0 // indirect
 	github.com/sirupsen/logrus v1.6.0
