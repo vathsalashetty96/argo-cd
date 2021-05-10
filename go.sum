@@ -88,8 +88,8 @@ github.com/anmitsu/go-shlex v0.0.0-20161002113705-648efa622239/go.mod h1:2FmKhYU
 github.com/antihax/optional v1.0.0/go.mod h1:uupD/76wgC+ih3iEmQUL+0Ugr19nfwCT1kdvxnR2qWY=
 github.com/vathsalashetty96/gitops-engine v0.3.1-0.20210505103630-c47463d588fe h1:CfllPGTBALxmaC4ACjDXOW4yGYlUR9IyFnSOZjaxAL8=
 github.com/vathsalashetty96/gitops-engine v0.3.1-0.20210505103630-c47463d588fe/go.mod h1:fiLGVlcqJT4DL2ZnNC7GCuyF+Nis5htDEWWb9Ky+yu8=
-github.com/vathsalashetty96/pkg v0.9.0 h1:hYt2gB9d+oouWEwnxf84XwYkpOJ06hv8RhjWS2n+8NE=
-github.com/vathsalashetty96/pkg v0.9.0/go.mod h1:ra+bQPmbVAoEL+gYSKesuigt4m49i3Qa3mE/xQcjCiA=
+github.com/vathsalashetty96/pkg v0.0.0-20210506052158-4502d7bc67cd h1:hYt2gB9d+oouWEwnxf84XwYkpOJ06hv8RhjWS2n+8NE=
+github.com/vathsalashetty96/pkg v0.0.0-20210506052158-4502d7bc67cd/go.mod h1:ra+bQPmbVAoEL+gYSKesuigt4m49i3Qa3mE/xQcjCiA=
 github.com/armon/circbuf v0.0.0-20150827004946-bbbad097214e/go.mod h1:3U/XgcO3hCbHZ8TKRvWD2dDTCfh9M9ya+I9JpbB7O8o=
 github.com/armon/consul-api v0.0.0-20180202201655-eb2c6b5be1b6/go.mod h1:grANhF5doyWs3UAsr3K4I6qtAmlQcZDesFNEHPZAzj8=
 github.com/armon/go-metrics v0.0.0-20180917152333-f0300d1749da/go.mod h1:Q73ZrmVTwzkszR9V5SSuryQ31EELlFMUz1kKyl939pY=
