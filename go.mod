@@ -92,6 +92,7 @@ replace (
 	github.com/grpc-ecosystem/grpc-gateway => github.com/grpc-ecosystem/grpc-gateway v1.16.0
 	github.com/improbable-eng/grpc-web => github.com/improbable-eng/grpc-web v0.0.0-20181111100011-16092bd1d58a
 	github.com/vathsalashetty96/pkg => github.com/vathsalashetty96/pkg v0.0.0-20210506052158-4502d7bc67cd
+	github.com/patrickmn/go-cache => github.com/patrickmn/go-cache v2.1.0
 	google.golang.org/grpc => google.golang.org/grpc v1.15.0
 
 	k8s.io/api => k8s.io/api v0.20.1
