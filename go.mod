@@ -94,7 +94,7 @@ replace (
 	github.com/gorilla/websocket => github.com/gorilla/websocket v1.4.2
 	github.com/grpc-ecosystem/grpc-gateway => github.com/grpc-ecosystem/grpc-gateway v1.16.0
 	github.com/improbable-eng/grpc-web => github.com/improbable-eng/grpc-web v0.0.0-20181111100011-16092bd1d58a
-	github.com/argoproj/pkg => github.com/vathsalashetty96/pkg v0.2.0 
+	github.com/argoproj/pkg => github.com/vathsalashetty96/pkg latest 
 	
 	google.golang.org/grpc => google.golang.org/grpc v1.15.0
 
