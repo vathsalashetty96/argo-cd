@@ -87,7 +87,7 @@ github.com/anmitsu/go-shlex v0.0.0-20161002113705-648efa622239 h1:kFOfPq6dUM1hTo
 github.com/anmitsu/go-shlex v0.0.0-20161002113705-648efa622239/go.mod h1:2FmKhYUyUczH0OGQWaF5ceTx0UBShxjsH6f8oGKYe2c=
 github.com/antihax/optional v1.0.0/go.mod h1:uupD/76wgC+ih3iEmQUL+0Ugr19nfwCT1kdvxnR2qWY=
 github.com/vathsalashetty96/gitops-engine v0.3.1-0.20210511094926-40fbd71a478f h1:CfllPGTBALxmaC4ACjDXOW4yGYlUR9IyFnSOZjaxAL8=
-github.com/vathsalashetty96/gitops-engine v0.3.1-0.20210511094926-40fbd71a478f/go.mod h1:fiLGVlcqJT4DL2ZnNC7GCuyF+Nis5htDEWWb9Ky+yu8=
+github.com/vathsalashetty96/gitops-engine v0.3.1-0.20210511094926-40fbd71a478f/go.mod h1:CfllPGTBALxmaC4ACjDXOW4yGYlUR9IyFnSOZjaxAL8=
 github.com/vathsalashetty96/pkg v0.9.1-0.20210511133136-8dca6acb180d h1:F4TZgInLUEjzsWFB/BTJBsewoEy0ucnKSq6vmQiD/yc=
 github.com/vathsalashetty96/pkg v0.9.1-0.20210511133136-8dca6acb180d/go.mod h1:PDg+0UWFUDE6W4c37S5OFum+Nm9cq6ab5se0+vSaGH4=
 github.com/armon/circbuf v0.0.0-20150827004946-bbbad097214e/go.mod h1:3U/XgcO3hCbHZ8TKRvWD2dDTCfh9M9ya+I9JpbB7O8o=
