@@ -24,10 +24,10 @@ ADD hack hack
 #RUN go mod tidy
 #RUN go mod vendor
 #RUN ./hack/update-openapi.sh
-RUN ./hack/generate-proto.sh
+#RUN ./hack/generate-proto.sh
 #RUN ./hack/update-codegen.sh
 #RUN go mod vendor
 #RUN ./hack/update-codegen.sh
-#RUN ./hack/update-manifests.sh
+RUN ./hack/update-manifests.sh
 #RUN ./hack/generate-proto.sh
 #RUN ./hack/update-openapi.sh
