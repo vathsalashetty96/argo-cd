@@ -34,6 +34,14 @@ go build -i -o dist/protoc-gen-gogo ./vendor/k8s.io/code-generator/cmd/go-to-pro
 PACKAGES=(
     github.com/vathsalashetty25/argo-cd/pkg/apis/application/v1alpha1
 )
+
+go get -d k8s.io/apimachinery/pkg/util/intstr
+go get -d k8s.io/apimachinery/pkg/api/resource
+go get -d k8s.io/apimachinery/pkg/runtime/schema
+go get -d k8s.io/apimachinery/pkg/runtime
+go get -d k8s.io/apimachinery/pkg/apis/meta/v1
+go get -d k8s.io/api/core/v1
+
 APIMACHINERY_PKGS=(
     +k8s.io/apimachinery/pkg/util/intstr
     +k8s.io/apimachinery/pkg/api/resource
