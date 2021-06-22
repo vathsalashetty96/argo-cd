@@ -33,7 +33,7 @@ RUN ./install.sh ksonnet-linux
 RUN ./install.sh helm2-linux
 RUN ./install.sh helm-linux
 RUN ./install.sh kustomize-linux
-
+RUN ./install.sh swagger-linux
 ####################################################################################################
 # Argo CD Base - used as the base for both the release and dev argocd images
 ####################################################################################################
@@ -94,7 +94,7 @@ FROM ppc64le/node:12.18.4-buster as argocd-ui
 WORKDIR /src
 ADD ["ui/package.json", "ui/yarn.lock", "./"]
 
-RUN yarn install
+RUN yarn install --network-timeout 600000
 
 ADD ["ui/", "."]
 
