@@ -9,8 +9,8 @@ RUN export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
 
-#COPY go.mod go.mod
-#COPY go.sum go.sum
+COPY go.mod go.mod
+COPY go.sum go.sum
 
 
 ADD hack/install.sh .
