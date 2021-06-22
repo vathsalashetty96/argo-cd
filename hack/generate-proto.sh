@@ -35,12 +35,6 @@ PACKAGES=(
     github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1
 )
 
-go get -d k8s.io/apimachinery/pkg/util/intstr
-go get -d k8s.io/apimachinery/pkg/api/resource
-go get -d k8s.io/apimachinery/pkg/runtime/schema
-go get -d k8s.io/apimachinery/pkg/runtime
-go get -d k8s.io/apimachinery/pkg/apis/meta/v1
-go get -d k8s.io/api/core/v1
 
 APIMACHINERY_PKGS=(
     +k8s.io/apimachinery/pkg/util/intstr
@@ -52,7 +46,7 @@ APIMACHINERY_PKGS=(
 )
 
 ${PROJECT_ROOT}/dist/go-to-protobuf \
-    --go-header-file=${PROJECT_ROOT}/hack/custom-boilerplate.go.txt \
+    --go-header-file=github.com/argoproj/argo-cd/hack/custom-boilerplate.go.txt \
     --packages=$(IFS=, ; echo "${PACKAGES[*]}") \
     --apimachinery-packages=$(IFS=, ; echo "${APIMACHINERY_PKGS[*]}") \
     --proto-import=./vendor
