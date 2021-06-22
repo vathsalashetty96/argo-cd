@@ -10,9 +10,9 @@ set -o nounset
 set -o pipefail
 
 # output tool versions
-protoc --version
-swagger version
-jq --version
+#protoc --version
+#swagger version
+#jq --version
 
 PROJECT_ROOT=$(cd $(dirname ${BASH_SOURCE})/..; pwd)
 CODEGEN_PKG=${CODEGEN_PKG:-$(cd ${PROJECT_ROOT}; ls -d -1 ./vendor/k8s.io/code-generator 2>/dev/null || echo ../code-generator)}
@@ -43,11 +43,7 @@ APIMACHINERY_PKGS=(
     k8s.io/api/core/v1
 )
 
-${PROJECT_ROOT}/dist/go-to-protobuf \
-    --go-header-file=${PROJECT_ROOT}/hack/custom-boilerplate.go.txt \
-    --packages=$(IFS=, ; echo "${PACKAGES[*]}") \
-    --apimachinery-packages=$(IFS=, ; echo "${APIMACHINERY_PKGS[*]}") \
-    --proto-import=./vendor
+
 
 # Either protoc-gen-go, protoc-gen-gofast, or protoc-gen-gogofast can be used to build
 # server/*/<service>.pb.go from .proto files. golang/protobuf and gogo/protobuf can be used
