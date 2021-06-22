@@ -21,6 +21,7 @@ set -o pipefail
 
 SCRIPT_ROOT=$(dirname ${BASH_SOURCE})/..
 . ${SCRIPT_ROOT}/hack/versions.sh
+go get -d k8s.io/code-generator
 CODEGEN_PKG=$GOPATH/pkg/mod/k8s.io/code-generator@${kube_version}
 TARGET_SCRIPT=/tmp/generate-groups.sh
 
