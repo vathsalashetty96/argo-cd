@@ -27,20 +27,20 @@ if [ "$IMAGE_TAG" = "" ]; then
   IMAGE_TAG=latest
 fi
 
-$KUSTOMIZE version
+#$KUSTOMIZE version
 
-cd ${SRCROOT}/manifests/base && $KUSTOMIZE edit set image quay.io/argoproj/argocd=${IMAGE_NAMESPACE}/argocd:${IMAGE_TAG}
-cd ${SRCROOT}/manifests/ha/base && $KUSTOMIZE edit set image quay.io/argoproj/argocd=${IMAGE_NAMESPACE}/argocd:${IMAGE_TAG}
+cd ${SRCROOT}/hack/manifests/base && $KUSTOMIZE edit set image quay.io/argoproj/argocd=${IMAGE_NAMESPACE}/argocd:${IMAGE_TAG}
+cd ${SRCROOT}/hack/manifests/ha/base && $KUSTOMIZE edit set image quay.io/argoproj/argocd=${IMAGE_NAMESPACE}/argocd:${IMAGE_TAG}
 
-echo "${AUTOGENMSG}" > "${SRCROOT}/manifests/install.yaml"
-$KUSTOMIZE build "${SRCROOT}/manifests/cluster-install" >> "${SRCROOT}/manifests/install.yaml"
+echo "${AUTOGENMSG}" > "${SRCROOT}/hack/manifests/install.yaml"
+$KUSTOMIZE build "${SRCROOT}/hack/manifests/cluster-install" >> "${SRCROOT}/hack/manifests/install.yaml"
 
-echo "${AUTOGENMSG}" > "${SRCROOT}/manifests/namespace-install.yaml"
-$KUSTOMIZE build "${SRCROOT}/manifests/namespace-install" >> "${SRCROOT}/manifests/namespace-install.yaml"
+echo "${AUTOGENMSG}" > "${SRCROOT}/hack/manifests/namespace-install.yaml"
+$KUSTOMIZE build "${SRCROOT}/hack/manifests/namespace-install" >> "${SRCROOT}/hack/manifests/namespace-install.yaml"
 
-echo "${AUTOGENMSG}" > "${SRCROOT}/manifests/ha/install.yaml"
-$KUSTOMIZE build "${SRCROOT}/manifests/ha/cluster-install" >> "${SRCROOT}/manifests/ha/install.yaml"
+echo "${AUTOGENMSG}" > "${SRCROOT}/hack/manifests/ha/install.yaml"
+$KUSTOMIZE build "${SRCROOT}/hack/manifests/ha/cluster-install" >> "${SRCROOT}/hack/manifests/ha/install.yaml"
 
-echo "${AUTOGENMSG}" > "${SRCROOT}/manifests/ha/namespace-install.yaml"
-$KUSTOMIZE build "${SRCROOT}/manifests/ha/namespace-install" >> "${SRCROOT}/manifests/ha/namespace-install.yaml"
+echo "${AUTOGENMSG}" > "${SRCROOT}/hack/manifests/ha/namespace-install.yaml"
+$KUSTOMIZE build "${SRCROOT}/hack/manifests/ha/namespace-install" >> "${SRCROOT}/hack/manifests/ha/namespace-install.yaml"
 
