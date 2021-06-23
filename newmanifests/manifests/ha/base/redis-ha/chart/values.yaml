@@ -1,0 +1,11 @@
+redis-ha:
+  persistentVolume:
+    enabled: false
+  redis:
+    masterGroupName: argocd
+    config:
+      save: "\"\""
+  haproxy:
+    enabled: true
+  image:
+    tag: 5.0.10-alpine
