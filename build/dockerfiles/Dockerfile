@@ -11,7 +11,7 @@ ADD hack/installers installers
 ADD hack/tool-versions.sh .
 ADD hack hack
 
-RUN go mod vendor
+#RUN go mod vendor
 #RUN ./hack/update-codegen.sh
 RUN ./hack/update-manifests.sh
 
