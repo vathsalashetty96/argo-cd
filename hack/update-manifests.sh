@@ -9,7 +9,7 @@ KUSTOMIZE=kustomize
 SRCROOT="$( CDPATH='' cd -- "$(dirname "$0")/.." && pwd -P )"
 AUTOGENMSG="# This is an auto-generated file. DO NOT EDIT"
 
-cd ${SRCROOT}/hack/installers && ./install-swagger-linux.sh
+cd ${SRCROOT}/manifests/base && ./kustomization.yaml
 
 IMAGE_NAMESPACE="${IMAGE_NAMESPACE:-quay.io/argoproj}"
 IMAGE_TAG="${IMAGE_TAG:-}"
