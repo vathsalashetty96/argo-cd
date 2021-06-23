@@ -11,8 +11,8 @@ AUTOGENMSG="# This is an auto-generated file. DO NOT EDIT"
 
 #cd ${SRCROOT}/hack/manifests/ha/base/redis-ha && ./generate.sh
 
-IMAGE_NAMESPACE="${IMAGE_NAMESPACE:-quay.io/argoproj}"
-IMAGE_TAG="${IMAGE_TAG:-}"
+IMAGE_NAMESPACE="${IMAGE_NAMESPACE:-docker.pkg.github.com/vathsalashetty25/repo-for-images/argocd}"
+IMAGE_TAG="${IMAGE_TAG:-1.9.0-c74c6979}"
 
 # if the tag has not been declared, and we are on a release branch, use the VERSION file.
 if [ "$IMAGE_TAG" = "" ]; then
