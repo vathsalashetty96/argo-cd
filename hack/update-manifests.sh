@@ -9,7 +9,7 @@ KUSTOMIZE=kustomize
 SRCROOT="$( CDPATH='' cd -- "$(dirname "$0")/.." && pwd -P )"
 AUTOGENMSG="# This is an auto-generated file. DO NOT EDIT"
 
-#cd ${SRCROOT}/hack/manifests/ha/base/redis-ha && ./generate.sh
+cd ${SRCROOT}/hack/manifests/ha/base/redis-ha && ./generate.sh
 
 IMAGE_NAMESPACE="${IMAGE_NAMESPACE:-docker.pkg.github.com/vathsalashetty25/repo-for-images/argocd}"
 IMAGE_TAG="${IMAGE_TAG:-1.9.0-c74c6979}"
@@ -27,7 +27,7 @@ if [ "$IMAGE_TAG" = "" ]; then
   IMAGE_TAG=latest
 fi
 
-#$KUSTOMIZE version
+$KUSTOMIZE version
 
 cd ${SRCROOT}/hack/manifests/base && $KUSTOMIZE edit set image quay.io/argoproj/argocd=${IMAGE_NAMESPACE}/argocd:${IMAGE_TAG}
 cd ${SRCROOT}/hack/manifests/ha/base && $KUSTOMIZE edit set image quay.io/argoproj/argocd=${IMAGE_NAMESPACE}/argocd:${IMAGE_TAG}
