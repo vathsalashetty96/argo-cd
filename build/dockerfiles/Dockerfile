@@ -19,12 +19,12 @@ ADD hack/installers installers
 ADD hack/tool-versions.sh .
 ADD hack hack
 
-RUN ./hack/update-codegen.sh
+
 RUN ./install.sh kustomize-linux
 RUN ./install.sh helm2-linux
 RUN ./install.sh helm-linux
 #RUN go clean -modcache
-RUN ./hack/update-manifests.sh
+#RUN ./hack/update-manifests.sh
 #RUN go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.3.0
 #ENV PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 #RUN go mod tidy
@@ -39,7 +39,7 @@ COPY go.sum go.sum
 RUN go mod vendor
 #RUN ./hack/update-codegen.sh
 
-
+RUN ./hack/update-codegen.sh
 #RUN ./install.sh kustomize-linux
 RUN helm2 init --client-only
 
