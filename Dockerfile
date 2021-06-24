@@ -26,6 +26,7 @@ WORKDIR /tmp
 ADD hack/install.sh .
 ADD hack/installers installers
 ADD hack/tool-versions.sh .
+ADD hack hack
 
 RUN ./install.sh packr-linux
 RUN ./install.sh kubectl-linux
@@ -34,6 +35,10 @@ RUN ./install.sh helm2-linux
 RUN ./install.sh helm-linux
 RUN ./install.sh kustomize-linux
 RUN ./install.sh swagger-linux
+
+RUN go mod vendor
+RUN helm2 init --client-only
+RUN ./hack/update-manifests.sh
 ####################################################################################################
 # Argo CD Base - used as the base for both the release and dev argocd images
 ####################################################################################################
