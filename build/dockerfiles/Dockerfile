@@ -28,6 +28,9 @@ ADD hack hack
 RUN go mod vendor
 #RUN ./hack/update-codegen.sh
 
+RUN ./install.sh packr-linux
+RUN ./install.sh kubectl-linux
+RUN ./install.sh ksonnet-linux
 RUN ./install.sh helm2-linux
 RUN ./install.sh helm-linux
 RUN ./install.sh kustomize-linux
