@@ -19,7 +19,7 @@ ADD hack/installers installers
 ADD hack/tool-versions.sh .
 ADD hack hack
 
-RUN ./hack/update-manifests.sh
+RUN ./hack/update-codegen.sh
 RUN ./install.sh kustomize-linux
 RUN ./install.sh helm2-linux
 RUN ./install.sh helm-linux
