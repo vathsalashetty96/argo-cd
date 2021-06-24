@@ -27,6 +27,9 @@ ADD hack hack
 #RUN ./hack/update-codegen.sh
 RUN go mod vendor
 #RUN ./hack/update-codegen.sh
+RUN ./install.sh helm2-linux
+RUN ./install.sh helm-linux
+RUN helm2 init --client-only
 RUN ./hack/update-manifests.sh
 #RUN ./hack/generate-proto.sh
 #RUN ./hack/update-openapi.sh
