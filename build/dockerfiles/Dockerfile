@@ -24,8 +24,7 @@ RUN apt-get update && apt-get install -y \
     
 WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
 
-COPY go.mod go.mod
-COPY go.sum go.sum
+
 
 
 ADD hack/install.sh .
