@@ -20,9 +20,9 @@ ADD hack/tool-versions.sh .
 ADD hack hack
 
 
-RUN ./install.sh kustomize-linux
-RUN ./install.sh helm2-linux
-RUN ./install.sh helm-linux
+#RUN ./install.sh kustomize-linux
+#RUN ./install.sh helm2-linux
+#RUN ./install.sh helm-linux
 #RUN go clean -modcache
 #RUN ./hack/update-manifests.sh
 #RUN go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.3.0
@@ -38,11 +38,11 @@ COPY go.sum go.sum
 
 RUN go mod vendor
 #RUN ./hack/update-codegen.sh
-
-RUN ./hack/update-codegen.sh
+RUN ./hack/generate-proto.sh
+#RUN ./hack/update-codegen.sh
 #RUN ./install.sh kustomize-linux
-RUN helm2 init --client-only
+#RUN helm2 init --client-only
 
-RUN ./hack/update-manifests.sh
+#RUN ./hack/update-manifests.sh
 #RUN ./hack/generate-proto.sh
 #RUN ./hack/update-openapi.sh
