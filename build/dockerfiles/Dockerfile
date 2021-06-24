@@ -26,8 +26,7 @@ WORKDIR /tmp
 
 
 
-COPY go.mod go.mod
-COPY go.sum go.sum
+
 
 ADD hack/install.sh .
 ADD hack/installers installers
@@ -42,6 +41,8 @@ RUN ./install.sh helm-linux
 RUN ./install.sh kustomize-linux
 RUN ./install.sh swagger-linux
 
+COPY go.mod go.mod
+COPY go.sum go.sum
 RUN go mod vendor
 RUN helm2 init --client-only
 
