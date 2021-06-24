@@ -43,12 +43,12 @@ ADD hack hack
 RUN go mod vendor
 #RUN ./hack/update-codegen.sh
 
-
+RUN ./install.sh kustomize-linux
 RUN ./install.sh helm2-linux
 RUN ./install.sh helm-linux
 #RUN ./install.sh kustomize-linux
 RUN helm2 init --client-only
-RUN ./install.sh kustomize-linux
+
 RUN ./hack/update-manifests.sh
 #RUN ./hack/generate-proto.sh
 #RUN ./hack/update-openapi.sh
