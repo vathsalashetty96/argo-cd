@@ -6,6 +6,21 @@ RUN golangci-lint --version
 RUN export GOPATH=$HOME/go
 RUN export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
+RUN echo 'deb http://deb.debian.org/debian buster-backports main' >> /etc/apt/sources.list
+
+RUN apt-get update && apt-get install -y \
+    openssh-server \
+    nginx \
+    fcgiwrap \
+    git \
+    git-lfs \
+    make \
+    wget \
+    gcc \
+    zip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    
 WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
 
 COPY go.mod go.mod
