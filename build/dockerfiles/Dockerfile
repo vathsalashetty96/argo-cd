@@ -1,11 +1,11 @@
 
-ARG BASE_IMAGE=ubuntu:20.10
-####################################################################################################
-# Builder image
-# Initial stage which pulls prepares build dependencies and CLI tooling we need for our final image
-# Also used as the image in CI jobs so needs all dependencie
-####################################################################################################
-FROM golang:1.14.12 as builder
+FROM golang@sha256:41cc61ae20fef3cbf18c315a82886100de9539da3ea05cb625d74100fd609e0b
+RUN go version
+RUN wget -O- -nv https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.40.1
+
+RUN golangci-lint --version
+RUN export GOPATH=$HOME/go
+RUN export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 RUN echo 'deb http://deb.debian.org/debian buster-backports main' >> /etc/apt/sources.list
 
@@ -21,11 +21,11 @@ RUN apt-get update && apt-get install -y \
     zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    
+WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
 
-WORKDIR /tmp
-
-
-
+COPY go.mod go.mod
+COPY go.sum go.sum
 
 
 ADD hack/install.sh .
@@ -33,19 +33,25 @@ ADD hack/installers installers
 ADD hack/tool-versions.sh .
 ADD hack hack
 
-RUN ./install.sh packr-linux
-RUN ./install.sh kubectl-linux
-RUN ./install.sh ksonnet-linux
+RUN ./install.sh kustomize-linux
 RUN ./install.sh helm2-linux
 RUN ./install.sh helm-linux
-RUN ./install.sh kustomize-linux
-RUN ./install.sh swagger-linux
-
-WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
-
-COPY go.mod go.mod
-COPY go.sum go.sum
+#RUN go clean -modcache
+#RUN ./hack/update-manifests.sh
+#RUN go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.3.0
+#ENV PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+#RUN go mod tidy
+#RUN go mod vendor
+#RUN ./hack/update-openapi.sh
+#RUN ./hack/generate-proto.sh
+#RUN ./hack/update-codegen.sh
 RUN go mod vendor
+#RUN ./hack/update-codegen.sh
+
+
+#RUN ./install.sh kustomize-linux
 RUN helm2 init --client-only
 
 RUN ./hack/update-manifests.sh
+#RUN ./hack/generate-proto.sh
+#RUN ./hack/update-openapi.sh
