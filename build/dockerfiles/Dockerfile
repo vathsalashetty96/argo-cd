@@ -44,6 +44,10 @@ RUN ./install.sh helm-linux
 #RUN ./hack/update-openapi.sh
 #RUN ./hack/generate-proto.sh
 #RUN ./hack/update-codegen.sh
+
+COPY go.mod go.mod
+COPY go.sum go.sum
+
 RUN go mod vendor
 #RUN ./hack/update-codegen.sh
 
