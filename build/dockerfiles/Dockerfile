@@ -24,9 +24,15 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /tmp
 
+
+
+COPY go.mod go.mod
+COPY go.sum go.sum
+
 ADD hack/install.sh .
 ADD hack/installers installers
 ADD hack/tool-versions.sh .
+ADD hack hack
 
 RUN ./install.sh packr-linux
 RUN ./install.sh kubectl-linux
@@ -35,3 +41,8 @@ RUN ./install.sh helm2-linux
 RUN ./install.sh helm-linux
 RUN ./install.sh kustomize-linux
 RUN ./install.sh swagger-linux
+
+RUN go mod vendor
+RUN helm2 init --client-only
+
+RUN ./hack/update-manifests.sh
