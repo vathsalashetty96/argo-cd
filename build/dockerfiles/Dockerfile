@@ -7,20 +7,7 @@ RUN golangci-lint --version
 RUN export GOPATH=$HOME/go
 RUN export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
-RUN echo 'deb http://deb.debian.org/debian buster-backports main' >> /etc/apt/sources.list
 
-RUN apt-get update && apt-get install -y \
-    openssh-server \
-    nginx \
-    fcgiwrap \
-    git \
-    git-lfs \
-    make \
-    wget \
-    gcc \
-    zip && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
     
 WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
 
@@ -32,11 +19,12 @@ ADD hack/installers installers
 ADD hack/tool-versions.sh .
 ADD hack hack
 
+RUN ./hack/update-manifests.sh
 RUN ./install.sh kustomize-linux
 RUN ./install.sh helm2-linux
 RUN ./install.sh helm-linux
 #RUN go clean -modcache
-#RUN ./hack/update-manifests.sh
+RUN ./hack/update-manifests.sh
 #RUN go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.3.0
 #ENV PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 #RUN go mod tidy
