@@ -41,6 +41,8 @@ RUN ./install.sh helm-linux
 RUN ./install.sh kustomize-linux
 RUN ./install.sh swagger-linux
 
+WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
+
 COPY go.mod go.mod
 COPY go.sum go.sum
 RUN go mod vendor
