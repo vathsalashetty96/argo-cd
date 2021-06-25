@@ -6,7 +6,7 @@ export BIN=${BIN:-/usr/local/bin}
 
 mkdir -p $DOWNLOADS
 
-ARCHITECTURE=""
+ARCHITECTURE="ppc64le"
 case $(uname -m) in
     ppc64le)                     ARCHITECTURE="ppc64le" ;
 esac
