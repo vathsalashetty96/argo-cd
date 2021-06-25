@@ -8,7 +8,7 @@ RUN export GOPATH=$HOME/go
 RUN export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 RUN set -x
 RUN export GOPATH=$(go env GOPATH)
-RUN git checkout -- go.mod go.sum
+#RUN git checkout -- go.mod go.sum
   
 
     
