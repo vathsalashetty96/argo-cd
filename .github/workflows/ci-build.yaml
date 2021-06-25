@@ -13,7 +13,7 @@ on:
 
 
   codegen:
-    name: Check changes to generated code
+    name: Check changes to generated codes
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
