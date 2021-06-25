@@ -6,7 +6,7 @@ RUN wget -O- -nv https://raw.githubusercontent.com/golangci/golangci-lint/master
 RUN golangci-lint --version
 RUN export GOPATH=$HOME/go
 RUN export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-
+RUN export GO111MODULE=off
 
     
 WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
