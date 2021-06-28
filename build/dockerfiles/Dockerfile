@@ -7,7 +7,7 @@ RUN export GOPATH=$HOME/go
 RUN export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 
-WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
+WORKDIR /go/src/github.com/vathsalashetty96/argo-cd
 
 COPY go.mod go.mod
 COPY go.sum go.sum
