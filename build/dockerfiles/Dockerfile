@@ -11,7 +11,18 @@ RUN set -x
 RUN export GOPATH=$(go env GOPATH)
 #RUN git checkout -- go.mod go.sum
   
-
+RUN apt-get update && apt-get install -y \
+    openssh-server \
+    nginx \
+    fcgiwrap \
+    git \
+    git-lfs \
+    make \
+    wget \
+    gcc \
+    zip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
     
 WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
 
