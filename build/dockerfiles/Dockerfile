@@ -23,7 +23,9 @@ ADD hack/installers installers
 ADD hack/tool-versions.sh .
 ADD hack hack
 
-
+RUN ./install.sh protoc-linux
+RUN ./install.sh swagger-linux
+RUN ./install.sh jq-linux
 #RUN ./install.sh kustomize-linux
 #RUN ./install.sh helm2-linux
 #RUN ./install.sh helm-linux
