@@ -21,7 +21,7 @@ MOD_ROOT=${GOPATH}/pkg/mod
 
 . ${PROJECT_ROOT}/hack/versions.sh
 
-export GO111MODULE=on
+export GO111MODULE=off
 
 # protobuf tooling required to build .proto files from go annotations from k8s-like api types
 go build -i -o dist/go-to-protobuf ./vendor/k8s.io/code-generator/cmd/go-to-protobuf
