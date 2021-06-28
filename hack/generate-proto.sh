@@ -63,8 +63,8 @@ ${PROJECT_ROOT}/dist/go-to-protobuf \
 #GOPROTOBINARY=gofast
 # 3. protoc-gen-gogofast - faster code generation and gogo extensions and flexibility in controlling
 # the generated go code (e.g. customizing field names, nullable fields)
-#go build -i -o dist/protoc-gen-gogofast ./vendor/github.com/gogo/protobuf/protoc-gen-gogofast
-#GOPROTOBINARY=gogofast
+go build -i -o dist/protoc-gen-gogofast ./vendor/github.com/gogo/protobuf/protoc-gen-gogofast
+GOPROTOBINARY=gogofast
 
 # protoc-gen-grpc-gateway is used to build <service>.pb.gw.go files from from .proto files
 go build -i -o dist/protoc-gen-grpc-gateway ./vendor/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
