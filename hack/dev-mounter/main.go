@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/vathsalashetty96/pkg/errors"
+	//"github.com/vathsalashetty96/pkg/errors"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	v1 "k8s.io/api/core/v1"
