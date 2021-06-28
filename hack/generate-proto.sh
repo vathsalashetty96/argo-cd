@@ -18,7 +18,7 @@ PROJECT_ROOT=$(cd $(dirname ${BASH_SOURCE})/..; pwd)
 CODEGEN_PKG=${CODEGEN_PKG:-$(cd ${PROJECT_ROOT}; ls -d -1 ./vendor/k8s.io/code-generator 2>/dev/null || echo ../code-generator)}
 PATH="${PROJECT_ROOT}/dist:${PATH}"
 MOD_ROOT=${GOPATH}/pkg/mod
-
+. ${PROJECT_ROOT}/hack/tool-versions.sh
 . ${PROJECT_ROOT}/hack/versions.sh
 
 export GO111MODULE=off
