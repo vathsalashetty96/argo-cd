@@ -37,7 +37,7 @@ PACKAGES=(
 
 
 APIMACHINERY_PKGS=(
-    #+k8s.io/apimachinery/pkg/util/intstr
+    +k8s.io/apimachinery/pkg/util/intstr
     +k8s.io/apimachinery/pkg/api/resource
     +k8s.io/apimachinery/pkg/runtime/schema
     +k8s.io/apimachinery/pkg/runtime
