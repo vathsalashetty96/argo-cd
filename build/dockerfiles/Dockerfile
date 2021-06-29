@@ -1,5 +1,5 @@
 
-FROM golang@sha256:41cc61ae20fef3cbf18c315a82886100de9539da3ea05cb625d74100fd609e0b
+FROM golang@sha256:1f13bbbe77d79c5d1f6417f9e49365cd3c381520c79f21255fe8479809f01f84
 RUN go version
 RUN wget -O- -nv https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.40.1
 
