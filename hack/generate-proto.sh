@@ -32,7 +32,7 @@ go build -i -o dist/protoc-gen-gogo ./vendor/k8s.io/code-generator/cmd/go-to-pro
 # --apimachinery-packages= option so that go-to-protobuf can locate the types, but prefixed with a
 # '-' so that go-to-protobuf will not generate .proto files for it.
 PACKAGES=(
-    github.com/vathsalashetty25/argo-cd/pkg/apis/application/v1alpha1
+    github.com/vathsalashetty25/argo-cd/hack/pkg/apis/application/v1alpha1
 )
 
 
@@ -48,7 +48,7 @@ APIMACHINERY_PKGS=(
 ${PROJECT_ROOT}/dist/go-to-protobuf \
     --go-header-file=${PROJECT_ROOT}/hack/custom-boilerplate.go.txt \
     --packages=$(IFS=, ; echo "${PACKAGES[*]}") \
-    --apimachinery-packages=$(IFS=, ;"${APIMACHINERY_PKGS[*]}") \
+    --apimachinery-packages=$(IFS=, ; echo "${APIMACHINERY_PKGS[*]}") \
     --proto-import=./vendor
 
 
