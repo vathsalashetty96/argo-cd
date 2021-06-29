@@ -8,7 +8,7 @@ COPY go.mod go.mod
 COPY go.sum go.sum
 
 RUN go mod download
-
+RUN go mod vendor -v
 # Perform the build
 COPY . .
 RUN make cli-local server controller repo-server argocd-util
