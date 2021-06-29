@@ -52,7 +52,7 @@ RUN ./install.sh jq-linux
 COPY go.mod go.mod
 COPY go.sum go.sum
 RUN go mod download
-#RUN go mod vendor 
+RUN go mod vendor 
 #RUN ./hack/update-codegen.sh
 RUN ./hack/generate-proto.sh
 #RUN ./hack/update-codegen.sh
