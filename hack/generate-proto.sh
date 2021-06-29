@@ -15,7 +15,6 @@ swagger version
 jq --version
 
 PROJECT_ROOT=$(cd $(dirname ${BASH_SOURCE})/..; pwd)
-go get -d k8s.io/code-generator
 CODEGEN_PKG=${CODEGEN_PKG:-$(cd ${PROJECT_ROOT}; ls -d -1 ./vendor/k8s.io/code-generator 2>/dev/null || echo ../code-generator)}
 PATH="${PROJECT_ROOT}/dist:${PATH}"
 MOD_ROOT=${GOPATH}/pkg/mod
@@ -49,7 +48,7 @@ APIMACHINERY_PKGS=(
 ${PROJECT_ROOT}/dist/go-to-protobuf \
     --go-header-file=${PROJECT_ROOT}/hack/custom-boilerplate.go.txt \
     --packages=$(IFS=, ; echo "${PACKAGES[*]}") \
-    --apimachinery-packages=$(IFS=, ; echo "${APIMACHINERY_PKGS[*]}") \
+    --apimachinery-packages=$(IFS=, ;"${APIMACHINERY_PKGS[*]}") \
     --proto-import=./vendor
 
 
