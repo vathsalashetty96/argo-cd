@@ -13,7 +13,6 @@ RUN go mod download
 COPY . .
 RUN make cli-local server controller repo-server argocd-util
 
-RUN go mod vendor
 
 ARG BUILD_ALL_CLIS=true
 RUN if [ "$BUILD_ALL_CLIS" = "true" ] ; then \
@@ -22,7 +21,18 @@ RUN if [ "$BUILD_ALL_CLIS" = "true" ] ; then \
     ; fi
 
 
-
+RUN apt-get update && apt-get install -y \
+    openssh-server \
+    nginx \
+    fcgiwrap \
+    git \
+    git-lfs \
+    make \
+    wget \
+    gcc \
+    zip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ADD hack/install.sh .
 ADD hack/installers installers
