@@ -60,11 +60,11 @@ COPY go.sum go.sum
 #RUN go mod download
 RUN go mod vendor 
 #RUN ./hack/update-codegen.sh
-RUN ./hack/generate-proto.sh
+#RUN ./hack/generate-proto.sh
 #RUN ./hack/update-codegen.sh
 #RUN ./install.sh kustomize-linux
 #RUN helm2 init --client-only
 
 #RUN ./hack/update-manifests.sh
 #RUN ./hack/generate-proto.sh
-#RUN ./hack/update-openapi.sh
+RUN ./hack/update-openapi.sh
