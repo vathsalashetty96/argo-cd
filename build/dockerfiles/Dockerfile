@@ -1,29 +1,23 @@
+FROM golang:1.14.12-buster as argocd-build
 
+COPY --from=builder /usr/local/bin/packr /usr/local/bin/packr
 
-ARG BASE_IMAGE=ubuntu:20.10
-####################################################################################################
-# Builder image
-# Initial stage which pulls prepares build dependencies and CLI tooling we need for our final image
-# Also used as the image in CI jobs so needs all dependencie
-####################################################################################################
-FROM golang:1.14.12 as builder
+WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
 
-RUN echo 'deb http://deb.debian.org/debian buster-backports main' >> /etc/apt/sources.list
+COPY go.mod go.mod
+COPY go.sum go.sum
 
-RUN apt-get update && apt-get install -y \
-    openssh-server \
-    nginx \
-    fcgiwrap \
-    git \
-    git-lfs \
-    make \
-    wget \
-    gcc \
-    zip && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-    
-    WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
+RUN go mod download
+
+# Perform the build
+COPY . .
+RUN make cli-local server controller repo-server argocd-util
+
+ARG BUILD_ALL_CLIS=true
+RUN if [ "$BUILD_ALL_CLIS" = "true" ] ; then \
+    make CLI_NAME=argocd-linux-ppc64le GOOS=linux cli-local && \
+    make CLI_NAME=argocd-linux-ppc64le.exe GOOS=linux cli-local \
+    ; fi
 
 
 
