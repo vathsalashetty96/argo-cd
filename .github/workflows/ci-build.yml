@@ -28,9 +28,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Setup Golang
-        uses: actions/setup-go@v1
-        with:
-          go-version: '1.14.12'
+        run: |
+          wget https://dl.google.com/go/go1.14.12.linux-ppc64le.tar.gz
+
+          tar -C /usr/local -xf go1.14.12.linux-ppc64le.tar.gz
       - name: Download all Go modules
         run: |
           go mod download
