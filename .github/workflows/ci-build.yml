@@ -30,7 +30,7 @@ jobs:
       - name: Setup Golang
         run: |
           wget https://dl.google.com/go/go1.14.12.linux-ppc64le.tar.gz
-
+          go version
       - name: Download all Go modules
         run: |
           go mod download
