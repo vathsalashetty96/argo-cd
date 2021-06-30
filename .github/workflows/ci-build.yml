@@ -29,9 +29,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Golang
         run: |
-          wget https://dl.google.com/go/go1.14.12.linux-ppc64le.tar.gz
-
-          tar -C /usr/local -xf go1.14.12.linux-ppc64le.tar.gz
+          golang@sha256:1f13bbbe77d79c5d1f6417f9e49365cd3c381520c79f21255fe8479809f01f84
       - name: Download all Go modules
         run: |
           go mod download
