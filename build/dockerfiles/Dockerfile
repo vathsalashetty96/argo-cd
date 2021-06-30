@@ -1,14 +1,24 @@
-FROM golang@sha256:1f13bbbe77d79c5d1f6417f9e49365cd3c381520c79f21255fe8479809f01f84
-RUN go version
-RUN wget -O- -nv https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.40.1
+FROM golang:1.14.12-buster as argocd-build
 
-RUN golangci-lint --version
-RUN export GOPATH=$HOME/go
-RUN export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-RUN set -x
+COPY --from=builder /usr/local/bin/packr /usr/local/bin/packr
 
-RUN export GOPATH=$(go env GOPATH)
-#RUN git checkout -- go.mod go.sum
+WORKDIR /go/src/github.com/argoproj/argo-cd
+
+COPY go.mod go.mod
+COPY go.sum go.sum
+
+RUN go mod download
+
+# Perform the build
+COPY . .
+RUN make cli-local server controller repo-server argocd-util
+
+ARG BUILD_ALL_CLIS=true
+RUN if [ "$BUILD_ALL_CLIS" = "true" ] ; then \
+    make CLI_NAME=argocd-linux-ppc64le GOOS=linux cli-local && \
+    make CLI_NAME=argocd-linux-ppc64le.exe GOOS=linux cli-local \
+    ; fi
+
   
 RUN apt-get update && apt-get install -y \
     openssh-server \
