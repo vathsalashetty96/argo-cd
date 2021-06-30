@@ -1,10 +1,6 @@
 FROM golang:1.14.12-buster as argocd-build
 
 
-COPY go.mod go.mod
-COPY go.sum go.sum
-
-RUN go mod download
 
 # Perform the build
 COPY . .
