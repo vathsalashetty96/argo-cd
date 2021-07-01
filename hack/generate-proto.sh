@@ -32,7 +32,7 @@ go build -i -o dist/protoc-gen-gogo ./vendor/k8s.io/code-generator/cmd/go-to-pro
 # --apimachinery-packages= option so that go-to-protobuf can locate the types, but prefixed with a
 # '-' so that go-to-protobuf will not generate .proto files for it.
 PACKAGES=(
-    github.com/vathsalashetty25/argo-cd/hack/pkg/apis/application/v1alpha1
+    github.com/argoproj/argo-cd/hack/pkg/apis/application/v1alpha1
 )
 
 
