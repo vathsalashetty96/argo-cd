@@ -33,7 +33,8 @@ RUN apt-get update && apt-get install -y \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
     
 WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
-
+RUN mkdir -p ~/go/src/github.com/vathsalashetty25
+RUN cp -a ../argo-cd ~/go/src/github.com/vathsalashetty25
 
 COPY go.mod go.mod
 COPY go.sum go.sum
