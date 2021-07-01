@@ -38,7 +38,6 @@ WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
 COPY go.mod go.mod
 COPY go.sum go.sum
 RUN go mod download
- 
 
 ADD hack/install.sh .
 ADD hack/installers installers
@@ -62,6 +61,10 @@ RUN ./install.sh jq-linux
 #RUN ./hack/update-codegen.sh
 
 RUN go mod vendor
+
+RUN set -x
+RUN export GOPATH=$(go env GOPATH)
+RUN export GO111MODULE=off
 #RUN ./hack/update-codegen.sh
 RUN ./hack/generate-proto.sh
 #RUN ./hack/update-codegen.sh
