@@ -1,8 +1,7 @@
 FROM golang:1.14.12-buster as argocd-build
 
 WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
-RUN export GOPATH=$HOME/go
-RUN export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
 
 COPY go.mod go.mod
 COPY go.sum go.sum
