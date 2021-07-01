@@ -24,6 +24,42 @@ jobs:
       -
         name: Available platforms
         run: echo ${{ steps.buildx.outputs.platforms }}
+       
+   
+      - name: Create checkout directory
+        run: mkdir -p ~/go/src/github.com/argo-cd
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Create symlink in GOPATH
+        run: ln -s $(pwd) ~/go/src/github.com/vathsalashetty25/argo-cd
+      - name: Setup Golang
+        uses: actions/setup-go@v1
+        with:
+          go-version: '1.14.12'
+      - uses: crazy-max/ghaction-docker-buildx@v3.2.0
+        with:
+          buildx-version: v0.4.1
+      - name: Install required packages
+        run: |
+          sudo apt-get install git -y
+      - name: Switch to temporal branch so we re-attach head
+        run: |
+          git switch -c temporal-pr-branch
+          git status
+      - name: Fetch complete history for blame information
+        run: |
+          git fetch --prune --no-tags --depth=1 origin +refs/heads/*:refs/remotes/origin/*
+      - name: Add ~/go/bin to PATH
+        run: |
+          echo "/home/runner/go/bin" >> $GITHUB_PATH
+      - name: Add /usr/local/bin to PATH
+        run: |
+          echo "/usr/local/bin" >> $GITHUB_PATH
+      - name: Restore go build cache
+        uses: actions/cache@v1
+        with:
+          path: ~/.cache/go-build
+          key: ${{ runner.os }}-go-build-v1-${{ github.run_id }}
       -
         name: Run Buildx
         run: |
