@@ -62,11 +62,11 @@ RUN ./install.sh jq-linux
 #RUN ./hack/generate-proto.sh
 #RUN ./hack/update-codegen.sh
 
-RUN go mod vendor
+RUN go mod vendor -v
 
-RUN set -x
-RUN export GOPATH=$(go env GOPATH)
-RUN export GO111MODULE=off
+#RUN set -x
+#RUN export GOPATH=$(go env GOPATH)
+#RUN export GO111MODULE=off
 #RUN ./hack/update-codegen.sh
 RUN ./hack/generate-proto.sh
 #RUN ./hack/update-codegen.sh
