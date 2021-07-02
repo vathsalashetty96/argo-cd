@@ -47,7 +47,7 @@ APIMACHINERY_PKGS=(
 
 ${PROJECT_ROOT}/dist/go-to-protobuf \
     --go-header-file=${PROJECT_ROOT}/hack/custom-boilerplate.go.txt \
-    --packages ${PROJECT_ROOT}/pkg/apis/application/v1alpha1 \
+    --packages github.com/vathsalashetty25/argo-cd/pkg/apis/application/v1alpha1 \
     --apimachinery-packages=$(IFS=, ; echo "${APIMACHINERY_PKGS[*]}") \
     --proto-import=./vendor
 
