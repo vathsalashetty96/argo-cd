@@ -33,8 +33,7 @@ RUN apt-get update && apt-get install -y \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
     
 WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
-RUN mkdir -p ~/go/src/github.com/vathsalashetty25
-RUN cp -a ../argo-cd ~/go/src/github.com/vathsalashetty25
+
 
 COPY go.mod go.mod
 COPY go.sum go.sum
@@ -61,9 +60,9 @@ RUN ./install.sh jq-linux
 #RUN ./hack/generate-proto.sh
 #RUN ./hack/update-codegen.sh
 
-RUN go mod vendor -v
+RUN go mod vendor 
 
-WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
+
 #RUN set -x
 #RUN export GOPATH=$(go env GOPATH)
 #RUN export GO111MODULE=off
