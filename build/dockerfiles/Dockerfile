@@ -6,8 +6,6 @@ WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
 COPY go.mod go.mod
 COPY go.sum go.sum
 
-RUN which goimports
-
 RUN go mod download
 
 # Perform the build
