@@ -64,6 +64,7 @@ RUN ./install.sh jq-linux
 
 RUN go mod vendor -v
 
+WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
 #RUN set -x
 #RUN export GOPATH=$(go env GOPATH)
 #RUN export GO111MODULE=off
