@@ -17,4 +17,5 @@ go build -o dist/openapi-gen ${CODEGEN_PKG}/cmd/openapi-gen
   --report-filename pkg/apis/api-rules/violation_exceptions.list \
   $@
 
-
+go build -o ./dist/gen-crd-spec github.com/argoproj/argo-cd/hack/gen-crd-spec
+./dist/gen-crd-spec
