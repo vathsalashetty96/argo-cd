@@ -1,7 +1,7 @@
 set -x
 set -o errexit
 set -o nounset
-#set -o pipefail
+set -o pipefail
 
 PROJECT_ROOT=$(cd $(dirname "$0")/.. ; pwd)
 CODEGEN_PKG=${PROJECT_ROOT}/vendor/k8s.io/kube-openapi
