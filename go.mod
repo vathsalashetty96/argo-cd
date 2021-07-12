@@ -1,14 +1,14 @@
 module github.com/vathsalashetty96/argo-cd
 
 go 1.14
-
+	
 require (
 	github.com/Masterminds/semver v1.5.0
 	github.com/TomOnTime/utfutil v0.0.0-20180511104225-09c41003ee1d
 	github.com/alicebob/gopher-json v0.0.0-20180125190556-5a6b3ba71ee6 // indirect
 	github.com/alicebob/miniredis v2.5.0+incompatible
-	github.com/vathsalashetty96/gitops-engine v0.3.1-0.20210504080653-6ef35e59bc86
-	github.com/vathsalashetty96/pkg v0.9.1-0.20210512104426-3e7833365023
+	github.com/vathsalashetty96/gitops-engine v0.3.1-0.20210511094926-40fbd71a478f
+	github.com/vathsalashetty96/pkg v0.9.1-0.20210511133136-8dca6acb180d
 	github.com/bombsimon/logrusr v1.0.0
 	github.com/casbin/casbin v1.9.1
 	github.com/chai2010/gettext-go v0.0.0-20170215093142-bf70f2a70fb1 // indirect
@@ -19,7 +19,7 @@ require (
 	github.com/evanphx/json-patch v4.9.0+incompatible
 	github.com/fsnotify/fsnotify v1.4.9
 	github.com/ghodss/yaml v1.0.0
-	github.com/go-logr/logr v0.3.0
+	github.com/go-logr/logr v0.4.0
 	github.com/go-openapi/loads v0.19.4
 	github.com/go-openapi/runtime v0.19.4
 	github.com/go-openapi/spec v0.19.3
@@ -46,7 +46,7 @@ require (
 	github.com/mattn/go-isatty v0.0.11
 	github.com/moby/term v0.0.0-20201110203204-bea5bbe245bf // indirect
 	github.com/mwitkow/go-conntrack v0.0.0-20190716064945-2f068394615f // indirect
-	github.com/patrickmn/go-cache v2.1.0+incompatible
+        github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/pkg/errors v0.9.1
 	github.com/pquerna/cachecontrol v0.0.0-20180306154005-525d0eb5f91d // indirect
 	github.com/prometheus/client_golang v1.7.1
@@ -56,6 +56,7 @@ require (
 	github.com/skratchdot/open-golang v0.0.0-20160302144031-75fb7ed4208c
 	github.com/soheilhy/cmux v0.1.4
 	github.com/spf13/cobra v1.1.1
+        github.com/spf13/cobra v1.1.3
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.6.1
 	github.com/undefinedlabs/go-mpatch v1.0.6
@@ -83,7 +84,7 @@ require (
 	k8s.io/kubernetes v1.20.1
 	k8s.io/utils v0.0.0-20201110183641-67b214c5f920
 	layeh.com/gopher-json v0.0.0-20190114024228-97fed8db8427
-	sigs.k8s.io/yaml v1.2.0
+	sigs.k8s.io/yaml v1.2.0 
 )
 
 replace (
@@ -91,7 +92,8 @@ replace (
 	github.com/gorilla/websocket => github.com/gorilla/websocket v1.4.2
 	github.com/grpc-ecosystem/grpc-gateway => github.com/grpc-ecosystem/grpc-gateway v1.16.0
 	github.com/improbable-eng/grpc-web => github.com/improbable-eng/grpc-web v0.0.0-20181111100011-16092bd1d58a
-
+	
+	
 	google.golang.org/grpc => google.golang.org/grpc v1.15.0
 
 	k8s.io/api => k8s.io/api v0.20.1
