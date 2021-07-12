@@ -1,16 +1,39 @@
-FROM golang@sha256:41cc61ae20fef3cbf18c315a82886100de9539da3ea05cb625d74100fd609e0b
-RUN go version
-RUN wget -O- -nv https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.40.1
+FROM golang:1.14.12-buster as argocd-build
 
-RUN golangci-lint --version
-RUN export GOPATH=$HOME/go
-RUN export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-
-
-WORKDIR /go/src/github.com/vathsalashetty96/argo-cd
+WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
+RUN go get golang.org/x/tools/cmd/goimports
 
 COPY go.mod go.mod
 COPY go.sum go.sum
+
+RUN go mod download
+
+# Perform the build
+COPY . .
+RUN make cli-local server controller repo-server argocd-util
+
+ARG BUILD_ALL_CLIS=true
+RUN if [ "$BUILD_ALL_CLIS" = "true" ] ; then \
+    make CLI_NAME=argocd-linux-ppc64le GOOS=linux cli-local && \
+    make CLI_NAME=argocd-linux-ppc64le.exe GOOS=linux cli-local \
+    ; fi
+
+  
+RUN apt-get update && apt-get install -y \
+    openssh-server \
+    nginx \
+    fcgiwrap \
+    git \
+    git-lfs \
+    make \
+    wget \
+    gcc \
+    zip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    
+WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
+
 
 
 
@@ -18,6 +41,7 @@ ADD hack/install.sh .
 ADD hack/installers installers
 ADD hack/tool-versions.sh .
 ADD hack hack
+
 #RUN go clean -modcache
 
 #RUN go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.3.0
