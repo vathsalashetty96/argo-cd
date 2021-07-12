@@ -1,6 +1,6 @@
 FROM golang:1.14.12-buster as argocd-build
 
-WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
+WORKDIR /go/src/github.com/vathsalashetty96/argo-cd
 RUN go get golang.org/x/tools/cmd/goimports
 
 COPY go.mod go.mod
@@ -32,7 +32,7 @@ RUN apt-get update && apt-get install -y \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
     
-WORKDIR /go/src/github.com/vathsalashetty25/argo-cd
+WORKDIR /go/src/github.com/vathsalashetty96/argo-cd
 
 
 
