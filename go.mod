@@ -22,13 +22,13 @@ require (
 	github.com/go-logr/logr v0.4.0
 	github.com/go-openapi/loads v0.19.4
 	github.com/go-openapi/runtime v0.19.4
-	github.com/go-openapi/spec v0.19.3
+	github.com/go-openapi/spec v0.19.5
 	github.com/go-redis/cache/v8 v8.2.1
 	github.com/go-redis/redis/v8 v8.3.2
 	github.com/gobuffalo/packr v1.11.0
 	github.com/gobwas/glob v0.2.3
 	github.com/gogits/go-gogs-client v0.0.0-20190616193657-5a05380e4bc2
-	github.com/gogo/protobuf v1.3.1
+	github.com/gogo/protobuf v1.3.2
 	github.com/golang/protobuf v1.4.3
 	github.com/gomodule/redigo v2.0.0+incompatible // indirect
 	github.com/google/go-cmp v0.5.2
@@ -44,7 +44,7 @@ require (
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51
 	github.com/malexdev/utfutil v0.0.0-20180510171754-00c8d4a8e7a8 // indirect
 	github.com/mattn/go-isatty v0.0.11
-	github.com/moby/term v0.0.0-20201110203204-bea5bbe245bf // indirect
+	github.com/moby/term v0.0.0-20201216013528-df9cb8a40635 // indirect
 	github.com/mwitkow/go-conntrack v0.0.0-20190716064945-2f068394615f // indirect
         github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/pkg/errors v0.9.1
@@ -52,36 +52,35 @@ require (
 	github.com/prometheus/client_golang v1.7.1
 	github.com/robfig/cron v1.1.0
 	github.com/rs/cors v1.6.0 // indirect
-	github.com/sirupsen/logrus v1.6.0
+	github.com/sirupsen/logrus v1.7.0
 	github.com/skratchdot/open-golang v0.0.0-20160302144031-75fb7ed4208c
 	github.com/soheilhy/cmux v0.1.4
-	github.com/spf13/cobra v1.1.1
-        github.com/spf13/cobra v1.1.3
+	github.com/spf13/cobra v1.1.3
 	github.com/spf13/pflag v1.0.5
-	github.com/stretchr/testify v1.6.1
+	github.com/stretchr/testify v1.7.0
 	github.com/undefinedlabs/go-mpatch v1.0.6
 	github.com/vmihailenco/msgpack/v5 v5.1.0 // indirect
 	github.com/yuin/gopher-lua v0.0.0-20190115140932-732aa6820ec4
-	golang.org/x/crypto v0.0.0-20201002170205-7f63de1d35b0
-	golang.org/x/exp v0.0.0-20200821190819-94841d0725da // indirect
-	golang.org/x/net v0.0.0-20201110031124-69a78807bb2b
+	golang.org/x/crypto v0.0.0-20210220033148-5ea612d1eb83
+	golang.org/x/exp v0.0.0-20210220032938-85be41e4509f // indirect
+	golang.org/x/net v0.0.0-20210224082022-3d97a244fca7
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
-	golang.org/x/sync v0.0.0-20201207232520-09787c993a3a
+	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	google.golang.org/genproto v0.0.0-20201110150050-8816d57aaa9a
 	google.golang.org/grpc v1.33.1
 	gopkg.in/go-playground/webhooks.v5 v5.11.0
 	gopkg.in/src-d/go-git.v4 v4.13.1
-	gopkg.in/yaml.v2 v2.3.0
-	k8s.io/api v0.20.1
-	k8s.io/apiextensions-apiserver v0.20.1
-	k8s.io/apimachinery v0.20.1
+	gopkg.in/yaml.v2 v2.4.0
+	k8s.io/api v0.21.0
+	k8s.io/apiextensions-apiserver v0.21.0
+	k8s.io/apimachinery v0.21.0
 	k8s.io/client-go v11.0.1-0.20190816222228-6d55c1b1f1ca+incompatible
 	k8s.io/code-generator v0.20.1
 	k8s.io/component-base v0.20.1
 	k8s.io/klog v1.0.0
-	k8s.io/kube-openapi v0.0.0-20201113171705-d219536bb9fd
-	k8s.io/kubectl v0.20.1
-	k8s.io/kubernetes v1.20.1
+	k8s.io/kube-openapi v0.0.0-20210305001622-591a79e4bda7
+	k8s.io/kubectl v0.21.0
+	k8s.io/kubernetes v1.21.0
 	k8s.io/utils v0.0.0-20201110183641-67b214c5f920
 	layeh.com/gopher-json v0.0.0-20190114024228-97fed8db8427
 	sigs.k8s.io/yaml v1.2.0 
@@ -92,25 +91,6 @@ replace (
 	github.com/gorilla/websocket => github.com/gorilla/websocket v1.4.2
 	github.com/grpc-ecosystem/grpc-gateway => github.com/grpc-ecosystem/grpc-gateway v1.16.0
 	github.com/improbable-eng/grpc-web => github.com/improbable-eng/grpc-web v0.0.0-20181111100011-16092bd1d58a
-	
-	github.com/go-openapi/spec v0.19.3 => v0.19.5
-	github.com/gogo/protobuf v1.3.1 => v1.3.2
-	github.com/moby/term v0.0.0-20201110203204-bea5bbe245bf => v0.0.0-20201216013528-df9cb8a40635
-	github.com/sirupsen/logrus v1.6.0 => v1.7.0
-	github.com/spf13/cobra v1.1.1 => v1.1.3
-	github.com/stretchr/testify v1.6.1 => v1.7.0
-	golang.org/x/crypto v0.0.0-20201002170205-7f63de1d35b0 => v0.0.0-20210220033148-5ea612d1eb83
-	golang.org/x/exp v0.0.0-20200821190819-94841d0725da => v0.0.0-20210220032938-85be41e4509f
-	golang.org/x/net v0.0.0-20201110031124-69a78807bb2b => v0.0.0-20210224082022-3d97a244fca7
-	golang.org/x/sync v0.0.0-20201207232520-09787c993a3a => v0.0.0-20210220032951-036812b2e83c
-	gopkg.in/yaml.v2 v2.3.0 => v2.4.0
-	k8s.io/api v0.20.1 => v0.21.0
-	k8s.io/apiextensions-apiserver v0.20.1 => v0.21.0
-	k8s.io/apimachinery v0.20.1 => v0.21.0
-	k8s.io/kube-openapi v0.0.0-20201113171705-d219536bb9fd => v0.0.0-20210305001622-591a79e4bda7
-	k8s.io/kubectl v0.20.1 => v0.21.0
-	k8s.io/kubernetes v1.20.1 => v1.21.0
-
 	
 	google.golang.org/grpc => google.golang.org/grpc v1.15.0
 
