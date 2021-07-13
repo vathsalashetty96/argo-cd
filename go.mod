@@ -93,6 +93,24 @@ replace (
 	github.com/grpc-ecosystem/grpc-gateway => github.com/grpc-ecosystem/grpc-gateway v1.16.0
 	github.com/improbable-eng/grpc-web => github.com/improbable-eng/grpc-web v0.0.0-20181111100011-16092bd1d58a
 	
+	github.com/go-openapi/spec v0.19.3 => v0.19.5
+	github.com/gogo/protobuf v1.3.1 => v1.3.2
+	github.com/moby/term v0.0.0-20201110203204-bea5bbe245bf => v0.0.0-20201216013528-df9cb8a40635
+	github.com/sirupsen/logrus v1.6.0 => v1.7.0
+	github.com/spf13/cobra v1.1.1 => v1.1.3
+	github.com/stretchr/testify v1.6.1 => v1.7.0
+	golang.org/x/crypto v0.0.0-20201002170205-7f63de1d35b0 => v0.0.0-20210220033148-5ea612d1eb83
+	golang.org/x/exp v0.0.0-20200821190819-94841d0725da => v0.0.0-20210220032938-85be41e4509f
+	golang.org/x/net v0.0.0-20201110031124-69a78807bb2b => v0.0.0-20210224082022-3d97a244fca7
+	golang.org/x/sync v0.0.0-20201207232520-09787c993a3a => v0.0.0-20210220032951-036812b2e83c
+	gopkg.in/yaml.v2 v2.3.0 => v2.4.0
+	k8s.io/api v0.20.1 => v0.21.0
+	k8s.io/apiextensions-apiserver v0.20.1 => v0.21.0
+	k8s.io/apimachinery v0.20.1 => v0.21.0
+	k8s.io/kube-openapi v0.0.0-20201113171705-d219536bb9fd => v0.0.0-20210305001622-591a79e4bda7
+	k8s.io/kubectl v0.20.1 => v0.21.0
+	k8s.io/kubernetes v1.20.1 => v1.21.0
+
 	
 	google.golang.org/grpc => google.golang.org/grpc v1.15.0
 
