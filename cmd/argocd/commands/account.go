@@ -10,7 +10,7 @@ import (
 	"text/tabwriter"
 	"time"
 
-	timeutil "github.com/vathsalashetty96/pkg/time"
+	timeutil "github.com/argoproj/pkg/time"
 	"github.com/ghodss/yaml"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
