@@ -8,7 +8,7 @@ import (
 	"text/tabwriter"
 	"time"
 
-	timeutil "github.com/vathsalashetty96/pkg/time"
+	timeutil "github.com/argoproj/pkg/time"
 	jwtgo "github.com/dgrijalva/jwt-go/v4"
 	"github.com/spf13/cobra"
 
