@@ -12,12 +12,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	"github.com/argoproj/argo-cd/common"
-	"github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	appclientset "github.com/argoproj/argo-cd/pkg/client/clientset/versioned/fake"
-	"github.com/argoproj/argo-cd/reposerver/cache"
-	cacheutil "github.com/argoproj/argo-cd/util/cache"
-	"github.com/argoproj/argo-cd/util/settings"
+	"github.com/vathsalashetty96/argo-cd/common"
+	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
+	appclientset "github.com/vathsalashetty96/argo-cd/pkg/client/clientset/versioned/fake"
+	"github.com/vathsalashetty96/argo-cd/reposerver/cache"
+	cacheutil "github.com/vathsalashetty96/argo-cd/util/cache"
+	"github.com/vathsalashetty96/argo-cd/util/settings"
 )
 
 type fakeSettingsSrc struct {
