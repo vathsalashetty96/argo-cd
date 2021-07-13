@@ -3,7 +3,7 @@ package metrics
 import (
 	"strconv"
 
-	"github.com/vathsalashetty96/pkg/kubeclientmetrics"
+	"github.com/argoproj/pkg/kubeclientmetrics"
 	"k8s.io/client-go/rest"
 
 	"github.com/vathsalashetty96/argo-cd/pkg/apis/application/v1alpha1"
