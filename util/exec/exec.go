@@ -10,7 +10,7 @@ import (
 
 	"github.com/vathsalashetty96/argo-cd/util/log"
 
-	argoexec "github.com/vathsalashetty96/pkg/exec"
+	argoexec "github.com/argoproj/pkg/exec"
 
 	tracing "github.com/vathsalashetty96/gitops-engine/pkg/utils/tracing"
 )
