@@ -17,7 +17,7 @@ import (
 	"time"
 
 	"github.com/Masterminds/semver"
-	"github.com/vathsalashetty96/pkg/sync"
+	"github.com/argoproj/pkg/sync"
 	log "github.com/sirupsen/logrus"
 	"gopkg.in/yaml.v2"
 
