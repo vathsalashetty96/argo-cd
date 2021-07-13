@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/vathsalashetty96/pkg/jwt/zjwt"
+	"github.com/argoproj/pkg/jwt/zjwt"
 	gooidc "github.com/coreos/go-oidc"
 	"github.com/dgrijalva/jwt-go/v4"
 	log "github.com/sirupsen/logrus"
