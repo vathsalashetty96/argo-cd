@@ -20,7 +20,7 @@ import (
 	"github.com/TomOnTime/utfutil"
 	"github.com/vathsalashetty96/gitops-engine/pkg/utils/kube"
 	textutils "github.com/vathsalashetty96/gitops-engine/pkg/utils/text"
-	"github.com/vathsalashetty96/pkg/sync"
+	"github.com/argoproj/pkg/sync"
 	jsonpatch "github.com/evanphx/json-patch"
 	"github.com/ghodss/yaml"
 	"github.com/google/go-jsonnet"
