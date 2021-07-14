@@ -9,7 +9,7 @@ COPY go.sum go.sum
 
 RUN go mod download
 
-RUN go mod vendor
+#RUN go mod vendor
 #RUN go mod download
 
 # Perform the build
