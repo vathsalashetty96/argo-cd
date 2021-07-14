@@ -6,6 +6,10 @@ RUN go get golang.org/x/tools/cmd/goimports
 COPY go.mod go.mod
 COPY go.sum go.sum
 
+
+RUN go mod download
+
+RUN go mod vendor
 #RUN go mod download
 
 # Perform the build
